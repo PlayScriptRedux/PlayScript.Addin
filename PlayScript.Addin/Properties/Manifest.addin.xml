@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionModel>
+	<Extension path="/MonoDevelop/Ide/FileFilters">
+		<FileFilter id="ActionScript" insertbefore="Assemblies" _label="ActionScript Files" extensions="*.as" />
+		<FileFilter id="PlayScript" insertbefore="Assemblies" _label="PlayScript Files" extensions="*.play" />
+	</Extension>
+	<Extension path="/MonoDevelop/SourceEditor2/SyntaxModes">
+		<Templates resource="PlayScript.Addin.SyntaxMode.ActionScriptSyntaxMode.xml" />
+		<Templates resource="PlayScript.Addin.SyntaxMode.PlayScriptSyntaxMode.xml" />
+	</Extension>
+	<Extension path="/MonoDevelop/Core/MimeTypes">
+<!--	md-actionscript-file-->
+		<MimeType id="text/x-actionscript" _description="ActionScript source code" icon="md-project" isText="true">
+			<File pattern="*.as" />
+		</MimeType>
+<!--		md-playscript-file-->
+		<MimeType id="text/x-playscript" _description="PlayScript source code" icon="md-project" isText="true">
+			<File pattern="*.play" />
+		</MimeType>
+	</Extension>
+	<!--	<Extension path="/MonoDevelop/Ide/TextEditorResolver">
+		<Resolver class="MonoDevelop.PlayScript.Resolver.TextEditorResolverProvider" mimeType="text/x-actionscript" />
+		<Resolver class="MonoDevelop.PlayScript.Resolver.TextEditorResolverProvider" mimeType="text/x-playscript" />
+	</Extension>-->
+	<Extension path="/MonoDevelop/ProjectModel/LanguageBindings">
+		<LanguageBinding id="ActionScript" supportedextensions=".as" class="PlayScript.Addin.ActionScriptLanguageBinding" />
+		<!--		<LanguageBinding id="PlayScript" supportedextensions=".play" class="PlayScript.Addin.PlayScriptLanguageBinding" />-->
+	</Extension>
+	<Extension path="/MonoDevelop/ProjectModel/SerializableClasses">
+		<DataType class="PlayScript.Addin.PlayScriptCompilerParameters" />
+		<DataType class="PlayScript.Addin.PlayScriptProjectParameters" />
+	</Extension>
+	<Extension path="/MonoDevelop/ProjectModel/MSBuildItemTypes">
+		<DotNetProject language="PlayScript" extension="psproj" guid="{2065160B-5C1B-4AFD-AAB6-1CF1AC3AC086}" import="$(MSBuildBinPath)\Microsoft.CSharp.targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
+	</Extension>
+	<Runtime>
+	</Runtime>
+</ExtensionModel>
