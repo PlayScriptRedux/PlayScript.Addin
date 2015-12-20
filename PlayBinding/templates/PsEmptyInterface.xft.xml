@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<Template Originator="Ben Cooley" Language="PlayScript" Created="3/09/2001" LastModified="3/09/2013">
+	
+	<TemplateConfiguration>
+		<_Name>Empty PlayScript Interface</_Name>
+		<Icon>md-interface-file</Icon>
+		<_Category>PlayScript</_Category>
+		<LanguageName>PlayScript</LanguageName>
+		<_Description>Creates an empty PlayScript interface file.</_Description>
+	</TemplateConfiguration>
+	
+	<TemplateFiles>
+		<File DefaultExtension=".play" DefaultName="MyClass" AddStandardHeader="True">
+<![CDATA[package ${Namespace}
+{
+	public interface ${Name}
+	{
+	
+	}
+}]]>		
+		</File>
+	</TemplateFiles>
+	
+	<FileOptions/>
+	
+</Template>

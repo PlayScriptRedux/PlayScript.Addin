@@ -1,0 +1,341 @@
+<ExtensionModel>
+	<Extension path="/MonoDevelop/SourceEditor2/SyntaxModes">
+		<Templates file="SyntaxMode/ActionScriptSyntaxMode.xml" />
+		<Templates file="SyntaxMode/PlayScriptSyntaxMode.xml" />
+	</Extension>
+	<Extension path="/MonoDevelop/Ide/FileTemplates">
+		<FileTemplate id="PlayScriptEmptyFile" file="templates/PsEmptyFile.xft.xml" />
+		<FileTemplate id="PlayScriptEmptyClass" file="templates/PsEmptyClass.xft.xml" />
+		<FileTemplate id="PlayScriptEmptyInterface" file="templates/PsEmptyInterface.xft.xml" />
+		<FileTemplate id="ActionScriptEmptyFile" file="templates/AsEmptyFile.xft.xml" />
+		<FileTemplate id="ActionScriptEmptyClass" file="templates/AsEmptyClass.xft.xml" />
+		<FileTemplate id="ActionScriptEmptyInterface" file="templates/AsEmptyInterface.xft.xml" />
+		<FileTemplate id="CSharpAssemblyInfo" file="templates/AssemblyInfo.xft.xml" />
+	</Extension>
+	<Extension path="/MonoDevelop/Ide/ProjectTemplates">
+		<ProjectTemplate id="PlayScriptEmptyProject" file="templates/PsEmptyProject.xpt.xml" />
+		<ProjectTemplate id="PlayScriptLibrary" file="templates/PsLibrary.xpt.xml" />
+		<ProjectTemplate id="PlayScriptConsoleProject" file="templates/PsConsoleProject.xpt.xml" />
+		<ProjectTemplate id="ActionScriptEmptyProject" file="templates/AsEmptyProject.xpt.xml" />
+		<ProjectTemplate id="ActionScriptLibrary" file="templates/AsLibrary.xpt.xml" />
+		<ProjectTemplate id="ActionScriptConsoleProject" file="templates/AsConsoleProject.xpt.xml" />
+	</Extension>
+	<Extension path="/MonoDevelop/Ide/FileFilters">
+		<FileFilter id="ActionScript" insertbefore="Assemblies" _label="ActionScript Files" extensions="*.as" />
+		<FileFilter id="PlayScript" insertbefore="Assemblies" _label="PlayScript Files" extensions="*.play" />
+		<FileFilter id="PlayScriptProject" insertbefore="Assemblies" _label="PlayScript Projects" extensions="*.psproj" />
+	</Extension>
+	<Extension path="/MonoDevelop/Core/StockIcons">
+		<StockIcon stockid="md-playscript-project" file="icons/playscript-project-16.png" size="Menu" />
+		<StockIcon stockid="md-playscript-project" file="icons/playscript-project-32.png" size="Dnd" />
+		<StockIcon stockid="md-playscript-file" file="icons/playscript-file-source-16.png" size="Menu" />
+		<StockIcon stockid="md-playscript-file" file="icons/playscript-file-source-32.png" size="Dnd" />
+		<StockIcon stockid="md-actionscript-project" file="icons/playscript-project-16.png" size="Menu" />
+		<StockIcon stockid="md-actionscript-project" file="icons/playscript-project-32.png" size="Dnd" />
+		<StockIcon stockid="md-actionscript-file" file="icons/actionscript-file-source-16.png" size="Menu" />
+		<StockIcon stockid="md-actionscript-file" file="icons/actionscript-file-source-32.png" size="Dnd" />
+	</Extension>
+	<Extension path="/MonoDevelop/Core/MimeTypes">
+		<MimeType id="application/psproject+xml" _description="PlayScript project file" baseType="application/xml">
+			<File pattern="*.psproj" />
+		</MimeType>
+		<MimeType id="text/x-playscript" _description="PlayScript source code" icon="md-playscript-file" isText="true">
+			<File pattern="*.play" />
+		</MimeType>
+		<MimeType id="text/x-actionscript" _description="ActionScript source code" icon="md-actionscript-file" isText="true">
+			<File pattern="*.as" />
+		</MimeType>
+	</Extension>
+	<Extension path="/MonoDevelop/ProjectModel/LanguageBindings">
+		<LanguageBinding id="ActionScript" supportedextensions=".as" class="MonoDevelop.PlayScript.ActionScriptLanguageBinding" />
+		<LanguageBinding id="PlayScript" supportedextensions=".play" class="MonoDevelop.PlayScript.PlayScriptLanguageBinding" />
+	</Extension>
+	<!--    <DotNetProject language="F#" extension="fsproj" guid="{f2a71f9b-5d33-465a-a702-920d77279786}" import="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets"  resourceHandler="MonoDevelop.FSharp.FSharpResourceIdBuilder"/>-->
+	<Extension path="/MonoDevelop/ProjectModel/MSBuildItemTypes">
+		<DotNetProject language="PlayScript" extension="psproj" guid="{1fc382b4-0f88-4dbe-994d-7aa7d07975c6}" import="$(MSBuildBinPath)\Microsoft.CSharp.targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
+	</Extension>
+	<Extension path="/MonoDevelop/ProjectModel/MSBuildItemTypes">
+		<DotNetProject language="ActionScript" extension="psproj" guid="{1fc382b4-0f88-4dbe-994d-7aa7d07975c6}" import="$(MSBuildBinPath)\Microsoft.CSharp.targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
+		<!--		<DotNetProjectSubtype guid="{1fc382b4-0f88-4dbe-994d-7aa7d07975c6}" type="MonoDevelop.AddinMaker.AddinProject" useXBuild="true" requireXbuild="false" />-->
+	</Extension>
+	<Extension path="/MonoDevelop/ProjectModel/Gui/ItemOptionPanels/Build/General">
+		<Condition id="ActiveLanguage" value="PlayScript">
+			<Panel id="CSharpCompilerOptionsPanel" _label="PlayScript" class="MonoDevelop.PlayScript.Project.CompilerOptionsPanel" />
+		</Condition>
+	</Extension>
+	<Extension path="/MonoDevelop/ProjectModel/Gui/ItemOptionPanels/Build/General">
+		<Condition id="ActiveLanguage" value="ActionScript">
+			<Panel id="CSharpCompilerOptionsPanel" _label="PlayScript" class="MonoDevelop.PlayScript.Project.CompilerOptionsPanel" />
+		</Condition>
+	</Extension>
+	<Extension path="/MonoDevelop/ProjectModel/Gui/ItemOptionPanels/Build/Compiler">
+		<Condition id="ActiveLanguage" value="PlayScript">
+			<Panel id="CSharpCodeGenerationPanel" _label="Compiler" class="MonoDevelop.PlayScript.Project.CodeGenerationPanel" />
+		</Condition>
+	</Extension>
+	<Extension path="/MonoDevelop/ProjectModel/Gui/ItemOptionPanels/Build/Compiler">
+		<Condition id="ActiveLanguage" value="ActionScript">
+			<Panel id="CSharpCodeGenerationPanel" _label="Compiler" class="MonoDevelop.PlayScript.Project.CodeGenerationPanel" />
+		</Condition>
+	</Extension>
+	<Extension path="/MonoDevelop/Core/SupportPackages">
+		<Condition id="PackageNotInstalled" name="playscript" version="1.0.0">
+			<Package name="pscorlib" version="1.0.0" clrVersion="Default">
+				<Assembly file="PlayScript.References/pscorlib.dll" />
+				<Assembly file="PlayScript.References/Mono.Playscript.dll" />
+				<Assembly file="PlayScript.References/PlayScript.Dynamic.dll" />
+				<Assembly file="PlayScript.References/PlayScript.Optimization.dll" />
+			</Package>
+			<Package name="pscorlib_aot" version="1.0.0" clrVersion="Default">
+				<Assembly file="PlayScript.References/pscorlib_aot.dll" />
+				<Assembly file="PlayScript.References/PlayScript.Dynamic_aot.dll" />
+				<Assembly file="PlayScript.References/Mono.Playscript.dll" />
+				<Assembly file="PlayScript.References/PlayScript.Optimization.dll" />
+			</Package>
+		</Condition>
+	</Extension>
+		<Extension path="/MonoDevelop/Core/SupportPackages">
+		<Condition id="PackageNotInstalled" name="playscript" version="1.0.0">
+			<Package name="pscorlib" version="1.0.0" clrVersion="Default">
+				<Assembly file="PlayScript.References/pscorlib.dll" />
+				<Assembly file="PlayScript.References/Mono.Playscript.dll" />
+				<Assembly file="PlayScript.References/PlayScript.Dynamic.dll" />
+				<Assembly file="PlayScript.References/PlayScript.Optimization.dll" />
+				<Assembly file="PlayScript.References/pscorlib_aot.dll" />
+				<Assembly file="PlayScript.References/PlayScript.Dynamic_aot.dll" />
+				<Assembly file="PlayScript.References/Mono.Playscript.dll" />
+				<Assembly file="PlayScript.References/PlayScript.Optimization.dll" />
+			</Package>
+		</Condition>
+	</Extension>
+
+	<!--	<ConditionType id="MSBuildTargetIsAvailable" type="MonoDevelop.Projects.Formats.MSBuild.TargetsAvailableCondition" />-->
+	<!--	<Extension path = "/MonoDevelop/Ide/Commands">
+		<Command id = "MonoDevelop.CodeGeneration.CodeGenerationCommands.ShowCodeGenerationWindow"
+				_label = "S_how Code Generation Window"
+				shortcut = "Alt|Insert"
+				macShortcut = "Meta|I" />
+	</Extension>-->
+	<!--	<Extension path="/MonoDevelop/Core/SupportPackages">
+		<Condition id="PackageNotInstalled" name="playscript">
+			<Package name="playscript" clrVersion="Default">
+				<Assembly file="pscorlib.dll" />
+	  			<Assembly file="PlayScript.Dynamic.dll" />
+	  			<Assembly file="Mono.PlayScript.dll" />
+				<Assembly file="pscorlib_aot.dll" />
+				<Assembly file="PlayScript.Dynamic_aot.dll" />
+			</Package>
+		</Condition>
+	</Extension>-->
+	<!--	<Extension path = "/MonoDevelop/ProjectModel/MSBuildItemTypes">
+		<DotNetProject
+			language="C#"
+			extension="csproj"
+			guid="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+			import="$(MSBuildBinPath)\Microsoft.CSharp.targets"
+			resourceHandler="MonoDevelop.CSharp.Project.CSharpResourceIdBuilder"
+			/>
+		<Condition id="MSBuildTargetIsAvailable" target="$(MSBuildExtensionsPath)\Microsoft\Portable\v4.0\Microsoft.Portable.CSharp.targets">
+			<DotNetProjectSubtype
+				guid="{786C830F-07A1-408B-BD7F-6EE04809D6DB}"
+				type="MonoDevelop.Projects.PortableDotNetProject"
+				useXBuild="true">
+				<AddImport language="C#" projects="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+				<RemoveImport language="C#" projects="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+			</DotNetProjectSubtype>
+		</Condition>
+	</Extension>-->
+	<!--	<Extension path = "/MonoDevelop/Ide/ProjectTemplates">
+		<ProjectTemplate id = "CSharpConsoleProject" resource = "ConsoleProject.xpt.xml"/>
+		<ProjectTemplate id = "CSharpEmptyProject" resource = "EmptyProject.xpt.xml"/>
+		<ProjectTemplate id = "CSharpGtkSharp2Project" resource = "GtkSharp2Project.xpt.xml"/>
+		<ProjectTemplate id = "CSharpLibrary" resource = "Library.xpt.xml"/>
+		<ProjectTemplate id = "CSharpSharedAssetsProject" resource = "SharedAssetsProject.xpt.xml"/>
+		<Condition id="MSBuildTargetIsAvailable" target="$(MSBuildExtensionsPath)\Microsoft\Portable\v4.0\Microsoft.Portable.CSharp.targets">
+			<ProjectTemplate id = "CSharpPortableLibrary" resource = "PortableLibrary.xpt.xml" />
+		</Condition>
+	</Extension>-->
+	<!--	<Extension path = "/MonoDevelop/ProjectModel/LanguageBindings">
+		<LanguageBinding id    = "CSharp"
+		                 supportedextensions = ".cs"
+		                 class = "MonoDevelop.CSharp.CSharpLanguageBinding" />
+	</Extension>-->
+	<!--	<Extension path = "/MonoDevelop/Ide/ReferenceFinder">
+		<ReferenceFinder supportedmimetypes = "text/x-csharp"
+		                 class = "MonoDevelop.CSharp.Refactoring.CSharpReferenceFinder" />
+	</Extension>-->
+	<!--	<Extension path = "/MonoDevelop/Ide/ReferenceFinder">
+		<ReferenceFinder supportedmimetypes = "text/x-csharp,text/x-actionscript,text/x-playscript"
+		                 class = "MonoDevelop.CSharp.Refactoring.CSharpReferenceFinder" />
+	</Extension>
+
+	<Extension path = "/MonoDevelop/ProjectModel/SerializableClasses">
+		<DataType class = "MonoDevelop.CSharp.Project.CSharpCompilerParameters" />
+		<DataType class = "MonoDevelop.CSharp.Project.CSharpProjectParameters" />
+	</Extension>-->
+	<!--	<Extension path = "/MonoDevelop/Ide/TextEditorExtensions">-->
+	<!-- indent engine must be before the completion text editor engine,
+		otherwise stuff like
+
+		int Foo {
+		         get;private set';'
+
+		will end up as
+
+		int Foo {
+		         get;
+		         privaet;
+
+		-->
+	<!--		<Class fileExtensions = ".play" class = "MonoDevelop.CSharp.Formatting.CSharpTextEditorIndentation" />
+		<Class fileExtensions = ".play" class = "MonoDevelop.CSharp.Completion.CSharpCompletionTextEditorExtension" />
+		<Class fileExtensions = ".play" class = "MonoDevelop.CSharp.Highlighting.HighlightUsagesExtension" />
+		<Class fileExtensions = ".play" class = "MonoDevelop.CSharp.PathedDocumentTextEditorExtension" />
+		<Class fileExtensions = ".play" class = "MonoDevelop.CSharp.UnitTestTextEditorExtension" />
+		<Class fileExtensions = ".as" class = "MonoDevelop.CSharp.Formatting.CSharpTextEditorIndentation" />
+		<Class fileExtensions = ".as" class = "MonoDevelop.CSharp.Completion.CSharpCompletionTextEditorExtension" />
+		<Class fileExtensions = ".as" class = "MonoDevelop.CSharp.Highlighting.HighlightUsagesExtension" />
+		<Class fileExtensions = ".as" class = "MonoDevelop.CSharp.PathedDocumentTextEditorExtension" />
+		<Class fileExtensions = ".as" class = "MonoDevelop.CSharp.UnitTestTextEditorExtension" />
+	</Extension>-->
+	<!--	<Extension path = "/MonoDevelop/Ide/CodeFormatters">
+		<Formatter mimeType="text/x-playscript" class="MonoDevelop.CSharp.Formatting.CSharpFormatter" />
+	</Extension>
+
+	<Extension path = "/MonoDevelop/TypeSystem/Ambiences">
+		<Ambience mimeType="text/x-playscript" class = "MonoDevelop.CSharp.CSharpAmbience" />
+	</Extension>
+
+	<Extension path = "/MonoDevelop/TypeSystem/Parser">
+		<Parser class="MonoDevelop.CSharp.Parser.TypeSystemParser" mimeType = "text/x-playscript" />
+	</Extension>
+
+	<Extension path = "/MonoDevelop/TypeSystem/FoldingParser">
+		<Parser class = "MonoDevelop.CSharp.Parser.CSharpFoldingParser" mimeType="text/x-playscript" />
+	</Extension>
+
+	<Extension path = "/MonoDevelop/TypeSystem/CodeGenerators">
+		<Generator class="MonoDevelop.CSharp.Refactoring.CSharpCodeGenerator" mimeType = "text/x-playscript" />
+	</Extension>
+	
+	<Extension path = "/MonoDevelop/ProjectModel/PolicySets/Mono" >
+		<Policies resource="MonoCSharpPolicy.xml" />
+		<Policies resource="MonoNameConventionPolicy.xml" />
+	</Extension>-->
+	<!--	<Extension path = "/MonoDevelop/ProjectModel/PolicySets" >
+		<PolicySet id="KR" _name="K&amp;R style" allowDiffSerialize="false">
+			<Policies resource="KRCSharpPolicy.xml" />
+			<Policies resource="InvariantTextStylePolicy.xml" />
+		</PolicySet>
+	</Extension>
+
+	<Extension path = "/MonoDevelop/ProjectModel/PolicySets" >
+		<PolicySet id="1TBS" _name="SharpDevelop style (1TBS)" allowDiffSerialize="false">
+			<Policies resource="SharpDevelopCSharpPolicy.xml" />
+			<Policies resource="InvariantTextStylePolicy.xml" />
+		</PolicySet>
+	</Extension>
+
+	<Extension path = "/MonoDevelop/ProjectModel/PolicySets/VisualStudio" >
+		<Policies resource="AllmanCSharpPolicy.xml" />
+	</Extension>
+
+	<Extension path = "/MonoDevelop/ProjectModel/PolicySets" >
+		<PolicySet id="Whitesmiths" _name="Whitesmiths style" allowDiffSerialize="false">
+			<Policies resource="WhitesmithsCSharpPolicy.xml" />
+			<Policies resource="InvariantTextStylePolicy.xml" />
+		</PolicySet>
+	</Extension>
+
+	<Extension path = "/MonoDevelop/ProjectModel/PolicySets" >
+		<PolicySet id="GNU" _name="GNU style" allowDiffSerialize="false">
+			<Policies resource="GNUCSharpPolicy.xml" />
+			<Policies resource="GNUTextStylePolicy.xml" />
+		</PolicySet>
+	</Extension>
+
+	<Extension path = "/MonoDevelop/ProjectModel/Gui/MimeTypePolicyPanels">
+		<Panel id = "CSharpFormatting" _label = "PlayScript Format" mimeType="text/x-playscript" class = "MonoDevelop.CSharp.Formatting.CSharpFormattingPolicyPanel" />
+	</Extension>-->
+	<!--	<Extension path = "/MonoDevelop/Refactoring/CodeActions">
+		<Action mimeType="text/x-playscript"
+			_title = "Move type to another file"
+			_description = "Moves current type to another file that matches the name of the type."
+			class = "MonoDevelop.CSharp.Refactoring.CodeActions.MoveTypeToFile" />
+		<Action mimeType="text/x-playscript"
+			_title = "Convert to enum"
+			_description = "Converts constant fields to enumeration"
+			class = "MonoDevelop.CSharp.Refactoring.CodeActions.ConvertToEnumAction" />
+	</Extension>
+	
+	<Extension path = "/MonoDevelop/Refactoring/CodeIssues">
+		<CodeIssue mimeType="text/x-playscript" severity = "Error" class="MonoDevelop.CSharp.Refactoring.CodeIssues.MonoTODOIssue"/>
+	</Extension>
+	
+	<Extension path = "/MonoDevelop/Ide/TextEditorResolver">
+		<Resolver class = "MonoDevelop.CSharp.Resolver.TextEditorResolverProvider" mimeType="text/x-playscript" />
+	</Extension>-->
+	<!--	<Extension path = "/MonoDevelop/Ide/Commands/TextEditor">
+		<Command id = "MonoDevelop.CSharp.Highlighting.MoveToUsagesCommand.PrevUsage"
+		         defaultHandler = "MonoDevelop.CSharp.Highlighting.MoveToPrevUsageHandler"
+		         shortcut = "Ctrl|Shift|Up"
+		         macShortcut = "Meta|Shift|Up"
+		         _label = "_Move to prev usage"/>
+		<Command id = "MonoDevelop.CSharp.Highlighting.MoveToUsagesCommand.NextUsage"
+		         defaultHandler = "MonoDevelop.CSharp.Highlighting.MoveToNextUsageHandler"
+		         shortcut = "Ctrl|Shift|Down"
+		         macShortcut = "Meta|Shift|Down"
+		         _label = "_Move to next usage"/>
+
+		<Command id = "MonoDevelop.CSharp.ExpandCommands.ExpandSelection"
+		         defaultHandler = "MonoDevelop.CSharp.ExpandSelectionHandler"
+		         shortcut = "Alt|Shift|Up"
+		         macShortcut = "Alt|Shift|Up"
+		         _label = "_Expand selection"/>
+
+		<Command id = "MonoDevelop.CSharp.ExpandCommands.ShrinkSelection"
+		         defaultHandler = "MonoDevelop.CSharp.ShrinkSelectionHandler"
+		         shortcut = "Alt|Shift|Down"
+		         macShortcut = "Alt|Shift|Down"
+		         _label = "_Shrink selection"/>
+	</Extension>-->
+	<!--	<Extension path = "/MonoDevelop/Refactoring/CodeGenerators">
+		<Class class = "MonoDevelop.CodeGeneration.CreateConstructorGenerator" />
+		<Class class = "MonoDevelop.CodeGeneration.ReadonlyPropertyGenerator" />
+		<Class class = "MonoDevelop.CodeGeneration.PropertyGenerator" />
+		<Class class = "MonoDevelop.CodeGeneration.ImplementInterfaceMembersGenerator" />
+		<Class class = "MonoDevelop.CodeGeneration.RequiredProtocolMemberGenerator" />
+		<Class class = "MonoDevelop.CodeGeneration.OptionalProtocolMemberGenerator" />
+		<Class class = "MonoDevelop.CodeGeneration.PartialGenerator" />
+		<Class class = "MonoDevelop.CodeGeneration.OverrideMembersGenerator" />
+		<Class class = "MonoDevelop.CodeGeneration.ToStringGenerator" />
+		<Class class = "MonoDevelop.CodeGeneration.RaiseEventMethodGenerator" />
+		<Class class = "MonoDevelop.CodeGeneration.EqualityMembersGenerator" />
+		<Class class = "MonoDevelop.CodeGeneration.WriteLineGenerator" />
+	</Extension>-->
+	<!--	<Extension path = "/MonoDevelop/Refactoring/CodeActionSource">
+		<Source class ="MonoDevelop.CSharp.Refactoring.CodeActions.NRefactoryCodeActionSource"/>
+	</Extension>
+
+	<Extension path = "/MonoDevelop/Refactoring/CodeIssueSource">
+		<Source class ="MonoDevelop.CSharp.Refactoring.CodeIssues.NRefactoryCodeIssueSource"/>
+	</Extension>
+
+	<Extension path = "/MonoDevelop/ProjectModel/Gui/DefaultPolicyPanels/SourceCode">
+		<Section id="NameConventions" _label="Name Conventions" fill = "true" class="MonoDevelop.CSharp.Refactoring.CodeIssues.NameConventionPanel" icon="md-prefs-name-conventions" />
+	</Extension>
+	<Extension path = "/MonoDevelop/ProjectModel/Gui/ItemOptionPanels/SourceCode">
+		<Section id="NameConventions" _label="Name Conventions" fill = "true" class="MonoDevelop.CSharp.Refactoring.CodeIssues.NameConventionPanel" icon="md-prefs-name-conventions" />
+	</Extension>
+	<Extension path = "/MonoDevelop/Ide/GlobalOptionsDialog/SourceCode">
+		<Section id="NameConventions" _label="Name Conventions" fill = "true" class="MonoDevelop.CSharp.Refactoring.CodeIssues.NameConventionPanel" icon="md-prefs-name-conventions" />
+	</Extension>
+
+	<Extension path = "/MonoDevelop/SourceEditor2/TooltipProviders">
+		<Class id="LanguageItem" class="MonoDevelop.SourceEditor.LanguageItemTooltipProvider" />
+	</Extension>
+	
+	<Extension path = "/MonoDevelop/Ide/CompletionCharacters">
+		<Complete language="PlayScript" commitOnSpace="True" commitChars="{}[]().,:;+-*/%&amp;|^!~=&lt;&gt;?@#'&quot;\"/>
+	</Extension>-->
+</ExtensionModel>

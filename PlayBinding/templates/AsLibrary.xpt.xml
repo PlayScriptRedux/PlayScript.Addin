@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Template originator="Mike Krueger" created="02/01/2003" lastModified="02/01/2003">
+	<!-- Template Header -->
+	<TemplateConfiguration>
+		<_Name>Library</_Name>
+		<Category>other/net/general</Category>
+		<Icon>md-project-library</Icon>
+		<Image id="md-library-project" />
+		<LanguageName>ActionScript</LanguageName>
+		<_Description>Creates an empty ActionScript class library</_Description>
+		<DefaultFilename>EmptyLibrary</DefaultFilename>
+		<GroupId>md-project-library</GroupId>
+	</TemplateConfiguration>
+	<!-- Actions -->
+	<Actions>
+		<Open filename="MyClass.as" />
+	</Actions>
+	<!-- Template Content -->
+	<Combine name="${ProjectName}" directory=".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+		<Project name="${ProjectName}" directory=".">
+			<Options Target="Library" PauseConsoleOutput="False" />
+			<References>
+				<Reference type="Package" refto="System" />
+				<Reference type="Package" refto="pscorlib_aot" LocalCopy="true" SpecificVersion="false" />
+				<Reference type="Package" refto="PlayScript.Dynamic_aot" LocalCopy="true" SpecificVersion="false" />
+			</References>
+			<Files>
+				<FileTemplateReference TemplateID="PlayScriptEmptyClass" name="MyClass.as" />
+				<FileTemplateReference TemplateID="CSharpAssemblyInfo" name="AssemblyInfo.cs" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

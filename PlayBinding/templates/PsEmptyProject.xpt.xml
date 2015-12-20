@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Template originator="Mike Krueger" created="01/10/2001" lastModified="02/01/2003">
+	<!-- Template Header -->
+	<TemplateConfiguration>
+		<_Name>Empty Project</_Name>
+		<Category>other/net/general</Category>
+		<Icon>md-project</Icon>
+		<LanguageName>PlayScript</LanguageName>
+		<_Description>Creates an empty PlayScript project</_Description>
+		<DefaultFilename>EmptyProject</DefaultFilename>
+		<GroupId>md-empty-project</GroupId>
+	</TemplateConfiguration>
+	<Combine name="${ProjectName}" directory=".">
+		<Project name="${ProjectName}" directory=".">
+			<References>
+				<Reference type="Package" refto="System" />
+				<Reference type="Package" refto="pscorlib_aot" LocalCopy="true" SpecificVersion="false" />
+				<Reference type="Package" refto="PlayScript.Dynamic_aot" LocalCopy="true" SpecificVersion="false" />
+			</References>
+		</Project>
+	</Combine>
+</Template>

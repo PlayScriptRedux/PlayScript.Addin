@@ -1,0 +1,9 @@
+[submodule "external/NRefactory"]
+	path = external/NRefactory
+	url = https://github.com/PlayScriptRedux/NRefactory.git
+[submodule "external/ikvm-fork"]
+	path = external/ikvm-fork
+	url = https://github.com/mono/ikvm-fork
+[submodule "external/ikvm"]
+	path = external/ikvm
+	url = https://github.com/mono/ikvm-fork
