@@ -32,17 +32,17 @@ using MonoDevelop.Core;
 using MonoDevelop.Ide.Gui;
 using MonoDevelop.Ide.CodeCompletion;
 using MonoDevelop.PlayScript.Formatting;
-using MonoDevelop.PlayScript.Parser;
+//using MonoDevelop.PlayScript.Parser;
 using System.Text.RegularExpressions;
-using ICSharpCode.NRefactory.CSharp;
-using MonoDevelop.PlayScript.Resolver;
+using ICSharpCode.NRefactory.PlayScript;
+//using MonoDevelop.PlayScript.Resolver;
 using Mono.TextEditor;
 using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.CSharp.Resolver;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
 using MonoDevelop.Ide.TypeSystem;
 using ICSharpCode.NRefactory.Completion;
 using System.Linq;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
+using ICSharpCode.NRefactory.PlayScript.TypeSystem;
 
 namespace MonoDevelop.PlayScript.Completion
 {

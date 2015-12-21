@@ -31,7 +31,6 @@ using System.Collections.Generic;
 using MonoDevelop.Projects;
 using MonoDevelop.Core.Serialization;
 using MonoDevelop.Core;
-using Mono.Collections.Generic;
 using System.Linq;
 
 namespace MonoDevelop.PlayScript.Project

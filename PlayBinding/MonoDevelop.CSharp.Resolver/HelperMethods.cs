@@ -42,12 +42,12 @@ using MonoDevelop.Ide.CodeCompletion;
 using MonoDevelop.Refactoring;
 using MonoDevelop.PlayScript.Parser;
 using Mono.TextEditor;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
 using ICSharpCode.NRefactory.TypeSystem;
 using ICSharpCode.NRefactory.Completion;
 using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
-using ICSharpCode.NRefactory.CSharp.Resolver;
+using ICSharpCode.NRefactory.PlayScript.TypeSystem;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
 
 namespace MonoDevelop.PlayScript
 {
@@ -64,14 +64,14 @@ namespace MonoDevelop.PlayScript
 			}
 		}
 		
-		public static ICSharpCode.NRefactory.CSharp.SyntaxTree Parse (this ICSharpCode.NRefactory.CSharp.CSharpParser parser, TextEditorData data)
+		public static ICSharpCode.NRefactory.PlayScript.SyntaxTree Parse (this ICSharpCode.NRefactory.PlayScript.PlayScriptParser parser, TextEditorData data)
 		{
 			using (var stream = data.OpenStream ()) {
 				return parser.Parse (stream, data.Document.FileName);
 			}
 		}
 		
-//		public static AstNode ParseSnippet (this ICSharpCode.NRefactory.CSharp.CSharpParser parser, TextEditorData data)
+//		public static AstNode ParseSnippet (this ICSharpCode.NRefactory.PlayScript.CSharpParser parser, TextEditorData data)
 //		{
 //			using (var stream = new  StreamReader (data.OpenStream ())) {
 //				var result = parser.ParseExpression (stream);

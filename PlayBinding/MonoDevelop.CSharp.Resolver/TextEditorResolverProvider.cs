@@ -30,18 +30,18 @@ using Mono.TextEditor;
 using System.Text;
 using MonoDevelop.Ide.Gui;
 using MonoDevelop.Ide;
-using ICSharpCode.NRefactory.CSharp.Resolver;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
 using ICSharpCode.NRefactory.TypeSystem;
 using MonoDevelop.Ide.TypeSystem;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
 using System.Linq;
 using System.Collections.Generic;
 using ICSharpCode.NRefactory.Semantics;
 using ICSharpCode.NRefactory;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
+using ICSharpCode.NRefactory.PlayScript.TypeSystem;
 using System.Threading;
 using MonoDevelop.Refactoring;
-using ICSharpCode.NRefactory.CSharp.Refactoring;
+using ICSharpCode.NRefactory.PlayScript.Refactoring;
 
 namespace MonoDevelop.PlayScript.Resolver
 {

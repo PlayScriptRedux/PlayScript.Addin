@@ -35,13 +35,13 @@ using MonoDevelop.PlayScript.Refactoring;
 using Mono.TextEditor;
 using MonoDevelop.Ide.CodeTemplates;
 using MonoDevelop.SourceEditor;
-using ICSharpCode.NRefactory.CSharp.Completion;
-using ICSharpCode.NRefactory.Editor;
 using System.Linq;
 using System.Text;
-using ICSharpCode.NRefactory.CSharp;
 using MonoDevelop.Ide;
 using ICSharpCode.NRefactory;
+using ICSharpCode.NRefactory.Editor;
+using ICSharpCode.NRefactory.PlayScript;
+using ICSharpCode.NRefactory.PlayScript.Completion;
 
 namespace MonoDevelop.PlayScript.Formatting
 {

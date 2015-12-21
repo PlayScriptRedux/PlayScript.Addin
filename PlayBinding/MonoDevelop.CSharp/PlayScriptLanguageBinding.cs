@@ -14,8 +14,8 @@ using MonoDevelop.Projects;
 using MonoDevelop.Core;
 using MonoDevelop.Core.Instrumentation;
 
-using MonoDevelop.PlayScript.Parser;
-using ICSharpCode.NRefactory.CSharp;
+//using MonoDevelop.PlayScript.Parser;
+using ICSharpCode.NRefactory.PlayScript;
 using MonoDevelop.PlayScript.Formatting;
 using MonoDevelop.PlayScript.Project;
 

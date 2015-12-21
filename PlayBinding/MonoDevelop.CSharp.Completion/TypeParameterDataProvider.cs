@@ -34,11 +34,11 @@ using MonoDevelop.Ide.CodeCompletion;
 using MonoDevelop.PlayScript.Formatting;
 using MonoDevelop.PlayScript.Parser;
 using System.Text.RegularExpressions;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
 using MonoDevelop.PlayScript.Resolver;
 using Mono.TextEditor;
 using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.CSharp.Resolver;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
 using MonoDevelop.Ide.TypeSystem;
 using ICSharpCode.NRefactory.Completion;
 

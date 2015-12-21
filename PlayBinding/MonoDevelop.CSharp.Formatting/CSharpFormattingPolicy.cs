@@ -32,7 +32,7 @@ using System.Xml;
 using System.Text;
 using System.Linq;
 using MonoDevelop.Projects.Policies;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
 
 namespace MonoDevelop.PlayScript.Formatting
 {

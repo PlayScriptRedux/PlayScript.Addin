@@ -24,14 +24,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
-using ICSharpCode.NRefactory.CSharp.Completion;
 using System.Collections.Generic;
-using MonoDevelop.CodeGeneration;
-using ICSharpCode.NRefactory.TypeSystem;
+//using MonoDevelop.CodeGeneration;
 using System.Linq;
 using MonoDevelop.PlayScript.Refactoring.CodeActions;
-using ICSharpCode.NRefactory.Editor;
 using MonoDevelop.PlayScript.CodeGeneration;
+using ICSharpCode.NRefactory.PlayScript.Completion;
+using ICSharpCode.NRefactory.Editor;
+using ICSharpCode.NRefactory.TypeSystem;
 
 namespace MonoDevelop.PlayScript.Completion
 {
@@ -51,7 +51,7 @@ namespace MonoDevelop.PlayScript.Completion
 			}
 		}
 
-		public MonoCSharpCompletionEngine (CSharpCompletionTextEditorExtension ext, ICSharpCode.NRefactory.Editor.IDocument document, ICompletionContextProvider completionContextProvider, ICompletionDataFactory factory, ICSharpCode.NRefactory.TypeSystem.IProjectContent content, ICSharpCode.NRefactory.CSharp.TypeSystem.CSharpTypeResolveContext ctx) : base (document, completionContextProvider, factory, content, ctx)
+		public MonoCSharpCompletionEngine (CSharpCompletionTextEditorExtension ext, ICSharpCode.NRefactory.Editor.IDocument document, ICompletionContextProvider completionContextProvider, ICompletionDataFactory factory, ICSharpCode.NRefactory.TypeSystem.IProjectContent content, ICSharpCode.NRefactory.PlayScript.TypeSystem.CSharpTypeResolveContext ctx) : base (document, completionContextProvider, factory, content, ctx)
 		{
 			this.ext = ext;
 		}

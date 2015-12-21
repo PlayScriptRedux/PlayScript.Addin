@@ -45,14 +45,20 @@ using MonoDevelop.Ide.CodeCompletion;
 using MonoDevelop.Components.Commands;
 
 using ICSharpCode.NRefactory;
-using ICSharpCode.NRefactory.CSharp;
 using ICSharpCode.NRefactory.Semantics;
 using ICSharpCode.NRefactory.Completion;
 using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.CSharp.Resolver;
-using ICSharpCode.NRefactory.CSharp.Completion;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
-using ICSharpCode.NRefactory.CSharp.Refactoring;
+using ICSharpCode.NRefactory.PlayScript;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
+using ICSharpCode.NRefactory.PlayScript.Completion;
+using ICSharpCode.NRefactory.PlayScript.TypeSystem;
+using ICSharpCode.NRefactory.PlayScript.Refactoring;
+
+using IEntityCompletionData = ICSharpCode.NRefactory.Completion.IEntityCompletionData;
+using ICompletionData = ICSharpCode.NRefactory.Completion.ICompletionData;
+using IParameterDataProvider = ICSharpCode.NRefactory.Completion.IParameterDataProvider;
+using IVariableCompletionData = ICSharpCode.NRefactory.Completion.IVariableCompletionData;
+using ICompletionDataFactory = ICSharpCode.NRefactory.PlayScript.Completion.ICompletionDataFactory;
 
 using MonoDevelop.PlayScript.Project;
 using MonoDevelop.PlayScript.Formatting;

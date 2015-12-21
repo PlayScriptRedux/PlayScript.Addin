@@ -31,9 +31,9 @@ using Gtk;
 using System.Collections.Generic;
 using MonoDevelop.Refactoring;
 using MonoDevelop.Ide;
-using ICSharpCode.NRefactory.TypeSystem;
 using MonoDevelop.Ide.TypeSystem;
 using MonoDevelop.Components;
+using ICSharpCode.NRefactory.TypeSystem;
 
 namespace MonoDevelop.PlayScript.CodeGeneration
 {

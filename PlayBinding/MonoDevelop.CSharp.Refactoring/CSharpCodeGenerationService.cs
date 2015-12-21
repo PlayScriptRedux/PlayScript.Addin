@@ -24,9 +24,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
 using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.CSharp.Refactoring;
+using ICSharpCode.NRefactory.PlayScript.Refactoring;
 using System.Linq;
 using Atk;
 using Gdk;

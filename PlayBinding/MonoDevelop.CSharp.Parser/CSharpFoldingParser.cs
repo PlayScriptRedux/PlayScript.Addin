@@ -28,7 +28,7 @@ using System.Collections.Generic;
 using MonoDevelop.Ide.TypeSystem;
 using ICSharpCode.NRefactory;
 using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
 
 namespace MonoDevelop.PlayScript.Parser
 {

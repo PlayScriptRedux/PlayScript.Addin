@@ -27,7 +27,7 @@ using System;
 using ICSharpCode.NRefactory.TypeSystem;
 using MonoDevelop.Ide.CodeCompletion;
 using MonoDevelop.Ide.TypeSystem;
-using MonoDevelop.CodeGeneration;
+//using MonoDevelop.CodeGeneration;
 using MonoDevelop.PlayScript.CodeGeneration;
 
 namespace MonoDevelop.PlayScript.Completion

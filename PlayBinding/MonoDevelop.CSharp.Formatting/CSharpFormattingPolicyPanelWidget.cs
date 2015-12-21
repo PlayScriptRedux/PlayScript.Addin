@@ -27,7 +27,6 @@ using System;
 using MonoDevelop.Ide;
 using MonoDevelop.Ide.Gui.Content;
 
-
 namespace MonoDevelop.PlayScript.Formatting
 {
 	[System.ComponentModel.ToolboxItem(true)]

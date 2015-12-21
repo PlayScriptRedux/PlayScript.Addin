@@ -33,7 +33,7 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 	[DataItem ("NamingRule")]
 	public class NameConventionRule
 	{
-		ICSharpCode.NRefactory.CSharp.Refactoring.NamingRule wrappedRule = new ICSharpCode.NRefactory.CSharp.Refactoring.NamingRule (ICSharpCode.NRefactory.CSharp.Refactoring.AffectedEntity.None);
+		ICSharpCode.NRefactory.PlayScript.Refactoring.NamingRule wrappedRule = new ICSharpCode.NRefactory.PlayScript.Refactoring.NamingRule (ICSharpCode.NRefactory.PlayScript.Refactoring.AffectedEntity.None);
 
 		[ItemProperty]
 		public string Name {
@@ -72,19 +72,19 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 		}
 
 		[ItemProperty]
-		public ICSharpCode.NRefactory.CSharp.Refactoring.AffectedEntity AffectedEntity {
+		public ICSharpCode.NRefactory.PlayScript.Refactoring.AffectedEntity AffectedEntity {
 			get { return wrappedRule.AffectedEntity; } 
 			set { wrappedRule.AffectedEntity = value;} 
 		}
 
 		[ItemProperty]
-		public ICSharpCode.NRefactory.CSharp.Modifiers VisibilityMask {
+		public ICSharpCode.NRefactory.PlayScript.Modifiers VisibilityMask {
 			get { return wrappedRule.VisibilityMask; } 
 			set { wrappedRule.VisibilityMask = value;} 
 		}
 
 		[ItemProperty]
-		public ICSharpCode.NRefactory.CSharp.Refactoring.NamingStyle NamingStyle {
+		public ICSharpCode.NRefactory.PlayScript.Refactoring.NamingStyle NamingStyle {
 			get { return wrappedRule.NamingStyle; } 
 			set { wrappedRule.NamingStyle = value;} 
 		}
@@ -101,7 +101,7 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 			set { wrappedRule.IncludeStaticEntities = value;} 
 		}
 
-		internal NameConventionRule (ICSharpCode.NRefactory.CSharp.Refactoring.NamingRule wrappedRule)
+		internal NameConventionRule (ICSharpCode.NRefactory.PlayScript.Refactoring.NamingRule wrappedRule)
 		{
 			this.wrappedRule = wrappedRule;
 		}
@@ -122,7 +122,7 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 			return wrappedRule.GetPreview ();
 		}
 
-		internal ICSharpCode.NRefactory.CSharp.Refactoring.NamingRule GetNRefactoryRule ()
+		internal ICSharpCode.NRefactory.PlayScript.Refactoring.NamingRule GetNRefactoryRule ()
 		{
 			return wrappedRule;
 		}

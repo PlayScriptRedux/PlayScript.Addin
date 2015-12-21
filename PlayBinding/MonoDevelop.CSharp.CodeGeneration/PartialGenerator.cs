@@ -26,9 +26,9 @@
 using System;
 using System.Collections.Generic;
 using Gtk;
-using ICSharpCode.NRefactory.TypeSystem;
 using MonoDevelop.Core;
 using MonoDevelop.Ide.TypeSystem;
+using ICSharpCode.NRefactory.TypeSystem;
 
 namespace MonoDevelop.PlayScript.CodeGeneration
 {

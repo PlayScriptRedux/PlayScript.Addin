@@ -26,8 +26,8 @@
 
 using System;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.CSharp;
-using ICSharpCode.NRefactory.CSharp.Refactoring;
+using ICSharpCode.NRefactory.PlayScript;
+using ICSharpCode.NRefactory.PlayScript.Refactoring;
 using MonoDevelop.Ide.Gui;
 using ICSharpCode.NRefactory;
 using System.Threading;

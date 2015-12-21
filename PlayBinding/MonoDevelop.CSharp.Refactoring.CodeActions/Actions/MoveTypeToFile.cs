@@ -24,7 +24,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
 using ICSharpCode.NRefactory.PatternMatching;
 using MonoDevelop.Core;
 using System.Collections.Generic;
@@ -37,7 +37,7 @@ using MonoDevelop.Ide.StandardHeader;
 using MonoDevelop.Core.ProgressMonitoring;
 using ICSharpCode.NRefactory;
 using System.Threading;
-using ICSharpCode.NRefactory.CSharp.Refactoring;
+using ICSharpCode.NRefactory.PlayScript.Refactoring;
 
 namespace MonoDevelop.PlayScript.Refactoring.CodeActions
 {

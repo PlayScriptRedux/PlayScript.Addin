@@ -31,8 +31,8 @@ using ICSharpCode.NRefactory.PatternMatching;
 using MonoDevelop.CodeActions;
 using ICSharpCode.NRefactory;
 using System.Threading;
-using ICSharpCode.NRefactory.CSharp;
-using ICSharpCode.NRefactory.CSharp.Refactoring;
+using ICSharpCode.NRefactory.PlayScript;
+using ICSharpCode.NRefactory.PlayScript.Refactoring;
 using ICSharpCode.Decompiler.ILAst;
 using MonoDevelop.Core;
 

@@ -33,13 +33,13 @@ using MonoDevelop.PlayScript.Resolver;
 using MonoDevelop.Ide.FindInFiles;
 using System.Linq;
 using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.CSharp;
-using ICSharpCode.NRefactory.CSharp.Resolver;
+using ICSharpCode.NRefactory.PlayScript;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
 using System.IO;
 using MonoDevelop.Ide.TypeSystem;
 using ICSharpCode.NRefactory.Semantics;
 using Mono.TextEditor;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
+using ICSharpCode.NRefactory.PlayScript.TypeSystem;
 using System.Threading;
 
 namespace MonoDevelop.PlayScript.Refactoring
@@ -47,7 +47,7 @@ namespace MonoDevelop.PlayScript.Refactoring
 	using MonoDevelop.Projects;
 	class CSharpReferenceFinder : ReferenceFinder
 	{
-		ICSharpCode.NRefactory.CSharp.Resolver.FindReferences refFinder = new ICSharpCode.NRefactory.CSharp.Resolver.FindReferences ();
+		ICSharpCode.NRefactory.PlayScript.Resolver.FindReferences refFinder = new ICSharpCode.NRefactory.PlayScript.Resolver.FindReferences ();
 		List<object> searchedMembers;
 		List<FilePath> files = new List<FilePath> ();
 		List<Tuple<FilePath, MonoDevelop.Ide.Gui.Document>> openDocuments = new List<Tuple<FilePath, MonoDevelop.Ide.Gui.Document>> ();
@@ -318,7 +318,7 @@ namespace MonoDevelop.PlayScript.Refactoring
 					continue;
 				using (var editor = TextEditorData.CreateImmutable (text)) {
 					editor.Document.FileName = file;
-					var unit = new CSharpParser ().Parse (editor);
+					var unit = new PlayScriptParser ().Parse (editor);
 					if (unit == null)
 						continue;
 					

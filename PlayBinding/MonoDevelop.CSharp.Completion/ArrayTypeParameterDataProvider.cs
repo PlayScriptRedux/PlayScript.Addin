@@ -23,12 +23,12 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
 using MonoDevelop.Ide.CodeCompletion;
-using ICSharpCode.NRefactory.CSharp.Resolver;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
 using ICSharpCode.NRefactory.TypeSystem;
 using MonoDevelop.PlayScript.Formatting;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
+using ICSharpCode.NRefactory.PlayScript.TypeSystem;
 using Mono.TextEditor;
 
 namespace MonoDevelop.PlayScript.Completion

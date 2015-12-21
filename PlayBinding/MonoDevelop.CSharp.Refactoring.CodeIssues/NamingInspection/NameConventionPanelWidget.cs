@@ -25,7 +25,7 @@
 // THE SOFTWARE.
 using System;
 using Gtk;
-using ICSharpCode.NRefactory.CSharp.Refactoring;
+using ICSharpCode.NRefactory.PlayScript.Refactoring;
 using MonoDevelop.Core;
 using MonoDevelop.Ide;
 using System.Collections.Generic;

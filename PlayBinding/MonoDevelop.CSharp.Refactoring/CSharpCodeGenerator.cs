@@ -24,7 +24,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
 using System.Text;
 using MonoDevelop.PlayScript.Formatting;
 using System.Collections.Generic;
@@ -32,13 +32,13 @@ using System.Linq;
 using MonoDevelop.Ide;
 using ICSharpCode.NRefactory.TypeSystem;
 using MonoDevelop.Ide.TypeSystem;
-using ICSharpCode.NRefactory.CSharp.Resolver;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
 using ICSharpCode.NRefactory;
 using Mono.TextEditor;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
+using ICSharpCode.NRefactory.PlayScript.TypeSystem;
 using MonoDevelop.Projects.Policies;
-using Mono.Cecil;
-using Mono.Cecil.Cil;
+//using Mono.Cecil;
+//using Mono.Cecil.Cil;
 using ICSharpCode.Decompiler;
 using ICSharpCode.Decompiler.Ast;
 using ICSharpCode.NRefactory.PatternMatching;
@@ -96,7 +96,7 @@ namespace MonoDevelop.PlayScript.Refactoring
 					return ns + "." + name;
 				var file = Document.ParsedDocument.ParsedFile as CSharpUnresolvedFile;
 				var csResolver = file.GetResolver (Document.Compilation, Document.Editor.Caret.Location);
-				var builder = new ICSharpCode.NRefactory.CSharp.Refactoring.TypeSystemAstBuilder (csResolver);
+				var builder = new ICSharpCode.NRefactory.PlayScript.Refactoring.TypeSystemAstBuilder (csResolver);
 				return OutputNode (Document, builder.ConvertType (typeDef));
 			}
 		}
@@ -293,7 +293,7 @@ namespace MonoDevelop.PlayScript.Refactoring
 					result.Append (typeString);
 				}
 			} else {
-				result.Append (new ICSharpCode.NRefactory.CSharp.CSharpAmbience ().ConvertType (type));
+				result.Append (new ICSharpCode.NRefactory.PlayScript.CSharpAmbience ().ConvertType (type));
 			}
 		}
 		
@@ -537,8 +537,10 @@ namespace MonoDevelop.PlayScript.Refactoring
 					// See: Bug 1373 - overriding [Model] class methods shouldn't insert base.Methods
 					// TODO: Extend this to user defined code.
 					try {
+#if NOT_PLAYSCRIPT
+// TODO: This doesn't work in PLAYSCRIPT!
 						if (method.Region.FileName == null) {
-							var asm = AssemblyDefinition.ReadAssembly (method.ParentAssembly.UnresolvedAssembly.Location);
+							var asm = 	AssemblyDefinition.ReadAssembly (method.ParentAssembly.UnresolvedAssembly.Location);
 							foreach (var type in asm.MainModule.Types) {
 								if (type.FullName != method.DeclaringType.FullName)
 									continue;
@@ -572,6 +574,7 @@ namespace MonoDevelop.PlayScript.Refactoring
 									break;
 							}
 						}
+#endif
 					} catch (Exception) {
 					}
 					AppendIndent (result);
@@ -896,7 +899,7 @@ namespace MonoDevelop.PlayScript.Refactoring
 
 		static bool IsCommentOrUsing (AstNode node)
 		{
-			return node is ICSharpCode.NRefactory.CSharp.Comment ||
+			return node is ICSharpCode.NRefactory.PlayScript.Comment ||
 				node is UsingDeclaration ||
 				node is UsingAliasDeclaration;
 		}
@@ -1036,7 +1039,7 @@ namespace MonoDevelop.PlayScript.Refactoring
 		public AstType CreateShortType (ICompilation compilation, CSharpUnresolvedFile parsedFile, TextLocation loc, IType fullType)
 		{
 			var csResolver = parsedFile.GetResolver (compilation, loc);
-			var builder = new ICSharpCode.NRefactory.CSharp.Refactoring.TypeSystemAstBuilder (csResolver);
+			var builder = new ICSharpCode.NRefactory.PlayScript.Refactoring.TypeSystemAstBuilder (csResolver);
 			return builder.ConvertType (fullType);			
 		}
 		

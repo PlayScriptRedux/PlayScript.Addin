@@ -26,12 +26,13 @@
 using System;
 using MonoDevelop.PlayScript.Refactoring.CodeActions;
 using MonoDevelop.CodeIssues;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
 using System.Collections.Generic;
 using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory.CSharp.Resolver;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
 using ICSharpCode.NRefactory.TypeSystem;
 using System.Linq;
+using ICSharpCode.NRefactory.PlayScript.Refactoring;
 
 namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 {
@@ -54,11 +55,11 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 			this.SetIsEnabled (true);
 		}
 
-		public override IEnumerable<CodeIssue> GetIssues (object refactoringContext, System.Threading.CancellationToken cancellationToken)
+		public override IEnumerable<MonoDevelop.CodeIssues.CodeIssue> GetIssues (object refactoringContext, System.Threading.CancellationToken cancellationToken)
 		{
 			var context = refactoringContext as MDRefactoringContext;
 			if (context == null || context.IsInvalid || context.RootNode == null || context.ParsedDocument.HasErrors)
-				return new CodeIssue[0];
+				return new MonoDevelop.CodeIssues.CodeIssue[0];
 			var visitor = new MonoTODOVisitor (this, context);
 			context.RootNode.AcceptVisitor (visitor);
 			return visitor.Issues;
@@ -68,7 +69,7 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 		{
 			readonly MonoTODOIssue issue;
 			readonly MDRefactoringContext ctx;
-			public readonly List<CodeIssue> Issues = new List<CodeIssue> ();
+			public readonly List<MonoDevelop.CodeIssues.CodeIssue> Issues = new List<MonoDevelop.CodeIssues.CodeIssue> ();
 
 			public MonoTODOVisitor (MonoTODOIssue issue, MDRefactoringContext ctx)
 			{
@@ -92,7 +93,7 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 						var arg = attr.PositionalArguments.FirstOrDefault ();
 						if (arg != null)
 							msg = arg.ConstantValue != null ? arg.ConstantValue.ToString () : null;
-						Issues.Add (new CodeIssue (ICSharpCode.NRefactory.Refactoring.IssueMarker.WavedLine,
+						Issues.Add (new MonoDevelop.CodeIssues.CodeIssue (ICSharpCode.NRefactory.Refactoring.IssueMarker.WavedLine,
 							string.IsNullOrEmpty (msg) ? val : val + ": " + msg,
 							new DomRegion (node.StartLocation, node.EndLocation),
 							issue.IdString

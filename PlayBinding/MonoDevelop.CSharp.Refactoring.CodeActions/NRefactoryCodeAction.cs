@@ -24,8 +24,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.CSharp.Refactoring;
+using ICSharpCode.NRefactory.PlayScript.Refactoring;
 using MonoDevelop.Ide.Gui;
 using ICSharpCode.NRefactory;
 using MonoDevelop.Ide.TypeSystem;
@@ -66,16 +67,18 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeActions
 		
 		public override void BatchRun (Document document, TextLocation loc)
 		{
-			base.BatchRun (document, loc);
-			var context = MDRefactoringContext.Create (document, loc).Result;
-			if (context == null)
-				return;
-			using (var script = context.StartScript ()) {
-				foreach (var action in SiblingActions) {
-					context.SetLocation (action.DocumentRegion.Begin);
-					action.Run (context, script);
-				}
-			}
+// TODO: Implement me
+			throw new NotImplementedException("PlayScript TODO");
+//			base.BatchRun (document, loc);
+//			var context = MDRefactoringContext.Create (document, loc).Result;
+//			if (context == null)
+//				return;
+//			using (var script = context.StartScript ()) {
+//				foreach (var action in SiblingActions) {
+//					context.SetLocation (action.DocumentRegion.Begin);
+//					action.Run (context, script);
+//				}
+//			}
 		}
 	}
 	

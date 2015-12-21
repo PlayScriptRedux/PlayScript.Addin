@@ -34,9 +34,10 @@ using System.IO;
 using System.CodeDom;
 using System.CodeDom.Compiler;
 using Microsoft.CSharp;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
 using MonoDevelop.Ide.TypeSystem;
 using ICSharpCode.NRefactory.TypeSystem;
+using ICSharpCode.NRefactory.PlayScript.TypeSystem;
 
 namespace MonoDevelop.PlayScript
 {

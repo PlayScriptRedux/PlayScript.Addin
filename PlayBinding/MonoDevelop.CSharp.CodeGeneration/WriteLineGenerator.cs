@@ -29,10 +29,10 @@ using MonoDevelop.Components;
 using Gtk;
 using MonoDevelop.Ide.Gui;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.CSharp;
 using System.Text;
 using MonoDevelop.Core;
 using MonoDevelop.Refactoring;
+using ICSharpCode.NRefactory.PlayScript;
 using ICSharpCode.NRefactory.TypeSystem;
 
 namespace MonoDevelop.PlayScript.CodeGeneration

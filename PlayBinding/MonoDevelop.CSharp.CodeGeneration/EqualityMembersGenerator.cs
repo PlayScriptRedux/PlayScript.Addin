@@ -25,9 +25,9 @@
 // THE SOFTWARE.
 
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.CSharp;
 using MonoDevelop.Core;
 using ICSharpCode.NRefactory.TypeSystem;
+using ICSharpCode.NRefactory.PlayScript;
 
 namespace MonoDevelop.PlayScript.CodeGeneration
 {

@@ -30,25 +30,25 @@ using MonoDevelop.PlayScript.Refactoring.CodeActions;
 using ICSharpCode.NRefactory;
 using MonoDevelop.Ide.TypeSystem;
 using Mono.TextEditor;
-using ICSharpCode.NRefactory.CSharp;
-using ICSharpCode.NRefactory.CSharp.Resolver;
+using ICSharpCode.NRefactory.PlayScript;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
 using MonoDevelop.Ide;
 using MonoDevelop.Projects;
 
 namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 {
-	class NRefactoryCodeIssueSource : ICodeIssueProviderSource
+	class NRefactoryCodeIssueSource : ICSharpCode.NRefactory.PlayScript.Refactoring.CodeIssueProvider
 	{
 		#region ICodeIssueProviderSource implementation
 		public IEnumerable<CodeIssueProvider> GetProviders ()
 		{
-			foreach (var t in typeof (ICSharpCode.NRefactory.CSharp.Refactoring.AbstractAndVirtualConversionAction).Assembly.GetTypes ()) {
-				var attr = t.GetCustomAttributes (typeof(ICSharpCode.NRefactory.CSharp.IssueDescriptionAttribute), false);
+			foreach (var t in typeof (ICSharpCode.NRefactory.PlayScript.Refactoring.CodeIssueProvider).Assembly.GetTypes ()) {
+				var attr = t.GetCustomAttributes (typeof(ICSharpCode.NRefactory.PlayScript.Refactoring.IssueDescriptionAttribute), false);
 				if (attr == null || attr.Length != 1)
 					continue;
 				yield return new NRefactoryIssueProvider (
-					(ICSharpCode.NRefactory.CSharp.Refactoring.CodeIssueProvider)Activator.CreateInstance (t),
-					(ICSharpCode.NRefactory.CSharp.IssueDescriptionAttribute)attr [0]);
+					(ICSharpCode.NRefactory.PlayScript.Refactoring.CodeIssueProvider)Activator.CreateInstance (t),
+					(ICSharpCode.NRefactory.PlayScript.Refactoring.IssueDescriptionAttribute)attr [0]);
 			}
 		}
 		#endregion

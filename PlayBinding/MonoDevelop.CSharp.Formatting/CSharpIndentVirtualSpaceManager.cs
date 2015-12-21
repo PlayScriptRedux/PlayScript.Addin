@@ -25,9 +25,9 @@
 // THE SOFTWARE.
 
 using Mono.TextEditor;
-using ICSharpCode.NRefactory.CSharp;
 using System;
 using MonoDevelop.Core;
+using ICSharpCode.NRefactory.PlayScript;
 
 namespace MonoDevelop.PlayScript.Formatting
 {

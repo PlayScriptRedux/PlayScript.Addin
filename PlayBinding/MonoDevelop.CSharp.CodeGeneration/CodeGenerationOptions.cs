@@ -26,14 +26,14 @@
 using System.Linq;
 using MonoDevelop.Ide.Gui;
 using MonoDevelop.Ide;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.CSharp;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
 using MonoDevelop.Ide.TypeSystem;
 using MonoDevelop.Core;
-using ICSharpCode.NRefactory.CSharp.Resolver;
 using System;
 using System.Threading;
+using ICSharpCode.NRefactory.TypeSystem;
+using ICSharpCode.NRefactory.PlayScript;
+using ICSharpCode.NRefactory.PlayScript.TypeSystem;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
 
 namespace MonoDevelop.PlayScript.CodeGeneration
 {
@@ -139,7 +139,7 @@ namespace MonoDevelop.PlayScript.CodeGeneration
 			fullType = compilation.Import (fullType);
 			var csResolver = parsedFile.GetResolver (compilation, Document.Editor.Caret.Location);
 			
-			var builder = new ICSharpCode.NRefactory.CSharp.Refactoring.TypeSystemAstBuilder (csResolver);
+			var builder = new ICSharpCode.NRefactory.PlayScript.Refactoring.TypeSystemAstBuilder (csResolver);
 			return builder.ConvertType (fullType);
 		}
 		

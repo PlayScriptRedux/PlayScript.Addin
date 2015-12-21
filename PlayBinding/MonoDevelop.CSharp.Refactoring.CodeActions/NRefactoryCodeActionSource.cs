@@ -34,15 +34,15 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeActions
 		#region ICodeActionProviderSource implementation
 		public IEnumerable<CodeActionProvider> GetProviders ()
 		{
-			foreach (var t in typeof (ICSharpCode.NRefactory.CSharp.Refactoring.AbstractAndVirtualConversionAction).Assembly.GetTypes ()) {
-				var attr = t.GetCustomAttributes (typeof(ICSharpCode.NRefactory.CSharp.ContextActionAttribute), false);
+			foreach (var t in typeof (ICSharpCode.NRefactory.PlayScript.Refactoring.AbstractAndVirtualConversionAction).Assembly.GetTypes ()) {
+				var attr = t.GetCustomAttributes (typeof(ICSharpCode.NRefactory.PlayScript.Refactoring.ContextActionAttribute), false);
 				if (attr == null || attr.Length != 1)
 					continue;
 				if (t.Name == "AddUsingAction")
 					continue;
 				yield return new NRefactoryCodeActionProvider (
-					(ICSharpCode.NRefactory.CSharp.Refactoring.CodeActionProvider)Activator.CreateInstance (t),
-					(ICSharpCode.NRefactory.CSharp.ContextActionAttribute)attr [0]);
+					(ICSharpCode.NRefactory.PlayScript.Refactoring.CodeActionProvider)Activator.CreateInstance (t),
+					(ICSharpCode.NRefactory.PlayScript.Refactoring.ContextActionAttribute)attr [0]);
 			}
 		}
 		#endregion

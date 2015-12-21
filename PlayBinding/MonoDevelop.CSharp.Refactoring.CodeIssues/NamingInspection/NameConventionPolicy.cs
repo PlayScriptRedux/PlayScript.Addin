@@ -28,9 +28,9 @@ using System.Linq;
 using System.Collections.Generic;
 using MonoDevelop.Projects.Policies;
 using MonoDevelop.Core.Serialization;
-using ICS = ICSharpCode.NRefactory.CSharp;
-using ICSharpCode.NRefactory.CSharp.Refactoring;
-
+using ICS = ICSharpCode.NRefactory.PlayScript;
+using ICSharpCode.NRefactory.PlayScript.Refactoring;
+	
 namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 {
 	[PolicyType ("Naming Conventions Policy - TODO")]
@@ -56,11 +56,11 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 			rules = new List<NameConventionRule> (DefaultRules.GetFdgRules ().Select (r => new NameConventionRule (r))).ToArray ();
 		}
 
-		class NamingConventionService : ICSharpCode.NRefactory.CSharp.Refactoring.NamingConventionService
+		class NamingConventionService : ICSharpCode.NRefactory.PlayScript.Refactoring.NamingConventionService
 		{
 			NameConventionPolicy policy;
-			ICSharpCode.NRefactory.CSharp.Refactoring.NamingRule[] rules = null;
-			public override IEnumerable<ICSharpCode.NRefactory.CSharp.Refactoring.NamingRule> Rules {
+			ICSharpCode.NRefactory.PlayScript.Refactoring.NamingRule[] rules = null;
+			public override IEnumerable<ICSharpCode.NRefactory.PlayScript.Refactoring.NamingRule> Rules {
 				get {
 					if (rules == null) {
 						this.rules = policy.Rules.Select (r => r.GetNRefactoryRule ()).ToArray ();
@@ -76,7 +76,7 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 			
 		}
 
-		public ICSharpCode.NRefactory.CSharp.Refactoring.NamingConventionService CreateNRefactoryService ()
+		public ICSharpCode.NRefactory.PlayScript.Refactoring.NamingConventionService CreateNRefactoryService ()
 		{
 			return new NamingConventionService (this);
 		}

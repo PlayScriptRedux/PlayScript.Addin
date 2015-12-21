@@ -25,9 +25,9 @@
 // THE SOFTWARE.
 using System;
 using Mono.TextEditor;
-using ICSharpCode.NRefactory.CSharp;
-using MonoDevelop.PlayScript.Resolver;
-using ICSharpCode.NRefactory.CSharp.Resolver;
+using ICSharpCode.NRefactory.PlayScript;
+//using MonoDevelop.PlayScript.Resolver;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
 
 namespace MonoDevelop.PlayScript.Refactoring.CodeActions
 {

@@ -28,16 +28,17 @@ using MonoDevelop.Ide;
 using System;
 using System.Collections.Generic;
 using MonoDevelop.Projects.Policies;
-using ICSharpCode.NRefactory.CSharp;
 using System.Text;
-using ICSharpCode.NRefactory;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
 using MonoDevelop.PlayScript.Completion;
 using MonoDevelop.PlayScript.Refactoring;
-using MonoDevelop.PlayScript.Parser;
 using MonoDevelop.Core;
-using ICSharpCode.NRefactory.CSharp.Completion;
+using ICSharpCode.NRefactory.PlayScript;
+using ICSharpCode.NRefactory.PlayScript.Completion;
+using ICSharpCode.NRefactory.PlayScript.TypeSystem;
+using ICSharpCode.NRefactory;
+using ICSharpCode.NRefactory.TypeSystem;
+using MonoDevelop.PlayScript.Parser;
+using Mono.PlayScript;
 
 namespace MonoDevelop.PlayScript.Formatting
 {
@@ -72,7 +73,6 @@ namespace MonoDevelop.PlayScript.Formatting
 			var mimeTypeChain = DesktopService.GetMimeTypeInheritanceChain (CSharpFormatter.MimeType);
 			Format (policyParent, mimeTypeChain, data, offset, offset, false, true);
 		}		
-		
 
 		static string BuildStub (MonoDevelop.Ide.Gui.Document data, CSharpCompletionTextEditorExtension.TypeSystemTreeSegment seg, int endOffset, out int memberStartOffset)
 		{
@@ -143,7 +143,8 @@ namespace MonoDevelop.PlayScript.Formatting
 		{
 			using (var stubData = TextEditorData.CreateImmutable (input)) {
 				stubData.Document.FileName = document.FileName;
-				var parser = document.HasProject ? new CSharpParser (TypeSystemParser.GetCompilerArguments (document.Project)) : new CSharpParser ();
+				//var parser = document.HasProject ? new CSharpParser (TypeSystemParser.GetCompilerArguments (document.Project)) : new CSharpParser ();
+				var parser = document.HasProject ? new ICSharpCode.NRefactory.PlayScript.PlayScriptParser (TypeSystemParser.GetCompilerArguments (document.Project)) : new ICSharpCode.NRefactory.PlayScript.PlayScriptParser ();
 				var compilationUnit = parser.Parse (stubData);
 				bool hadErrors = parser.HasErrors;
 				if (hadErrors) {
@@ -159,7 +160,7 @@ namespace MonoDevelop.PlayScript.Formatting
 				
 				var policy = policyParent.Get<PlayScriptFormattingPolicy> (mimeTypeChain);
 				
-				var formattingVisitor = new ICSharpCode.NRefactory.CSharp.CSharpFormatter (policy.CreateOptions (), document.Editor.CreateNRefactoryTextEditorOptions ());
+				var formattingVisitor = new ICSharpCode.NRefactory.PlayScript.CSharpFormatter (policy.CreateOptions (), document.Editor.CreateNRefactoryTextEditorOptions ());
 				formattingVisitor.FormattingMode = FormattingMode.Intrusive;
 				formattingVisitor.AddFormattingRegion (formattingRegion);
 

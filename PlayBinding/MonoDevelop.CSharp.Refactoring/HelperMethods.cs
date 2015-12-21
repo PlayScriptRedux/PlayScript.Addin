@@ -25,7 +25,7 @@
 // THE SOFTWARE.
 using System;
 using Mono.TextEditor;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
 using MonoDevelop.Ide.Gui;
 using MonoDevelop.Refactoring;
 
@@ -47,9 +47,9 @@ namespace MonoDevelop.PlayScript.Refactoring
 			return change;
 		}
 
-		public static ICSharpCode.NRefactory.CSharp.TextEditorOptions CreateNRefactoryTextEditorOptions (this TextEditorData doc)
+		public static ICSharpCode.NRefactory.PlayScript.TextEditorOptions CreateNRefactoryTextEditorOptions (this TextEditorData doc)
 		{
-			return new ICSharpCode.NRefactory.CSharp.TextEditorOptions () {
+			return new ICSharpCode.NRefactory.PlayScript.TextEditorOptions () {
 				TabsToSpaces = doc.TabsToSpaces,
 				TabSize = doc.Options.TabSize,
 				IndentSize = doc.Options.IndentationSize,

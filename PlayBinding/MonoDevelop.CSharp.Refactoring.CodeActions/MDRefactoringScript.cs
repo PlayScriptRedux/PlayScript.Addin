@@ -25,14 +25,14 @@
 // THE SOFTWARE.
 using System;
 using System.Linq;
-using ICSharpCode.NRefactory.CSharp.Refactoring;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript.Refactoring;
+using ICSharpCode.NRefactory.PlayScript;
 using Mono.TextEditor;
 using MonoDevelop.Core;
 using System.Collections.Generic;
 using ICSharpCode.NRefactory.TypeSystem;
 using MonoDevelop.Refactoring.Rename;
-using ICSharpCode.NRefactory.CSharp.Resolver;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
 using System.IO;
 using MonoDevelop.PlayScript.Formatting;
 using System.Threading.Tasks;
@@ -42,7 +42,7 @@ using MonoDevelop.Ide.FindInFiles;
 using MonoDevelop.Ide.TypeSystem;
 using MonoDevelop.Ide.Gui.Content;
 using MonoDevelop.Projects;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
+using ICSharpCode.NRefactory.PlayScript.TypeSystem;
 
 namespace MonoDevelop.PlayScript.Refactoring.CodeActions
 {
@@ -336,40 +336,42 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeActions
 
 		public override void CreateNewType (AstNode newType, NewTypeContext ntctx = NewTypeContext.CurrentNamespace)
 		{
-			if (newType == null)
-				throw new ArgumentNullException ("newType");
-			var correctFileName = MoveTypeToFile.GetCorrectFileName (context, (EntityDeclaration)newType);
-			
-			var content = context.TextEditor.Text;
-			
-			var types = new List<EntityDeclaration> (context.Unit.GetTypes ());
-			types.Sort ((x, y) => y.StartLocation.CompareTo (x.StartLocation));
-
-			foreach (var removeType in types) {
-				var start = context.GetOffset (removeType.StartLocation);
-				var end = context.GetOffset (removeType.EndLocation);
-				content = content.Remove (start, end - start);
-			}
-			
-			var insertLocation = types.Count > 0 ? context.GetOffset (types.Last ().StartLocation) : -1;
-			if (insertLocation < 0 || insertLocation > content.Length)
-				insertLocation = content.Length;
-			content = content.Substring (0, insertLocation) + newType.ToString (FormattingOptions) + content.Substring (insertLocation);
-
-			var project = context.FileContainerProject;
-			if (project != null) {
-				var policy = project.Policies.Get<PlayScriptFormattingPolicy> ();
-				var textPolicy = project.Policies.Get<TextStylePolicy> ();
-				content = MonoDevelop.PlayScript.Formatting.CSharpFormatter.FormatText (policy, textPolicy, MonoDevelop.PlayScript.Formatting.CSharpFormatter.MimeType, content, 0, content.Length);
-			}
-
-			File.WriteAllText (correctFileName, content);
-
-			if (project != null) {
-				project.AddFile (correctFileName);
-				IdeApp.ProjectOperations.Save (project);
-			}
-			IdeApp.Workbench.OpenDocument (correctFileName, project);
+// TODO : Implement me....
+			throw new NotImplementedException("PlayScript TODO");
+//			if (newType == null)
+//				throw new ArgumentNullException ("newType");
+//			var correctFileName = MoveTypeToFile.GetCorrectFileName (context, (EntityDeclaration)newType);
+//			
+//			var content = context.TextEditor.Text;
+//			
+//			var types = new List<EntityDeclaration> (context.Unit.GetTypes ());
+//			types.Sort ((x, y) => y.StartLocation.CompareTo (x.StartLocation));
+//
+//			foreach (var removeType in types) {
+//				var start = context.GetOffset (removeType.StartLocation);
+//				var end = context.GetOffset (removeType.EndLocation);
+//				content = content.Remove (start, end - start);
+//			}
+//			
+//			var insertLocation = types.Count > 0 ? context.GetOffset (types.Last ().StartLocation) : -1;
+//			if (insertLocation < 0 || insertLocation > content.Length)
+//				insertLocation = content.Length;
+//			content = content.Substring (0, insertLocation) + newType.ToString (FormattingOptions) + content.Substring (insertLocation);
+//
+//			var project = context.FileContainerProject;
+//			if (project != null) {
+//				var policy = project.Policies.Get<PlayScriptFormattingPolicy> ();
+//				var textPolicy = project.Policies.Get<TextStylePolicy> ();
+//				content = MonoDevelop.PlayScript.Formatting.CSharpFormatter.FormatText (policy, textPolicy, MonoDevelop.PlayScript.Formatting.CSharpFormatter.MimeType, content, 0, content.Length);
+//			}
+//
+//			File.WriteAllText (correctFileName, content);
+//
+//			if (project != null) {
+//				project.AddFile (correctFileName);
+//				IdeApp.ProjectOperations.Save (project);
+//			}
+//			IdeApp.Workbench.OpenDocument (correctFileName, project);
 		}
 
 	}

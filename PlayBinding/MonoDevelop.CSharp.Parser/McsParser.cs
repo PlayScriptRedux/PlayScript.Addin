@@ -139,7 +139,7 @@ namespace MonoDevelop.CSharp.Parser
 				} catch (Exception ex) {
 					System.Console.WriteLine (ex);
 				}
-				result.LanguageAST = new ICSharpCode.NRefactory.CSharp.CSharpParser().Parse (top, 0);
+				result.LanguageAST = new ICSharpCode.NRefactory.PlayScript.CSharpParser().Parse (top, 0);
 				// parser errorse
 				errorReportPrinter.Errors.ForEach (e => conversionVisitor.ParsedDocument.Add (e));
 				return result;

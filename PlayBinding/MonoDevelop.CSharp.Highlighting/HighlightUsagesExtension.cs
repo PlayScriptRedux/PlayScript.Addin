@@ -26,10 +26,10 @@
 using System;
 using System.Collections.Generic;
 using MonoDevelop.Core;
-using ICSharpCode.NRefactory.CSharp.Resolver;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
 using MonoDevelop.Ide.FindInFiles;
 using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
 using System.Threading;
 using MonoDevelop.SourceEditor;
 

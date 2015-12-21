@@ -26,10 +26,10 @@
 
 using Gtk;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.CSharp;
 using MonoDevelop.Core;
-using ICSharpCode.NRefactory.TypeSystem;
 using System.Linq;
+using ICSharpCode.NRefactory.PlayScript;
+using ICSharpCode.NRefactory.TypeSystem;
 
 namespace MonoDevelop.PlayScript.CodeGeneration
 {

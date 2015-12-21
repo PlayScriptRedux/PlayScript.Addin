@@ -24,7 +24,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +36,7 @@ namespace MonoDevelop.PlayScript
 	{
 		CSharpFormattingOptions options;
 		
-		public AstAmbience (ICSharpCode.NRefactory.CSharp.CSharpFormattingOptions options)
+		public AstAmbience (ICSharpCode.NRefactory.PlayScript.CSharpFormattingOptions options)
 		{
 			this.options = options;
 		}

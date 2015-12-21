@@ -33,10 +33,10 @@ using MonoDevelop.Ide;
 using System.Collections.ObjectModel;
 using MonoDevelop.Ide.TypeSystem;
 using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.CSharp.Refactoring;
+using ICSharpCode.NRefactory.PlayScript.Refactoring;
 using System.IO;
-using ICSharpCode.NRefactory.CSharp.Resolver;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
+using ICSharpCode.NRefactory.PlayScript;
 using ICSharpCode.NRefactory.TypeSystem.Implementation;
 
 namespace MonoDevelop.PlayScript

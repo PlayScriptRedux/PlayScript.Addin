@@ -34,10 +34,10 @@ using ICSharpCode.NRefactory.TypeSystem;
 using MonoDevelop.Ide.TypeSystem;
 using ICSharpCode.NRefactory.Completion;
 using System.Linq;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
-using ICSharpCode.NRefactory.CSharp.Resolver;
-using ICSharpCode.NRefactory.CSharp.Refactoring;
-using ICSharpCode.NRefactory.CSharp.Completion;
+using ICSharpCode.NRefactory.PlayScript.TypeSystem;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
+using ICSharpCode.NRefactory.PlayScript.Refactoring;
+using ICSharpCode.NRefactory.PlayScript.Completion;
 using MonoDevelop.Ide.CodeCompletion;
 using Mono.TextEditor;
 

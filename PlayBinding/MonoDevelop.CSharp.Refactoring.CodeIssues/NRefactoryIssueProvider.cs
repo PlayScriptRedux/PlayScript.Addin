@@ -27,11 +27,13 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
+//using ICSharpCode.NRefactory.PlayScript.Refactoring;
 using MonoDevelop.Ide.Gui;
 using System.Threading;
 using MonoDevelop.CodeIssues;
 using MonoDevelop.PlayScript.Refactoring.CodeActions;
+using MonoDevelop.PlayScript.Refactoring;
 using MonoDevelop.Core;
 using Mono.TextEditor;
 using MonoDevelop.Core.Instrumentation;
@@ -40,8 +42,8 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 {
 	class NRefactoryIssueProvider : CodeIssueProvider
 	{
-		readonly ICSharpCode.NRefactory.CSharp.Refactoring.CodeIssueProvider issueProvider;
-		readonly IssueDescriptionAttribute attr;
+		readonly ICSharpCode.NRefactory.PlayScript.Refactoring.CodeIssueProvider issueProvider;
+		readonly ICSharpCode.NRefactory.PlayScript.Refactoring.IssueDescriptionAttribute attr;
 		readonly string providerIdString;
 		readonly TimerCounter counter;
 
@@ -64,7 +66,7 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 			}
 		}
 
-		public ICSharpCode.NRefactory.CSharp.Refactoring.CodeIssueProvider IssueProvider {
+		public ICSharpCode.NRefactory.PlayScript.Refactoring.CodeIssueProvider IssueProvider {
 			get {
 				return issueProvider;
 			}
@@ -76,7 +78,7 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 			}
 		}
 
-		public NRefactoryIssueProvider (ICSharpCode.NRefactory.CSharp.Refactoring.CodeIssueProvider issue, IssueDescriptionAttribute attr)
+		public NRefactoryIssueProvider (ICSharpCode.NRefactory.PlayScript.Refactoring.CodeIssueProvider issue, ICSharpCode.NRefactory.PlayScript.Refactoring.IssueDescriptionAttribute attr)
 		{
 			issueProvider = issue;
 			this.attr = attr;
@@ -86,7 +88,7 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 			Description = GettextCatalog.GetString (attr.Description ?? "");
 			DefaultSeverity = attr.Severity;
 			IsEnabledByDefault = attr.IsEnabledByDefault;
-			SetMimeType ("text/x-csharp");
+			SetMimeType ("text/x-playscript");
 			subIssues = issueProvider.SubIssues.Select (subIssue => (BaseCodeIssueProvider)new BaseNRefactoryIssueProvider (this, subIssue)).ToList ();
 
 			counter = InstrumentationService.CreateTimerCounter (IdString, "CodeIssueProvider run times");
@@ -99,24 +101,24 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 				return new CodeIssue[0];
 				
 			// Holds all the actions in a particular sibling group.
-			IList<ICSharpCode.NRefactory.CSharp.Refactoring.CodeIssue> issues;
+			IList<ICSharpCode.NRefactory.PlayScript.Refactoring.CodeIssue> issues;
 			using (var timer = counter.BeginTiming ()) {
 				// We need to enumerate here in order to time it. 
 				// This shouldn't be a problem since there are current very few (if any) lazy providers.
 				var _issues = issueProvider.GetIssues (context);
-				issues = _issues as IList<ICSharpCode.NRefactory.CSharp.Refactoring.CodeIssue> ?? _issues.ToList ();
+				issues = _issues as IList<ICSharpCode.NRefactory.PlayScript.Refactoring.CodeIssue> ?? _issues.ToList ();
 			}
 			return ToMonoDevelopRepresentation (cancellationToken, context, issues);
 		}
 
-		IEnumerable<NRefactoryCodeAction> GetActions (ICSharpCode.NRefactory.CSharp.Refactoring.CodeIssue issue, MDRefactoringContext context)
+		IEnumerable<NRefactoryCodeAction> GetActions (ICSharpCode.NRefactory.PlayScript.Refactoring.CodeIssue issue, MDRefactoringContext context)
 		{
 			foreach (var action in issue.Actions)
 				yield return new NRefactoryCodeAction (IdString, action.Description, action, action.SiblingKey);
 
 			if (issue.ActionProvider != null) {
 				foreach (var provider in issue.ActionProvider) {
-					var boundActionProvider = (ICSharpCode.NRefactory.CSharp.Refactoring.CodeActionProvider)Activator.CreateInstance (provider);
+					var boundActionProvider = (ICSharpCode.NRefactory.PlayScript.Refactoring.CodeActionProvider)Activator.CreateInstance (provider);
 					context.SetLocation (issue.Start);
 					foreach (var action in boundActionProvider.GetActions (context)) {
 						yield return new NRefactoryCodeAction (provider.FullName, action.Description, action, action.SiblingKey);
@@ -125,7 +127,7 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 			}
 		}
 
-		internal IEnumerable<CodeIssue> ToMonoDevelopRepresentation (CancellationToken cancellationToken, MDRefactoringContext context, IEnumerable<ICSharpCode.NRefactory.CSharp.Refactoring.CodeIssue> issues)
+		internal IEnumerable<CodeIssue> ToMonoDevelopRepresentation (CancellationToken cancellationToken, MDRefactoringContext context, IEnumerable<ICSharpCode.NRefactory.PlayScript.Refactoring.CodeIssue> issues)
 		{
 			var actionGroups = new Dictionary<object, IList<MonoDevelop.CodeActions.CodeAction>> ();
 			foreach (var issue in issues) {

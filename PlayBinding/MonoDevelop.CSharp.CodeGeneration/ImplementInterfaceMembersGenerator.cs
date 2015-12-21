@@ -27,10 +27,10 @@ using Gtk;
 using System.Collections.Generic;
 using MonoDevelop.Core;
 using MonoDevelop.Refactoring;
-using ICSharpCode.NRefactory.CSharp;
-using ICSharpCode.NRefactory.TypeSystem;
 using MonoDevelop.Ide.TypeSystem;
 using System;
+using ICSharpCode.NRefactory.PlayScript;
+using ICSharpCode.NRefactory.TypeSystem;
 
 namespace MonoDevelop.PlayScript.CodeGeneration
 {
@@ -82,7 +82,7 @@ namespace MonoDevelop.PlayScript.CodeGeneration
 					if (baseType.Kind != TypeKind.Interface)
 						continue;
 					bool ifm;
-					foreach (var t in ICSharpCode.NRefactory.CSharp.Refactoring.ImplementInterfaceAction.CollectMembersToImplement (type, baseType, false, out ifm)) {
+					foreach (var t in ICSharpCode.NRefactory.PlayScript.Refactoring.ImplementInterfaceAction.CollectMembersToImplement (type, baseType, false, out ifm)) {
 						yield return t;
 					}
 				}

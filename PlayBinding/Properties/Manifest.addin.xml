@@ -109,6 +109,56 @@
 		</Condition>
 	</Extension>
 
+	<Extension path = "/MonoDevelop/Ide/ReferenceFinder">
+		<ReferenceFinder supportedmimetypes = "text/x-csharp,text/x-actionscript,text/x-playscript"
+		                 class = "MonoDevelop.PlayScript.Refactoring.CSharpReferenceFinder" />
+	</Extension>
+
+		<Extension path = "/MonoDevelop/Ide/TextEditorExtensions">
+		<!-- indent engine must be before the completion text editor engine,
+		otherwise stuff like
+
+		int Foo {
+		         get;private set';'
+
+		will end up as
+
+		int Foo {
+		         get;
+		         privaet;
+
+		-->
+		<Class fileExtensions = ".as,.play" class = "MonoDevelop.PlayScript.Formatting.CSharpTextEditorIndentation" />
+		<Class fileExtensions = ".as,.play" class = "MonoDevelop.PlayScript.Completion.CSharpCompletionTextEditorExtension" />
+		<Class fileExtensions = ".as,.play" class = "MonoDevelop.PlayScript.Highlighting.HighlightUsagesExtension" />
+		<Class fileExtensions = ".as,.play" class = "MonoDevelop.PlayScript.PathedDocumentTextEditorExtension" />
+	</Extension>
+
+	<Extension path = "/MonoDevelop/Ide/CodeFormatters">
+		<Formatter mimeType="text/x-actionscript" class="MonoDevelop.PlayScript.Formatting.CSharpFormatter" />
+		<Formatter mimeType="text/x-playscript" class="MonoDevelop.PlayScript.Formatting.CSharpFormatter" />
+	</Extension>
+
+	<Extension path = "/MonoDevelop/TypeSystem/Ambiences">
+		<Ambience mimeType="text/x-actionscript" class = "MonoDevelop.PlayScript.CSharpAmbience" />
+		<Ambience mimeType="text/x-playscript" class = "MonoDevelop.PlayScript.CSharpAmbience" />
+	</Extension>
+
+	<Extension path = "/MonoDevelop/TypeSystem/Parser">
+		<Parser class="MonoDevelop.PlayScript.Parser.TypeSystemParser" mimeType = "text/x-actionscript" />
+		<Parser class="MonoDevelop.PlayScript.Parser.TypeSystemParser" mimeType = "text/x-playscript" />
+	</Extension>
+
+	<Extension path = "/MonoDevelop/TypeSystem/FoldingParser">
+		<Parser class = "MonoDevelop.PlayScript.Parser.CSharpFoldingParser" mimeType="text/x-actionscript" />
+		<Parser class = "MonoDevelop.PlayScript.Parser.CSharpFoldingParser" mimeType="text/x-playscript" />		
+	</Extension>
+
+	<Extension path = "/MonoDevelop/TypeSystem/CodeGenerators">
+		<Generator class="MonoDevelop.PlayScript.Refactoring.CSharpCodeGenerator" mimeType = "text/x-actionscript" />
+		<Generator class="MonoDevelop.PlayScript.Refactoring.CSharpCodeGenerator" mimeType = "text/x-playscript" />		
+	</Extension>
+
 	<!--	<ConditionType id="MSBuildTargetIsAvailable" type="MonoDevelop.Projects.Formats.MSBuild.TargetsAvailableCondition" />-->
 	<!--	<Extension path = "/MonoDevelop/Ide/Commands">
 		<Command id = "MonoDevelop.CodeGeneration.CodeGenerationCommands.ShowCodeGenerationWindow"

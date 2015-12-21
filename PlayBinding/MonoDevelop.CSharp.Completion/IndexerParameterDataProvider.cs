@@ -33,15 +33,15 @@ using System.Xml;
 using MonoDevelop.Ide.Gui;
 using MonoDevelop.Ide.CodeCompletion;
 using MonoDevelop.PlayScript.Formatting;
-using MonoDevelop.PlayScript.Parser;
+//using MonoDevelop.PlayScript.Parser;
 
 using System.Text.RegularExpressions;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
 using Mono.TextEditor;
 using ICSharpCode.NRefactory.TypeSystem;
 using ICSharpCode.NRefactory.Completion;
 using MonoDevelop.Ide.TypeSystem;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
+using ICSharpCode.NRefactory.PlayScript.TypeSystem;
 
 namespace MonoDevelop.PlayScript.Completion
 {

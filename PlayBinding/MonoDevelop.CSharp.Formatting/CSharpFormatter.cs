@@ -32,9 +32,9 @@ using MonoDevelop.Ide.Gui.Content;
 using MonoDevelop.Projects.Policies;
 using System.Linq;
 using MonoDevelop.Ide.CodeFormatting;
-using ICSharpCode.NRefactory.CSharp;
 using MonoDevelop.Core;
 using MonoDevelop.PlayScript.Refactoring;
+using ICSharpCode.NRefactory.PlayScript;
 
 namespace MonoDevelop.PlayScript.Formatting
 {
@@ -100,7 +100,7 @@ namespace MonoDevelop.PlayScript.Formatting
 			// System.Console.WriteLine (data.Text.Replace (" ", ".").Replace ("\t", "->"));
 			// System.Console.WriteLine ("-----");
 
-			var parser = new CSharpParser ();
+			var parser = new PlayScriptParser ();
 			var compilationUnit = parser.Parse (data);
 			bool hadErrors = parser.HasErrors;
 			
@@ -113,7 +113,7 @@ namespace MonoDevelop.PlayScript.Formatting
 			var originalVersion = data.Document.Version;
 
 			var textEditorOptions = data.CreateNRefactoryTextEditorOptions ();
-			var formattingVisitor = new ICSharpCode.NRefactory.CSharp.CSharpFormatter (
+			var formattingVisitor = new ICSharpCode.NRefactory.PlayScript.CSharpFormatter (
 				policy.CreateOptions (),
 				textEditorOptions
 			) {
@@ -129,7 +129,7 @@ namespace MonoDevelop.PlayScript.Formatting
 			}
 
 			// check if the formatter has produced errors
-			parser = new CSharpParser ();
+			parser = new PlayScriptParser ();
 			parser.Parse (data);
 			if (parser.HasErrors) {
 				LoggingService.LogError ("C# formatter produced source code errors. See console for output.");

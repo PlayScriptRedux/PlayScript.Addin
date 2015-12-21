@@ -26,11 +26,11 @@
 
 using System;
 using System.Linq;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
 using MonoDevelop.Projects;
 using MonoDevelop.Core;
 using MonoDevelop.Refactoring;
-using ICSharpCode.NRefactory.CSharp.Refactoring;
+using ICSharpCode.NRefactory.PlayScript.Refactoring;
 using MonoDevelop.Ide.TypeSystem;
 using ICSharpCode.NRefactory;
 using System.Threading;
@@ -38,7 +38,7 @@ using MonoDevelop.Ide.Gui;
 using System.Diagnostics;
 using MonoDevelop.PlayScript.Refactoring.CodeIssues;
 using Mono.TextEditor;
-using ICSharpCode.NRefactory.CSharp.Resolver;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
 using MonoDevelop.PlayScript.Formatting;
 using System.Threading.Tasks;
 
@@ -131,7 +131,7 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeActions
 			}
 		}
 
-		public override ICSharpCode.NRefactory.CSharp.TextEditorOptions TextEditorOptions {
+		public override ICSharpCode.NRefactory.PlayScript.TextEditorOptions TextEditorOptions {
 			get {
 				return TextEditor.CreateNRefactoryTextEditorOptions ();
 			}
@@ -229,16 +229,18 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeActions
 				tcs.SetResult (null);
 				return tcs.Task;
 			}
-
-			return shared.ContinueWith (t => {
-				var sharedResolver = t.Result;
-				if (sharedResolver == null)
-					return null;
-				return new MDRefactoringContext (document, sharedResolver, loc, cancellationToken);
-				// Do not add TaskContinuationOptions.ExecuteSynchronously
-				// https://bugzilla.xamarin.com/show_bug.cgi?id=25065
-				// adding ExecuteSynchronously appears to create a deadlock situtation in TypeSystemParser.Parse()
-			});
+// TODO: Fix me
+			throw new NotImplementedException("PlayScript TODO mdrefctorying context create");
+			return null;
+//			return shared.ContinueWith (t => {
+//				var sharedResolver = t.Result;
+//				if (sharedResolver == null)
+//					return null;
+//				return new MDRefactoringContext (document, sharedResolver, loc, cancellationToken);
+//				// Do not add TaskContinuationOptions.ExecuteSynchronously
+//				// https://bugzilla.xamarin.com/show_bug.cgi?id=25065
+//				// adding ExecuteSynchronously appears to create a deadlock situtation in TypeSystemParser.Parse()
+//			});
 		}
 
 		internal MDRefactoringContext (Document document, CSharpAstResolver resolver, TextLocation loc, CancellationToken cancellationToken = default (CancellationToken)) : base (resolver, cancellationToken)
@@ -253,7 +255,7 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeActions
 			this.location = loc;
 			var policy = document.HasProject ? document.Project.Policies.Get<NameConventionPolicy> () : MonoDevelop.Projects.Policies.PolicyService.GetDefaultPolicy<NameConventionPolicy> ();
 			Services.AddService (typeof(NamingConventionService), policy.CreateNRefactoryService ());
-			Services.AddService (typeof(ICSharpCode.NRefactory.CSharp.CodeGenerationService), new CSharpCodeGenerationService());
+//			Services.AddService (typeof(ICSharpCode.NRefactory.PlayScript CodeGenerationService), new CSharpCodeGenerationService());
 		}
 
 		public MDRefactoringContext (DotNetProject project, TextEditorData data, ParsedDocument parsedDocument, CSharpAstResolver resolver, TextLocation loc, CancellationToken cancellationToken = default (CancellationToken)) : base (resolver, cancellationToken)

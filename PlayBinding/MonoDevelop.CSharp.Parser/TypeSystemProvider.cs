@@ -25,7 +25,7 @@
 // THE SOFTWARE.
 using System;
 using MonoDevelop.Ide.TypeSystem;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
 using ICSharpCode.NRefactory.TypeSystem;
 using System.Collections.Generic;
 using MonoDevelop.Projects;
@@ -35,8 +35,9 @@ using System.Linq;
 using ICSharpCode.NRefactory;
 using MonoDevelop.PlayScript.Refactoring.CodeActions;
 using MonoDevelop.Core;
-using ICSharpCode.NRefactory.CSharp.Resolver;
-using ICSharpCode.NRefactory.MonoCSharp;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
+using ICSharpCode.NRefactory.MonoPlayScript;
+using MonoDevelop.PlayScript.Parser;
 
 namespace MonoDevelop.PlayScript.Parser
 {
@@ -44,7 +45,7 @@ namespace MonoDevelop.PlayScript.Parser
 	{
 		public override ParsedDocument Parse (bool storeAst, string fileName, System.IO.TextReader content, MonoDevelop.Projects.Project project = null)
 		{
-			var parser = new ICSharpCode.NRefactory.CSharp.CSharpParser (GetCompilerArguments (project));
+			var parser = new ICSharpCode.NRefactory.PlayScript.PlayScriptParser (GetCompilerArguments (project));
 			parser.GenerateTypeSystemMode = !storeAst;
 			var result = new ParsedDocumentDecorator ();
 
@@ -387,9 +388,9 @@ namespace MonoDevelop.PlayScript.Parser
 			}
 		}
 
-		public static ICSharpCode.NRefactory.CSharp.CompilerSettings GetCompilerArguments (MonoDevelop.Projects.Project project)
+		public static ICSharpCode.NRefactory.PlayScript.CompilerSettings GetCompilerArguments (MonoDevelop.Projects.Project project)
 		{
-			var compilerArguments = new ICSharpCode.NRefactory.CSharp.CompilerSettings ();
+			var compilerArguments = new ICSharpCode.NRefactory.PlayScript.CompilerSettings ();
 
 			if (project == null || MonoDevelop.Ide.IdeApp.Workspace == null) {
 				compilerArguments.AllowUnsafeBlocks = true;

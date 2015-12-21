@@ -31,7 +31,7 @@ using MonoDevelop.Ide.CodeCompletion;
 using MonoDevelop.Ide.Gui;
 using MonoDevelop.Ide.Gui.Content;
 using MonoDevelop.PlayScript.Formatting;
-using MonoDevelop.PlayScript.Parser;
+//using MonoDevelop.PlayScript.Parser;
 using Mono.TextEditor;
 using System.Collections.Generic;
 using ICSharpCode.NRefactory.TypeSystem;

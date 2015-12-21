@@ -25,14 +25,15 @@
 // THE SOFTWARE.
 using Gtk;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
 using MonoDevelop.Core;
 using ICSharpCode.NRefactory.TypeSystem;
 using System.Linq;
-using ICSharpCode.NRefactory.CSharp.Refactoring;
+using ICSharpCode.NRefactory.PlayScript.Refactoring;
 using MonoDevelop.PlayScript.Refactoring.CodeActions;
-using MonoDevelop.CodeGeneration;
+//using MonoDevelop.CodeGeneration;
 using MonoDevelop.PlayScript.Completion;
+using MonoDevelop.PlayScript;
 
 namespace MonoDevelop.PlayScript.CodeGeneration
 {

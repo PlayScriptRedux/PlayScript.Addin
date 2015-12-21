@@ -28,9 +28,9 @@ using System.Text;
 
 using MonoDevelop.Core;
 using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
-using ICSharpCode.NRefactory.CSharp.Resolver;
-using ICSharpCode.NRefactory.CSharp.Refactoring;
+using ICSharpCode.NRefactory.PlayScript.TypeSystem;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
+using ICSharpCode.NRefactory.PlayScript.Refactoring;
 using MonoDevelop.Ide.CodeCompletion;
 
 namespace MonoDevelop.PlayScript.Completion

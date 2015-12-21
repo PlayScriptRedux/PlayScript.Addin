@@ -29,12 +29,12 @@ using Mono.TextEditor;
 using MonoDevelop.Ide.TypeSystem;
 using ICSharpCode.NRefactory.Semantics;
 using MonoDevelop.Ide;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
 using MonoDevelop.PlayScript;
 using ICSharpCode.NRefactory.TypeSystem;
 using Gtk;
-using ICSharpCode.NRefactory.CSharp.Resolver;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
+using ICSharpCode.NRefactory.PlayScript.TypeSystem;
 using System.Threading;
 using System.Text;
 using MonoDevelop.Core;
@@ -62,7 +62,7 @@ namespace MonoDevelop.SourceEditor
 			public AstNode Node;
 			public CSharpAstResolver Resolver;
 
-			public ToolTipData (ICSharpCode.NRefactory.CSharp.SyntaxTree unit, ICSharpCode.NRefactory.Semantics.ResolveResult result, ICSharpCode.NRefactory.CSharp.AstNode node, CSharpAstResolver file)
+			public ToolTipData (ICSharpCode.NRefactory.PlayScript.SyntaxTree unit, ICSharpCode.NRefactory.Semantics.ResolveResult result, ICSharpCode.NRefactory.PlayScript.AstNode node, CSharpAstResolver file)
 			{
 				this.Unit = unit;
 				this.Result = result;

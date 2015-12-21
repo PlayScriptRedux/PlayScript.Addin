@@ -27,7 +27,7 @@ using System;
 using System.Linq;
 using MonoDevelop.Core;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
 
 namespace MonoDevelop.PlayScript.Refactoring.CodeActions
 {

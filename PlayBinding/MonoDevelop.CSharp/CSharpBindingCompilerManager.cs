@@ -41,9 +41,7 @@ using MonoDevelop.PlayScript.Project;
 using System.Threading;
 using MonoDevelop.Ide;
 using MonoDevelop.Core.ProgressMonitoring;
-using MonoDevelop.Debugger;
-
-
+//using MonoDevelop.Debugger;
 
 namespace MonoDevelop.PlayScript
 {

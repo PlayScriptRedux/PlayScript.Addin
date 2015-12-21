@@ -37,17 +37,17 @@ using MonoDevelop.PlayScript.Project;
 using MonoDevelop.Ide.Gui;
 using MonoDevelop.Ide;
 using MonoDevelop.Ide.Tasks;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
 using ICSharpCode.NRefactory.TypeSystem;
 using MonoDevelop.Ide.TypeSystem;
-using ICSharpCode.NRefactory.CSharp.Resolver;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
 using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory.CSharp.TypeSystem;
+using ICSharpCode.NRefactory.PlayScript.TypeSystem;
 using MonoDevelop.SourceEditor.QuickTasks;
 using System.Threading;
 using System.Diagnostics;
 using MonoDevelop.Core;
-using ICSharpCode.NRefactory.CSharp.Analysis;
+using ICSharpCode.NRefactory.PlayScript.Analysis;
 using ICSharpCode.NRefactory;
 using MonoDevelop.Refactoring;
 using ICSharpCode.NRefactory.Refactoring;
@@ -151,7 +151,8 @@ namespace MonoDevelop.PlayScript.Highlighting
 				if (parsedDocument != null) {
 					if (guiDocument.Project != null && guiDocument.IsCompileableInProject) {
 						src = new CancellationTokenSource ();
-						var newResolverTask = guiDocument.GetSharedResolver ();
+						//var newResolverTask = guiDocument.GetSharedResolver ();
+						var newResolverTask = guiDocument.GetPlayScriptSharedResolver();
 						var cancellationToken = src.Token;
 						System.Threading.Tasks.Task.Factory.StartNew (delegate {
 							if (newResolverTask == null)
@@ -373,7 +374,7 @@ namespace MonoDevelop.PlayScript.Highlighting
 				}
 			}
 
-			public override void VisitComment (ICSharpCode.NRefactory.CSharp.Comment comment)
+			public override void VisitComment (ICSharpCode.NRefactory.PlayScript.Comment comment)
 			{
 			}
 		}

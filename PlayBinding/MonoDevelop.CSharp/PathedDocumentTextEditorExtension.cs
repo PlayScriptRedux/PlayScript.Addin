@@ -27,16 +27,16 @@ using System;
 using MonoDevelop.Ide.Gui.Content;
 using MonoDevelop.Components;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.TypeSystem;
 using MonoDevelop.Ide.TypeSystem;
 using MonoDevelop.Ide.Gui;
 using MonoDevelop.Core;
 using MonoDevelop.PlayScript.Completion;
 using System.Linq;
 using MonoDevelop.Ide;
-using ICSharpCode.NRefactory.CSharp;
 using System.Text;
 using MonoDevelop.Projects;
+using ICSharpCode.NRefactory.PlayScript;
+using ICSharpCode.NRefactory.TypeSystem;
 
 namespace MonoDevelop.PlayScript
 {

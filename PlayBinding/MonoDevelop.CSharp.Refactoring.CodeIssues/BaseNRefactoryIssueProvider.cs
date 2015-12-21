@@ -26,7 +26,8 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.CSharp;
+using ICSharpCode.NRefactory.PlayScript;
+//using ICSharpCode.NRefactory.PlayScript.Refactoring;
 using MonoDevelop.Ide.Gui;
 using System.Threading;
 using MonoDevelop.CodeIssues;
@@ -40,7 +41,7 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 	class BaseNRefactoryIssueProvider : BaseCodeIssueProvider
 	{
 		NRefactoryIssueProvider parentIssue;
-		SubIssueAttribute subIssue;
+		ICSharpCode.NRefactory.PlayScript.Refactoring.SubIssueAttribute subIssue;
 		TimerCounter counter;
 
 		public override CodeIssueProvider Parent {
@@ -65,7 +66,7 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 			}
 		}
 
-		public BaseNRefactoryIssueProvider (NRefactoryIssueProvider parentIssue, SubIssueAttribute subIssue)
+		public BaseNRefactoryIssueProvider (NRefactoryIssueProvider parentIssue, ICSharpCode.NRefactory.PlayScript.Refactoring.SubIssueAttribute subIssue)
 		{
 			this.parentIssue = parentIssue;
 			this.subIssue = subIssue;
@@ -88,12 +89,12 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 			if (context == null || context.IsInvalid || context.RootNode == null || context.ParsedDocument.HasErrors)
 				return new CodeIssue[0];
 			// Holds all the actions in a particular sibling group.
-			IList<ICSharpCode.NRefactory.CSharp.Refactoring.CodeIssue> issues;
+			IList<ICSharpCode.NRefactory.PlayScript.Refactoring.CodeIssue> issues;
 			using (var timer = counter.BeginTiming ()) {
 				// We need to enumerate here in order to time it. 
 				// This shouldn't be a problem since there are current very few (if any) lazy providers.
 				var _issues = parentIssue.IssueProvider.GetIssues (context, subIssue.Title);
-				issues = _issues as IList<ICSharpCode.NRefactory.CSharp.Refactoring.CodeIssue> ?? _issues.ToList ();
+				issues = _issues as IList<ICSharpCode.NRefactory.PlayScript.Refactoring.CodeIssue> ?? _issues.ToList ();
 			}
 			return parentIssue.ToMonoDevelopRepresentation (cancellationToken, context, issues);
 		}
