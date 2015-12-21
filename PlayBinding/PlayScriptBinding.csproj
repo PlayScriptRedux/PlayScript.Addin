@@ -75,35 +75,35 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\PsAllmanCSharpPolicy.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <LogicalName>PsAllmanCSharpPolicy.xml</LogicalName>
+      <LogicalName>PsAllmanCSharpPolicy.xml</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\PsGNUCSharpPolicy.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <LogicalName>PsGNUCSharpPolicy.xml</LogicalName>
+      <LogicalName>PsGNUCSharpPolicy.xml</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\PsGNUTextStylePolicy.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <LogicalName>PsGNUTextStylePolicy.xml</LogicalName>
+      <LogicalName>PsGNUTextStylePolicy.xml</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\PsInvariantTextStylePolicy.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-                  <LogicalName>PsInvariantTextStylePolicy.xml</LogicalName>
+      <LogicalName>PsInvariantTextStylePolicy.xml</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\PsKRCSharpPolicy.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-                  <LogicalName>PsKRCSharpPolicy.xml</LogicalName>
+      <LogicalName>PsKRCSharpPolicy.xml</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\PsMonoCSharpPolicy.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-                  <LogicalName>PsMonoCSharpPolicy.xml</LogicalName>
+      <LogicalName>PsMonoCSharpPolicy.xml</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\PsSharpDevelopCSharpPolicy.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-                  <LogicalName>PsSharpDevelopCSharpPolicy.xml</LogicalName>
+      <LogicalName>PsSharpDevelopCSharpPolicy.xml</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\PsWhitesmithsCSharpPolicy.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-                  <LogicalName>PsWhitesmithsCSharpPolicy.xml</LogicalName>
+      <LogicalName>PsWhitesmithsCSharpPolicy.xml</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
