@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NRefactory", "NRefactory", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICSharpCode.Decompiler", "..\monodevelop\main\contrib\ICSharpCode.Decompiler\ICSharpCode.Decompiler.csproj", "{984CC812-9470-4A13-AFF9-CC44068D666C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICSharpCode.NRefactory.PlayScript", "external\NRefactory\ICSharpCode.NRefactory.PlayScript\ICSharpCode.NRefactory.PlayScript.csproj", "{53DCA265-3C3C-42F9-B647-F72BA678122B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICSharpCode.NRefactory.PlayScript.IKVM", "external\NRefactory\ICSharpCode.NRefactory.IKVM\ICSharpCode.NRefactory.PlayScript.IKVM.csproj", "{A727169F-D94F-443F-B305-B057D7F3B420}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICSharpCode.NRefactory.PlayScript.Refactoring", "external\NRefactory\ICSharpCode.NRefactory.PlayScript.Refactoring\ICSharpCode.NRefactory.PlayScript.Refactoring.csproj", "{2A705FC6-1A9E-4941-9E47-254D79F2D9D5}"
@@ -18,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICSharpCode.NRefactory.PlayScript.Xml", "external\NRefactory\ICSharpCode.NRefactory.Xml\ICSharpCode.NRefactory.PlayScript.Xml.csproj", "{DC393B66-92ED-4CAD-AB25-CFEF23F3D7C6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKVM.Reflection", "external\ikvm\reflect\IKVM.Reflection.csproj", "{4CB170EF-DFE6-4A56-9E1B-A85449E827A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICSharpCode.NRefactory.PlayScript", "external\NRefactory\ICSharpCode.NRefactory.PlayScript\ICSharpCode.NRefactory.PlayScript.csproj", "{53DCA265-3C3C-42F9-B647-F72BA678122B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -329,7 +329,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{984CC812-9470-4A13-AFF9-CC44068D666C} = {EE47B354-43ED-4293-9E54-B831ADB649A6}
-		{53DCA265-3C3C-42F9-B647-F72BA678122B} = {EE47B354-43ED-4293-9E54-B831ADB649A6}
 		{A727169F-D94F-443F-B305-B057D7F3B420} = {EE47B354-43ED-4293-9E54-B831ADB649A6}
 		{2A705FC6-1A9E-4941-9E47-254D79F2D9D5} = {EE47B354-43ED-4293-9E54-B831ADB649A6}
 		{DC393B66-92ED-4CAD-AB25-CFEF23F3D7C6} = {EE47B354-43ED-4293-9E54-B831ADB649A6}

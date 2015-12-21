@@ -132,7 +132,7 @@ namespace MonoDevelop.PlayScript.Formatting
 			parser = new PlayScriptParser ();
 			parser.Parse (data);
 			if (parser.HasErrors) {
-				LoggingService.LogError ("C# formatter produced source code errors. See console for output.");
+				LoggingService.LogError ("PlayScript formatter produced source code errors. See console for output.");
 				return input.Substring (startOffset, Math.Max (0, Math.Min (endOffset, input.Length) - startOffset));
 			}
 
