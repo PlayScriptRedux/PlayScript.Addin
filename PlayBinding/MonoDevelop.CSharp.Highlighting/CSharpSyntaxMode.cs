@@ -476,6 +476,18 @@ namespace MonoDevelop.PlayScript.Highlighting
 
 		public CSharpSyntaxMode (Document document)
 		{
+			var foo = System.Reflection.Assembly.GetCallingAssembly ();
+			var resourceNames = foo.GetManifestResourceNames ().Where (s => s.Contains ("Policy.xml"));
+			foreach(string resourceName in resourceNames)
+			{
+				Console.WriteLine(resourceName);
+			}
+			resourceNames = foo.GetManifestResourceNames ().Where (s => !s.Contains ("Policy.xml"));
+			foreach(string resourceName in resourceNames)
+			{
+				Console.WriteLine(resourceName);
+			}
+
 			this.guiDocument = document;
 			guiDocument.DocumentParsed += HandleDocumentParsed;
 			if (guiDocument.ParsedDocument != null)
@@ -484,7 +496,12 @@ namespace MonoDevelop.PlayScript.Highlighting
 			bool loadRules = _rules == null;
 
 			if (loadRules) {
-				var provider = new ResourceStreamProvider (typeof(ResourceStreamProvider).Assembly, typeof(ResourceStreamProvider).Assembly.GetManifestResourceNames ().First (s => s.Contains ("CSharpSyntaxMode")));
+				var thisAssembly = System.Reflection.Assembly.GetCallingAssembly ();
+				var resourceName = thisAssembly.GetManifestResourceNames ().First (s => s.Contains ("PlayScriptSyntaxMode"));
+				Console.WriteLine(resourceName);
+				var provider = new ResourceStreamProvider (thisAssembly, resourceName);
+
+//				var provider = new ResourceStreamProvider (typeof(ResourceStreamProvider).Assembly, typeof(ResourceStreamProvider).Assembly.GetManifestResourceNames ().First (s => s.Contains ("PlayScriptSyntaxMode")));
 				using (var reader = provider.Open ()) {
 					SyntaxMode baseMode = SyntaxMode.Read (reader);
 					_rules = new List<Rule> (baseMode.Rules.Where (r => r.Name != "Comment"));

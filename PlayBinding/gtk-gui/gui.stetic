@@ -1916,6 +1916,7 @@ None</property>
   <widget class="Gtk.Bin" id="MonoDevelop.PlayScript.Refactoring.CodeIssues.NameConventionPanelWidget" design-size="300 300">
     <property name="MemberName" />
     <property name="Visible">False</property>
+    <property name="GeneratePublic">False</property>
     <child>
       <widget class="Gtk.HBox" id="hbox3">
         <property name="MemberName" />

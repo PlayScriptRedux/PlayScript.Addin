@@ -1,7 +1,7 @@
 <ExtensionModel>
 	<Extension path="/MonoDevelop/SourceEditor2/SyntaxModes">
-		<Templates file="SyntaxMode/ActionScriptSyntaxMode.xml" />
-		<Templates file="SyntaxMode/PlayScriptSyntaxMode.xml" />
+		<Templates resource="PlayScriptBinding.SyntaxMode.ActionScriptSyntaxMode.xml" />
+		<Templates resource="PlayScriptBinding.SyntaxMode.PlayScriptSyntaxMode.xml" />
 	</Extension>
 	<Extension path="/MonoDevelop/Ide/FileTemplates">
 		<FileTemplate id="PlayScriptEmptyFile" file="templates/PsEmptyFile.xft.xml" />
@@ -159,6 +159,47 @@
 		<Generator class="MonoDevelop.PlayScript.Refactoring.CSharpCodeGenerator" mimeType = "text/x-playscript" />		
 	</Extension>
 
+	<Extension path = "/MonoDevelop/ProjectModel/PolicySets/Mono" >
+		<Policies resource="PsMonoNameConventionPolicy.xml" />
+	</Extension>
+
+	<Extension path = "/MonoDevelop/ProjectModel/PolicySets" >
+		<PolicySet id="KR" _name="K&amp;R style" allowDiffSerialize="false">
+			<Policies resource="PsKRCSharpPolicy.xml" />
+			<Policies resource="PsInvariantTextStylePolicy.xml" />
+		</PolicySet>
+	</Extension>
+
+	<Extension path = "/MonoDevelop/ProjectModel/PolicySets" >
+		<PolicySet id="1TBS" _name="SharpDevelop style (1TBS)" allowDiffSerialize="false">
+			<Policies resource="PsSharpDevelopCSharpPolicy.xml" />
+			<Policies resource="PsInvariantTextStylePolicy.xml" />
+		</PolicySet>
+	</Extension>
+
+	<Extension path = "/MonoDevelop/ProjectModel/PolicySets/VisualStudio" >
+		<Policies resource="PsAllmanCSharpPolicy.xml" />
+	</Extension>
+
+	<Extension path = "/MonoDevelop/ProjectModel/PolicySets" >
+		<PolicySet id="Whitesmiths" _name="Whitesmiths style" allowDiffSerialize="false">
+			<Policies resource="PsWhitesmithsCSharpPolicy.xml" />
+			<Policies resource="PsInvariantTextStylePolicy.xml" />
+		</PolicySet>
+	</Extension>
+
+	<Extension path = "/MonoDevelop/ProjectModel/PolicySets" >
+		<PolicySet id="GNU" _name="GNU style" allowDiffSerialize="false">
+			<Policies resource="PsGNUCSharpPolicy.xml" />
+			<Policies resource="PsGNUTextStylePolicy.xml" />
+		</PolicySet>
+	</Extension>
+
+	<Extension path = "/MonoDevelop/ProjectModel/Gui/MimeTypePolicyPanels">
+		<Panel id = "ActionScriptFormatting" _label = "ActionScript Format" mimeType="text/x-actionscript" class = "MonoDevelop.PlayScript.Formatting.CSharpFormattingPolicyPanel" />
+		<Panel id = "PlayScriptFormatting" _label = "PlayScript Format" mimeType="text/x-playscript" class = "MonoDevelop.PlayScript.Formatting.CSharpFormattingPolicyPanel" />		
+	</Extension>
+
 	<!--	<ConditionType id="MSBuildTargetIsAvailable" type="MonoDevelop.Projects.Formats.MSBuild.TargetsAvailableCondition" />-->
 	<!--	<Extension path = "/MonoDevelop/Ide/Commands">
 		<Command id = "MonoDevelop.CodeGeneration.CodeGenerationCommands.ShowCodeGenerationWindow"
@@ -195,48 +236,16 @@
 			</DotNetProjectSubtype>
 		</Condition>
 	</Extension>-->
-	<!--	<Extension path = "/MonoDevelop/Ide/ProjectTemplates">
-		<ProjectTemplate id = "CSharpConsoleProject" resource = "ConsoleProject.xpt.xml"/>
-		<ProjectTemplate id = "CSharpEmptyProject" resource = "EmptyProject.xpt.xml"/>
-		<ProjectTemplate id = "CSharpGtkSharp2Project" resource = "GtkSharp2Project.xpt.xml"/>
-		<ProjectTemplate id = "CSharpLibrary" resource = "Library.xpt.xml"/>
-		<ProjectTemplate id = "CSharpSharedAssetsProject" resource = "SharedAssetsProject.xpt.xml"/>
-		<Condition id="MSBuildTargetIsAvailable" target="$(MSBuildExtensionsPath)\Microsoft\Portable\v4.0\Microsoft.Portable.CSharp.targets">
-			<ProjectTemplate id = "CSharpPortableLibrary" resource = "PortableLibrary.xpt.xml" />
-		</Condition>
-	</Extension>-->
 	<!--	<Extension path = "/MonoDevelop/ProjectModel/LanguageBindings">
 		<LanguageBinding id    = "CSharp"
 		                 supportedextensions = ".cs"
 		                 class = "MonoDevelop.CSharp.CSharpLanguageBinding" />
 	</Extension>-->
-	<!--	<Extension path = "/MonoDevelop/Ide/ReferenceFinder">
-		<ReferenceFinder supportedmimetypes = "text/x-csharp"
-		                 class = "MonoDevelop.CSharp.Refactoring.CSharpReferenceFinder" />
-	</Extension>-->
-	<!--	<Extension path = "/MonoDevelop/Ide/ReferenceFinder">
-		<ReferenceFinder supportedmimetypes = "text/x-csharp,text/x-actionscript,text/x-playscript"
-		                 class = "MonoDevelop.CSharp.Refactoring.CSharpReferenceFinder" />
-	</Extension>
-
 	<Extension path = "/MonoDevelop/ProjectModel/SerializableClasses">
 		<DataType class = "MonoDevelop.CSharp.Project.CSharpCompilerParameters" />
 		<DataType class = "MonoDevelop.CSharp.Project.CSharpProjectParameters" />
 	</Extension>-->
-	<!--	<Extension path = "/MonoDevelop/Ide/TextEditorExtensions">-->
-	<!-- indent engine must be before the completion text editor engine,
-		otherwise stuff like
 
-		int Foo {
-		         get;private set';'
-
-		will end up as
-
-		int Foo {
-		         get;
-		         privaet;
-
-		-->
 	<!--		<Class fileExtensions = ".play" class = "MonoDevelop.CSharp.Formatting.CSharpTextEditorIndentation" />
 		<Class fileExtensions = ".play" class = "MonoDevelop.CSharp.Completion.CSharpCompletionTextEditorExtension" />
 		<Class fileExtensions = ".play" class = "MonoDevelop.CSharp.Highlighting.HighlightUsagesExtension" />
@@ -268,46 +277,8 @@
 		<Generator class="MonoDevelop.CSharp.Refactoring.CSharpCodeGenerator" mimeType = "text/x-playscript" />
 	</Extension>
 	
-	<Extension path = "/MonoDevelop/ProjectModel/PolicySets/Mono" >
-		<Policies resource="MonoCSharpPolicy.xml" />
-		<Policies resource="MonoNameConventionPolicy.xml" />
-	</Extension>-->
-	<!--	<Extension path = "/MonoDevelop/ProjectModel/PolicySets" >
-		<PolicySet id="KR" _name="K&amp;R style" allowDiffSerialize="false">
-			<Policies resource="KRCSharpPolicy.xml" />
-			<Policies resource="InvariantTextStylePolicy.xml" />
-		</PolicySet>
-	</Extension>
 
-	<Extension path = "/MonoDevelop/ProjectModel/PolicySets" >
-		<PolicySet id="1TBS" _name="SharpDevelop style (1TBS)" allowDiffSerialize="false">
-			<Policies resource="SharpDevelopCSharpPolicy.xml" />
-			<Policies resource="InvariantTextStylePolicy.xml" />
-		</PolicySet>
-	</Extension>
-
-	<Extension path = "/MonoDevelop/ProjectModel/PolicySets/VisualStudio" >
-		<Policies resource="AllmanCSharpPolicy.xml" />
-	</Extension>
-
-	<Extension path = "/MonoDevelop/ProjectModel/PolicySets" >
-		<PolicySet id="Whitesmiths" _name="Whitesmiths style" allowDiffSerialize="false">
-			<Policies resource="WhitesmithsCSharpPolicy.xml" />
-			<Policies resource="InvariantTextStylePolicy.xml" />
-		</PolicySet>
-	</Extension>
-
-	<Extension path = "/MonoDevelop/ProjectModel/PolicySets" >
-		<PolicySet id="GNU" _name="GNU style" allowDiffSerialize="false">
-			<Policies resource="GNUCSharpPolicy.xml" />
-			<Policies resource="GNUTextStylePolicy.xml" />
-		</PolicySet>
-	</Extension>
-
-	<Extension path = "/MonoDevelop/ProjectModel/Gui/MimeTypePolicyPanels">
-		<Panel id = "CSharpFormatting" _label = "PlayScript Format" mimeType="text/x-playscript" class = "MonoDevelop.CSharp.Formatting.CSharpFormattingPolicyPanel" />
-	</Extension>-->
-	<!--	<Extension path = "/MonoDevelop/Refactoring/CodeActions">
+	<Extension path = "/MonoDevelop/Refactoring/CodeActions">
 		<Action mimeType="text/x-playscript"
 			_title = "Move type to another file"
 			_description = "Moves current type to another file that matches the name of the type."

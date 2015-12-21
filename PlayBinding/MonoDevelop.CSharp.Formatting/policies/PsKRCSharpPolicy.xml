@@ -1,6 +1,6 @@
 <!--
 
-GNUCSharpPolicy.xml
+KRCSharpPolicy.xml
  
 Author:
       Mike Krüger <mkrueger@xamarin.com>
@@ -26,7 +26,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 -->
 
-
 <PlayScriptFormattingPolicy scope="text/x-playscript" allowDiffSerialize="False">
 	<IndentNamespaceBody>True</IndentNamespaceBody>
 	<IndentClassBody>True</IndentClassBody>
@@ -41,7 +40,8 @@ THE SOFTWARE.
 	<IndentCaseBody>True</IndentCaseBody>
 	<IndentBreakStatements>True</IndentBreakStatements>
 	<AlignEmbeddedStatements>True</AlignEmbeddedStatements>
-	<PropertyFormatting>AllowOneLine</PropertyFormatting>
+	<SimplePropertyFormatting>AllowOneLine</SimplePropertyFormatting>
+	<AutoPropertyFormatting>AllowOneLine</AutoPropertyFormatting>
 	<NamespaceBraceStyle>NextLine</NamespaceBraceStyle>
 	<ClassBraceStyle>NextLine</ClassBraceStyle>
 	<InterfaceBraceStyle>NextLine</InterfaceBraceStyle>
@@ -61,7 +61,7 @@ THE SOFTWARE.
 	<EventRemoveBraceStyle>EndOfLine</EventRemoveBraceStyle>
 	<AllowEventAddBlockInline>True</AllowEventAddBlockInline>
 	<AllowEventRemoveBlockInline>True</AllowEventRemoveBlockInline>
-	<StatementBraceStyle>NextLineShifted2</StatementBraceStyle>
+	<StatementBraceStyle>EndOfLine</StatementBraceStyle>
 	<AllowIfBlockInline>False</AllowIfBlockInline>
 	<ElseNewLinePlacement>SameLine</ElseNewLinePlacement>
 	<ElseIfNewLinePlacement>SameLine</ElseIfNewLinePlacement>
@@ -159,5 +159,6 @@ THE SOFTWARE.
 	<BlankLinesBetweenMembers>1</BlankLinesBetweenMembers>
 	<BlankLinesInsideRegion>1</BlankLinesInsideRegion>
 	<BlankLinesAroundRegion>1</BlankLinesAroundRegion>
+	<IndentPreprocessorDirectives>True</IndentPreprocessorDirectives>
 	<IndentBlocksInsideExpressions>False</IndentBlocksInsideExpressions>
-</CSharpFormattingPolicy>
+</PlayScriptFormattingPolicy>

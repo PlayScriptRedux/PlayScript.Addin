@@ -50,7 +50,7 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeActions
 			Title = GettextCatalog.GetString (attr.Title ?? "");
 			Description = GettextCatalog.GetString (attr.Description ?? "");
 			Category = GettextCatalog.GetString (attr.Category ?? "");
-			MimeType = "text/x-csharp";
+			MimeType = "text/x-playscript";
 		}
 
 		public override IEnumerable<MonoDevelop.CodeActions.CodeAction> GetActions (Document document, object _context, TextLocation loc, CancellationToken cancellationToken)

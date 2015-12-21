@@ -42,6 +42,9 @@ using ICSharpCode.NRefactory.PlayScript.Resolver;
 using MonoDevelop.PlayScript.Formatting;
 using System.Threading.Tasks;
 
+using MonoDevelop.Components;
+using MonoDevelop.Ide;
+
 namespace MonoDevelop.PlayScript.Refactoring.CodeActions
 {
 	public class MDRefactoringContext : RefactoringContext, IRefactoringContext
@@ -230,7 +233,7 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeActions
 				return tcs.Task;
 			}
 // TODO: Fix me
-			throw new NotImplementedException("PlayScript TODO mdrefctorying context create");
+			throw new NotImplementedException("PlayScript TODO MDRefactoringContext create");
 			return null;
 //			return shared.ContinueWith (t => {
 //				var sharedResolver = t.Result;
@@ -253,9 +256,9 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeActions
 			this.Project = document.Project as DotNetProject;
 			this.formattingOptions = document.GetFormattingOptions ();
 			this.location = loc;
-			var policy = document.HasProject ? document.Project.Policies.Get<NameConventionPolicy> () : MonoDevelop.Projects.Policies.PolicyService.GetDefaultPolicy<NameConventionPolicy> ();
+			var policy = document.HasProject ? document.Project.Policies.Get<PsNameConventionPolicy> () : MonoDevelop.Projects.Policies.PolicyService.GetDefaultPolicy<PsNameConventionPolicy> ();
 			Services.AddService (typeof(NamingConventionService), policy.CreateNRefactoryService ());
-//			Services.AddService (typeof(ICSharpCode.NRefactory.PlayScript CodeGenerationService), new CSharpCodeGenerationService());
+			Services.AddService (typeof(DefaultCodeGenerationService), new CSharpCodeGenerationService());
 		}
 
 		public MDRefactoringContext (DotNetProject project, TextEditorData data, ParsedDocument parsedDocument, CSharpAstResolver resolver, TextLocation loc, CancellationToken cancellationToken = default (CancellationToken)) : base (resolver, cancellationToken)
@@ -266,7 +269,7 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeActions
 			var policy = Project.Policies.Get<PlayScriptFormattingPolicy> ();
 			this.formattingOptions = policy.CreateOptions ();
 			this.location = loc;
-			var namingPolicy = Project.Policies.Get<NameConventionPolicy> ();
+			var namingPolicy = Project.Policies.Get<PsNameConventionPolicy> ();
 			Services.AddService (typeof(NamingConventionService), namingPolicy.CreateNRefactoryService ());
 		}
 	}

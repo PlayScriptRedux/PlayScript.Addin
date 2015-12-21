@@ -1079,7 +1079,7 @@ namespace MonoDevelop.PlayScript.Completion
 			{
 				var result = new CompletionDataList ();
 				if (EnableAutoCodeCompletion || IncludeCodeSnippetsInCompletionList.Value) {
-					CodeTemplateService.AddCompletionDataForMime ("text/x-csharp", result);
+					CodeTemplateService.AddCompletionDataForMime ("text/x-playscript", result);
 				}
 				return result;
 			}

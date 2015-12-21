@@ -119,4 +119,9 @@
 			<Word>UNDONE</Word>
 		</Keywords>
 	</Rule>
+
+	<Keywords color = "Keyword(Other)">
+		<Word>trace</Word>
+	</Keywords>
+
 </SyntaxMode>

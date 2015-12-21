@@ -1,6 +1,6 @@
 <!--
 
-KRCSharpPolicy.xml
+WhitesmithsCSharpPolicy.xml
  
 Author:
       Mike Krüger <mkrueger@xamarin.com>
@@ -42,26 +42,26 @@ THE SOFTWARE.
 	<AlignEmbeddedStatements>True</AlignEmbeddedStatements>
 	<SimplePropertyFormatting>AllowOneLine</SimplePropertyFormatting>
 	<AutoPropertyFormatting>AllowOneLine</AutoPropertyFormatting>
-	<NamespaceBraceStyle>NextLine</NamespaceBraceStyle>
-	<ClassBraceStyle>NextLine</ClassBraceStyle>
-	<InterfaceBraceStyle>NextLine</InterfaceBraceStyle>
-	<StructBraceStyle>NextLine</StructBraceStyle>
-	<EnumBraceStyle>NextLine</EnumBraceStyle>
-	<MethodBraceStyle>NextLine</MethodBraceStyle>
-	<AnonymousMethodBraceStyle>EndOfLine</AnonymousMethodBraceStyle>
-	<ConstructorBraceStyle>NextLine</ConstructorBraceStyle>
-	<DestructorBraceStyle>NextLine</DestructorBraceStyle>
-	<PropertyBraceStyle>EndOfLine</PropertyBraceStyle>
-	<PropertyGetBraceStyle>EndOfLine</PropertyGetBraceStyle>
-	<PropertySetBraceStyle>EndOfLine</PropertySetBraceStyle>
+	<NamespaceBraceStyle>NextLineShifted</NamespaceBraceStyle>
+	<ClassBraceStyle>NextLineShifted</ClassBraceStyle>
+	<InterfaceBraceStyle>NextLineShifted</InterfaceBraceStyle>
+	<StructBraceStyle>NextLineShifted</StructBraceStyle>
+	<EnumBraceStyle>NextLineShifted</EnumBraceStyle>
+	<MethodBraceStyle>NextLineShifted</MethodBraceStyle>
+	<AnonymousMethodBraceStyle>NextLineShifted</AnonymousMethodBraceStyle>
+	<ConstructorBraceStyle>NextLineShifted</ConstructorBraceStyle>
+	<DestructorBraceStyle>NextLineShifted</DestructorBraceStyle>
+	<PropertyBraceStyle>NextLineShifted</PropertyBraceStyle>
+	<PropertyGetBraceStyle>NextLineShifted</PropertyGetBraceStyle>
+	<PropertySetBraceStyle>NextLineShifted</PropertySetBraceStyle>
 	<SimpleGetBlockFormatting>AllowOneLine</SimpleGetBlockFormatting>
 	<SimpleSetBlockFormatting>AllowOneLine</SimpleSetBlockFormatting>
-	<EventBraceStyle>EndOfLine</EventBraceStyle>
-	<EventAddBraceStyle>EndOfLine</EventAddBraceStyle>
-	<EventRemoveBraceStyle>EndOfLine</EventRemoveBraceStyle>
+	<EventBraceStyle>NextLineShifted</EventBraceStyle>
+	<EventAddBraceStyle>NextLineShifted</EventAddBraceStyle>
+	<EventRemoveBraceStyle>NextLineShifted</EventRemoveBraceStyle>
 	<AllowEventAddBlockInline>True</AllowEventAddBlockInline>
 	<AllowEventRemoveBlockInline>True</AllowEventRemoveBlockInline>
-	<StatementBraceStyle>EndOfLine</StatementBraceStyle>
+	<StatementBraceStyle>NextLineShifted</StatementBraceStyle>
 	<AllowIfBlockInline>False</AllowIfBlockInline>
 	<ElseNewLinePlacement>SameLine</ElseNewLinePlacement>
 	<ElseIfNewLinePlacement>SameLine</ElseIfNewLinePlacement>
@@ -160,5 +160,5 @@ THE SOFTWARE.
 	<BlankLinesInsideRegion>1</BlankLinesInsideRegion>
 	<BlankLinesAroundRegion>1</BlankLinesAroundRegion>
 	<IndentPreprocessorDirectives>True</IndentPreprocessorDirectives>
-	<IndentBlocksInsideExpressions>False</IndentBlocksInsideExpressions>
-</CSharpFormattingPolicy>
+	<IndentBlocksInsideExpressions>True</IndentBlocksInsideExpressions>
+</PlayScriptFormattingPolicy>

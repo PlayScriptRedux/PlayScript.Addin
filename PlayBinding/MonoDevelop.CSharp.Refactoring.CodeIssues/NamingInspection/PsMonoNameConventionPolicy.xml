@@ -1,4 +1,4 @@
-<NameConventionPolicy2>
+<MonoNameConventionPolicy>
 	<Rules>
 		<NamingRule>
 			<Name>Namespaces</Name>
@@ -176,4 +176,4 @@
 			<IncludeStaticEntities>True</IncludeStaticEntities>
 		</NamingRule>
 	</Rules>
-</NameConventionPolicy2>
+</MonoNameConventionPolicy>

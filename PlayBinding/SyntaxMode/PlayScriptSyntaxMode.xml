@@ -261,6 +261,7 @@
 		<Word>fixed</Word>
 		<Word>unsafe</Word>
 		<Word>lock</Word>
+		<Word>trace</Word>
 	</Keywords>
 
 	<Rule name = "text.preprocessor" ignorecase="True">

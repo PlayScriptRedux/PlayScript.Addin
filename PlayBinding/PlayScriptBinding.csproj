@@ -60,35 +60,50 @@
     <EmbeddedResource Include="gtk-gui\gui.stetic">
       <LogicalName>gui.stetic</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\AllmanCSharpPolicy.xml">
-      <LogicalName>AllmanCSharpPolicy.xml</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\InvariantTextStylePolicy.xml">
-      <LogicalName>InvariantTextStylePolicy.xml</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\KRCSharpPolicy.xml">
-      <LogicalName>KRCSharpPolicy.xml</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\MonoCSharpPolicy.xml">
-      <LogicalName>MonoCSharpPolicy.xml</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\SharpDevelopCSharpPolicy.xml">
-      <LogicalName>SharpDevelopCSharpPolicy.xml</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\WhitesmithsCSharpPolicy.xml">
-      <LogicalName>WhitesmithsCSharpPolicy.xml</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\GNUCSharpPolicy.xml">
-      <LogicalName>GNUCSharpPolicy.xml</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\GNUTextStylePolicy.xml">
-      <LogicalName>GNUTextStylePolicy.xml</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MonoDevelop.CSharp.Refactoring.CodeIssues\NamingInspection\MonoNameConventionPolicy.xml">
-      <LogicalName>MonoNameConventionPolicy.xml</LogicalName>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Manifest.addin.xml">
-      <LogicalName>CSharpBinding.addin.xml</LogicalName>
+      <LogicalName>PlayScript.addin.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SyntaxMode\PlayScriptSyntaxMode.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SyntaxMode\ActionScriptSyntaxMode.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonoDevelop.CSharp.Refactoring.CodeIssues\NamingInspection\PsMonoNameConventionPolicy.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <LogicalName>PsMonoNameConventionPolicy.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\PsAllmanCSharpPolicy.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <LogicalName>PsAllmanCSharpPolicy.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\PsGNUCSharpPolicy.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <LogicalName>PsGNUCSharpPolicy.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\PsGNUTextStylePolicy.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <LogicalName>PsGNUTextStylePolicy.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\PsInvariantTextStylePolicy.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+                  <LogicalName>PsInvariantTextStylePolicy.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\PsKRCSharpPolicy.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+                  <LogicalName>PsKRCSharpPolicy.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\PsMonoCSharpPolicy.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+                  <LogicalName>PsMonoCSharpPolicy.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\PsSharpDevelopCSharpPolicy.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+                  <LogicalName>PsSharpDevelopCSharpPolicy.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonoDevelop.CSharp.Formatting\policies\PsWhitesmithsCSharpPolicy.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+                  <LogicalName>PsWhitesmithsCSharpPolicy.xml</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -270,12 +285,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AddinFile>
     <AddinFile Include="templates\PsLibrary.xpt.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AddinFile>
-    <AddinFile Include="SyntaxMode\ActionScriptSyntaxMode.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AddinFile>
-    <AddinFile Include="SyntaxMode\PlayScriptSyntaxMode.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AddinFile>
     <AddinFile Include="icons\playscript-project-16.png">

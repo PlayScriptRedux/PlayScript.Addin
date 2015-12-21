@@ -30,7 +30,7 @@ using MonoDevelop.Core;
 
 namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 {
-	class NameConventionPanel : PolicyOptionsPanel<NameConventionPolicy>
+	class NameConventionPanel : PolicyOptionsPanel<PsNameConventionPolicy>
 	{
 		NameConventionPanelWidget panel;
 		
@@ -55,12 +55,12 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 			return panel;
 		}
 		
-		protected override void LoadFrom (NameConventionPolicy policy)
+		protected override void LoadFrom (PsNameConventionPolicy policy)
 		{
 			panel.Policy = policy.Clone ();
 		}
 		
-		protected override NameConventionPolicy GetPolicy ()
+		protected override PsNameConventionPolicy GetPolicy ()
 		{
 			// return cloned policy
 			panel.ApplyChanges ();

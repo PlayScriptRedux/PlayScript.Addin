@@ -49,7 +49,7 @@ namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 			this.Title = "Mono TODO";
 			this.Description = "Find usages of mono todo items";
 			this.Category = IssueCategories.Notifications;
-			this.SetMimeType ("text/x-csharp");
+			this.SetMimeType ("text/x-playscript");
 			this.IsEnabledByDefault = true;
 			this.SetSeverity (ICSharpCode.NRefactory.Refactoring.Severity.Warning); 
 			this.SetIsEnabled (true);
