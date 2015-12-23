@@ -75,12 +75,12 @@ namespace MonoDevelop.PlayScript
 //				FilePath outputName2 = (configuration2 as DotNetProjectConfiguration).CompiledOutputName;	
 //			}
 
-			var x = IdeApp.Workbench.ActiveDocument;
-			if (x.HasProject) {
-				foreach (var y in x.Project.Configurations) {
-					LoggingService.LogInfo (y.Name);
-				}
-			}
+//			var x = IdeApp.Workbench.ActiveDocument;
+//			if (x.HasProject) {
+//				foreach (var y in x.Project.Configurations) {
+//					LoggingService.LogInfo (y.Name);
+//				}
+//			}
 
 //			MonoDevelop.Ide.IdeApp.ProjectOperations.IsRunning;
 
@@ -389,7 +389,7 @@ namespace MonoDevelop.PlayScript
 			if (configuration.ParentItem != null)
 				workingDir = configuration.ParentItem.BaseDirectory;
 
-			LoggingService.LogInfo (compilerName + " " + sb);
+			//LoggingService.LogInfo (compilerName + " " + sb);
 
 			ExecutionEnvironment envVars = runtime.GetToolsExecutionEnvironment (project.TargetFramework);
 			string cargs = "/noconfig @\"" + responseFileName + "\"";

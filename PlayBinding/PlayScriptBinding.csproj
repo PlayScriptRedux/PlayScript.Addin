@@ -65,9 +65,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SyntaxMode\PlayScriptSyntaxMode.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <LogicalName>PlayScriptSyntaxMode.xml</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="SyntaxMode\ActionScriptSyntaxMode.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <LogicalName>ActionScriptSyntaxMode.xml</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="MonoDevelop.CSharp.Refactoring.CodeIssues\NamingInspection\PsMonoNameConventionPolicy.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -408,7 +410,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\external\NRefactory\ICSharpCode.NRefactory.PlayScript\ICSharpCode.NRefactory.PlayScript.csproj">
-      <Project>{53DCA265-3C3C-42F9-B647-F72BA678122B}</Project>
+      <Project>{0D8EC1C8-9706-4D8B-96F2-8636F2C9F894}</Project>
       <Name>ICSharpCode.NRefactory.PlayScript</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\monodevelop\main\contrib\ICSharpCode.Decompiler\ICSharpCode.Decompiler.csproj">
@@ -416,7 +418,7 @@
       <Name>ICSharpCode.Decompiler</Name>
     </ProjectReference>
     <ProjectReference Include="..\external\NRefactory\ICSharpCode.NRefactory.PlayScript.Refactoring\ICSharpCode.NRefactory.PlayScript.Refactoring.csproj">
-      <Project>{2A705FC6-1A9E-4941-9E47-254D79F2D9D5}</Project>
+      <Project>{D9654D35-F86C-4105-B4E6-FAA656487BF8}</Project>
       <Name>ICSharpCode.NRefactory.PlayScript.Refactoring</Name>
     </ProjectReference>
     <ProjectReference Include="..\external\ikvm\reflect\IKVM.Reflection.csproj">
@@ -424,7 +426,7 @@
       <Name>IKVM.Reflection</Name>
     </ProjectReference>
     <ProjectReference Include="..\external\NRefactory\ICSharpCode.NRefactory.IKVM\ICSharpCode.NRefactory.PlayScript.IKVM.csproj">
-      <Project>{A727169F-D94F-443F-B305-B057D7F3B420}</Project>
+      <Project>{6FBE63EB-4D01-4BED-BC3E-F4AB31AB7D6F}</Project>
       <Name>ICSharpCode.NRefactory.PlayScript.IKVM</Name>
     </ProjectReference>
   </ItemGroup>

@@ -1,4 +1,4 @@
-<MonoNameConventionPolicy>
+<PsMonoNameConventionPolicy>
 	<Rules>
 		<NamingRule>
 			<Name>Namespaces</Name>
@@ -10,7 +10,7 @@
 		</NamingRule>
 		<NamingRule>
 			<Name>Types</Name>
-			<AffectedEntity>Class, Struct, Enum, Delegate</AffectedEntity>
+			<AffectedEntity>Class, Struct, Enum, Function</AffectedEntity>
 			<VisibilityMask>VisibilityMask</VisibilityMask>
 			<NamingStyle>PascalCase</NamingStyle>
 			<IncludeInstanceMembers>True</IncludeInstanceMembers>
@@ -176,4 +176,4 @@
 			<IncludeStaticEntities>True</IncludeStaticEntities>
 		</NamingRule>
 	</Rules>
-</MonoNameConventionPolicy>
+</PsMonoNameConventionPolicy>

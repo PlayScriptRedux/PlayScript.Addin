@@ -34,6 +34,9 @@ using ICSharpCode.NRefactory.PlayScript.Refactoring;
 namespace MonoDevelop.PlayScript.Refactoring.CodeIssues
 {
 //	[PolicyType ("Naming Conventions Policy")]
+//	PlayScript naming Conventions Policy
+
+	[PolicyType ("PlayScript Naming Conventions Policy")]
 	class PsNameConventionPolicy : IEquatable<PsNameConventionPolicy>
 	{
 		NameConventionRule[] rules = new NameConventionRule[0];

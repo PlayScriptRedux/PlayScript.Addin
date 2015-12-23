@@ -476,17 +476,17 @@ namespace MonoDevelop.PlayScript.Highlighting
 
 		public CSharpSyntaxMode (Document document)
 		{
-			var foo = System.Reflection.Assembly.GetCallingAssembly ();
-			var resourceNames = foo.GetManifestResourceNames ().Where (s => s.Contains ("Policy.xml"));
-			foreach(string resourceName in resourceNames)
-			{
-				Console.WriteLine(resourceName);
-			}
-			resourceNames = foo.GetManifestResourceNames ().Where (s => !s.Contains ("Policy.xml"));
-			foreach(string resourceName in resourceNames)
-			{
-				Console.WriteLine(resourceName);
-			}
+//			var foo = System.Reflection.Assembly.GetCallingAssembly ();
+//			var resourceNames = foo.GetManifestResourceNames ().Where (s => s.Contains ("Policy.xml"));
+//			foreach(string resourceName in resourceNames)
+//			{
+//				Console.WriteLine(resourceName);
+//			}
+//			resourceNames = foo.GetManifestResourceNames ().Where (s => !s.Contains ("Policy.xml"));
+//			foreach(string resourceName in resourceNames)
+//			{
+//				Console.WriteLine(resourceName);
+//			}
 
 			this.guiDocument = document;
 			guiDocument.DocumentParsed += HandleDocumentParsed;
@@ -500,7 +500,6 @@ namespace MonoDevelop.PlayScript.Highlighting
 				var resourceName = thisAssembly.GetManifestResourceNames ().First (s => s.Contains ("PlayScriptSyntaxMode"));
 				Console.WriteLine(resourceName);
 				var provider = new ResourceStreamProvider (thisAssembly, resourceName);
-
 //				var provider = new ResourceStreamProvider (typeof(ResourceStreamProvider).Assembly, typeof(ResourceStreamProvider).Assembly.GetManifestResourceNames ().First (s => s.Contains ("PlayScriptSyntaxMode")));
 				using (var reader = provider.Open ()) {
 					SyntaxMode baseMode = SyntaxMode.Read (reader);

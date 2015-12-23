@@ -1,7 +1,7 @@
 <ExtensionModel>
 	<Extension path="/MonoDevelop/SourceEditor2/SyntaxModes">
-		<Templates resource="PlayScriptBinding.SyntaxMode.ActionScriptSyntaxMode.xml" />
-		<Templates resource="PlayScriptBinding.SyntaxMode.PlayScriptSyntaxMode.xml" />
+		<Templates resource="ActionScriptSyntaxMode.xml" />
+		<Templates resource="PlayScriptSyntaxMode.xml" />
 	</Extension>
 	<Extension path="/MonoDevelop/Ide/FileTemplates">
 		<FileTemplate id="PlayScriptEmptyFile" file="templates/PsEmptyFile.xft.xml" />
@@ -82,8 +82,8 @@
 		<Condition id="PackageNotInstalled" name="playscript" version="1.0.0">
 			<Package name="pscorlib" version="1.0.0" clrVersion="Default">
 				<Assembly file="PlayScript.References/pscorlib.dll" />
-				<Assembly file="PlayScript.References/Mono.Playscript.dll" />
 				<Assembly file="PlayScript.References/PlayScript.Dynamic.dll" />
+				<Assembly file="PlayScript.References/Mono.Playscript.dll" />
 				<Assembly file="PlayScript.References/PlayScript.Optimization.dll" />
 			</Package>
 			<Package name="pscorlib_aot" version="1.0.0" clrVersion="Default">
@@ -94,23 +94,9 @@
 			</Package>
 		</Condition>
 	</Extension>
-		<Extension path="/MonoDevelop/Core/SupportPackages">
-		<Condition id="PackageNotInstalled" name="playscript" version="1.0.0">
-			<Package name="pscorlib" version="1.0.0" clrVersion="Default">
-				<Assembly file="PlayScript.References/pscorlib.dll" />
-				<Assembly file="PlayScript.References/Mono.Playscript.dll" />
-				<Assembly file="PlayScript.References/PlayScript.Dynamic.dll" />
-				<Assembly file="PlayScript.References/PlayScript.Optimization.dll" />
-				<Assembly file="PlayScript.References/pscorlib_aot.dll" />
-				<Assembly file="PlayScript.References/PlayScript.Dynamic_aot.dll" />
-				<Assembly file="PlayScript.References/Mono.Playscript.dll" />
-				<Assembly file="PlayScript.References/PlayScript.Optimization.dll" />
-			</Package>
-		</Condition>
-	</Extension>
 
 	<Extension path = "/MonoDevelop/Ide/ReferenceFinder">
-		<ReferenceFinder supportedmimetypes = "text/x-csharp,text/x-actionscript,text/x-playscript"
+		<ReferenceFinder supportedmimetypes = "text/x-actionscript,text/x-playscript"
 		                 class = "MonoDevelop.PlayScript.Refactoring.CSharpReferenceFinder" />
 	</Extension>
 
@@ -157,6 +143,16 @@
 	<Extension path = "/MonoDevelop/TypeSystem/CodeGenerators">
 		<Generator class="MonoDevelop.PlayScript.Refactoring.CSharpCodeGenerator" mimeType = "text/x-actionscript" />
 		<Generator class="MonoDevelop.PlayScript.Refactoring.CSharpCodeGenerator" mimeType = "text/x-playscript" />		
+	</Extension>
+
+	<Extension path = "/MonoDevelop/ProjectModel/Gui/DefaultPolicyPanels/SourceCode">
+		<Section id="PlayScriptNameConventions" _label="PlayScript Name Conventions" fill = "true" class="MonoDevelop.PlayScript.Refactoring.CodeIssues.NameConventionPanel" icon="md-prefs-name-conventions" />
+	</Extension>
+	<Extension path = "/MonoDevelop/ProjectModel/Gui/ItemOptionPanels/SourceCode">
+		<Section id="PlayScriptNameConventions" _label="PlayScript Name Conventions" fill = "true" class="MonoDevelop.PlayScript.Refactoring.CodeIssues.NameConventionPanel" icon="md-prefs-name-conventions" />
+	</Extension>
+	<Extension path = "/MonoDevelop/Ide/GlobalOptionsDialog/SourceCode">
+		<Section id="PlayScriptNameConventions" _label="PlayScript Name Conventions" fill = "true" class="MonoDevelop.PlayScript.Refactoring.CodeIssues.NameConventionPanel" icon="md-prefs-name-conventions" />
 	</Extension>
 
 	<Extension path = "/MonoDevelop/ProjectModel/PolicySets/Mono" >
@@ -207,17 +203,6 @@
 				shortcut = "Alt|Insert"
 				macShortcut = "Meta|I" />
 	</Extension>-->
-	<!--	<Extension path="/MonoDevelop/Core/SupportPackages">
-		<Condition id="PackageNotInstalled" name="playscript">
-			<Package name="playscript" clrVersion="Default">
-				<Assembly file="pscorlib.dll" />
-	  			<Assembly file="PlayScript.Dynamic.dll" />
-	  			<Assembly file="Mono.PlayScript.dll" />
-				<Assembly file="pscorlib_aot.dll" />
-				<Assembly file="PlayScript.Dynamic_aot.dll" />
-			</Package>
-		</Condition>
-	</Extension>-->
 	<!--	<Extension path = "/MonoDevelop/ProjectModel/MSBuildItemTypes">
 		<DotNetProject
 			language="C#"
@@ -236,48 +221,13 @@
 			</DotNetProjectSubtype>
 		</Condition>
 	</Extension>-->
-	<!--	<Extension path = "/MonoDevelop/ProjectModel/LanguageBindings">
-		<LanguageBinding id    = "CSharp"
-		                 supportedextensions = ".cs"
-		                 class = "MonoDevelop.CSharp.CSharpLanguageBinding" />
-	</Extension>-->
+
 	<Extension path = "/MonoDevelop/ProjectModel/SerializableClasses">
-		<DataType class = "MonoDevelop.CSharp.Project.CSharpCompilerParameters" />
-		<DataType class = "MonoDevelop.CSharp.Project.CSharpProjectParameters" />
+		<DataType class = "MonoDevelop.PlayScript.Project.CSharpCompilerParameters" />
+		<DataType class = "MonoDevelop.PlayScript.Project.CSharpProjectParameters" />
 	</Extension>-->
 
-	<!--		<Class fileExtensions = ".play" class = "MonoDevelop.CSharp.Formatting.CSharpTextEditorIndentation" />
-		<Class fileExtensions = ".play" class = "MonoDevelop.CSharp.Completion.CSharpCompletionTextEditorExtension" />
-		<Class fileExtensions = ".play" class = "MonoDevelop.CSharp.Highlighting.HighlightUsagesExtension" />
-		<Class fileExtensions = ".play" class = "MonoDevelop.CSharp.PathedDocumentTextEditorExtension" />
-		<Class fileExtensions = ".play" class = "MonoDevelop.CSharp.UnitTestTextEditorExtension" />
-		<Class fileExtensions = ".as" class = "MonoDevelop.CSharp.Formatting.CSharpTextEditorIndentation" />
-		<Class fileExtensions = ".as" class = "MonoDevelop.CSharp.Completion.CSharpCompletionTextEditorExtension" />
-		<Class fileExtensions = ".as" class = "MonoDevelop.CSharp.Highlighting.HighlightUsagesExtension" />
-		<Class fileExtensions = ".as" class = "MonoDevelop.CSharp.PathedDocumentTextEditorExtension" />
-		<Class fileExtensions = ".as" class = "MonoDevelop.CSharp.UnitTestTextEditorExtension" />
-	</Extension>-->
-	<!--	<Extension path = "/MonoDevelop/Ide/CodeFormatters">
-		<Formatter mimeType="text/x-playscript" class="MonoDevelop.CSharp.Formatting.CSharpFormatter" />
-	</Extension>
-
-	<Extension path = "/MonoDevelop/TypeSystem/Ambiences">
-		<Ambience mimeType="text/x-playscript" class = "MonoDevelop.CSharp.CSharpAmbience" />
-	</Extension>
-
-	<Extension path = "/MonoDevelop/TypeSystem/Parser">
-		<Parser class="MonoDevelop.CSharp.Parser.TypeSystemParser" mimeType = "text/x-playscript" />
-	</Extension>
-
-	<Extension path = "/MonoDevelop/TypeSystem/FoldingParser">
-		<Parser class = "MonoDevelop.CSharp.Parser.CSharpFoldingParser" mimeType="text/x-playscript" />
-	</Extension>
-
-	<Extension path = "/MonoDevelop/TypeSystem/CodeGenerators">
-		<Generator class="MonoDevelop.CSharp.Refactoring.CSharpCodeGenerator" mimeType = "text/x-playscript" />
-	</Extension>
-	
-
+	<!--	
 	<Extension path = "/MonoDevelop/Refactoring/CodeActions">
 		<Action mimeType="text/x-playscript"
 			_title = "Move type to another file"
@@ -288,39 +238,42 @@
 			_description = "Converts constant fields to enumeration"
 			class = "MonoDevelop.CSharp.Refactoring.CodeActions.ConvertToEnumAction" />
 	</Extension>
-	
+-->
+
+	<Extension path = "/MonoDevelop/Ide/TextEditorResolver">
+		<Resolver class = "MonoDevelop.PlayScript.Resolver.TextEditorResolverProvider" mimeType="text/x-playscript" />
+	</Extension>
+
 	<Extension path = "/MonoDevelop/Refactoring/CodeIssues">
 		<CodeIssue mimeType="text/x-playscript" severity = "Error" class="MonoDevelop.CSharp.Refactoring.CodeIssues.MonoTODOIssue"/>
 	</Extension>
-	
-	<Extension path = "/MonoDevelop/Ide/TextEditorResolver">
-		<Resolver class = "MonoDevelop.CSharp.Resolver.TextEditorResolverProvider" mimeType="text/x-playscript" />
-	</Extension>-->
-	<!--	<Extension path = "/MonoDevelop/Ide/Commands/TextEditor">
+
+	<Extension path = "/MonoDevelop/Ide/Commands/TextEditor">
 		<Command id = "MonoDevelop.CSharp.Highlighting.MoveToUsagesCommand.PrevUsage"
-		         defaultHandler = "MonoDevelop.CSharp.Highlighting.MoveToPrevUsageHandler"
+		         defaultHandler = "MonoDevelop.PlayScript.Highlighting.MoveToPrevUsageHandler"
 		         shortcut = "Ctrl|Shift|Up"
 		         macShortcut = "Meta|Shift|Up"
 		         _label = "_Move to prev usage"/>
 		<Command id = "MonoDevelop.CSharp.Highlighting.MoveToUsagesCommand.NextUsage"
-		         defaultHandler = "MonoDevelop.CSharp.Highlighting.MoveToNextUsageHandler"
+		         defaultHandler = "MonoDevelop.PlayScript.Highlighting.MoveToNextUsageHandler"
 		         shortcut = "Ctrl|Shift|Down"
 		         macShortcut = "Meta|Shift|Down"
 		         _label = "_Move to next usage"/>
 
 		<Command id = "MonoDevelop.CSharp.ExpandCommands.ExpandSelection"
-		         defaultHandler = "MonoDevelop.CSharp.ExpandSelectionHandler"
+		         defaultHandler = "MonoDevelop.PlayScript.ExpandSelectionHandler"
 		         shortcut = "Alt|Shift|Up"
 		         macShortcut = "Alt|Shift|Up"
 		         _label = "_Expand selection"/>
 
 		<Command id = "MonoDevelop.CSharp.ExpandCommands.ShrinkSelection"
-		         defaultHandler = "MonoDevelop.CSharp.ShrinkSelectionHandler"
+		         defaultHandler = "MonoDevelop.PlayScript.ShrinkSelectionHandler"
 		         shortcut = "Alt|Shift|Down"
 		         macShortcut = "Alt|Shift|Down"
 		         _label = "_Shrink selection"/>
-	</Extension>-->
-	<!--	<Extension path = "/MonoDevelop/Refactoring/CodeGenerators">
+	</Extension>
+
+	<Extension path = "/MonoDevelop/Refactoring/CodeGenerators">
 		<Class class = "MonoDevelop.CodeGeneration.CreateConstructorGenerator" />
 		<Class class = "MonoDevelop.CodeGeneration.ReadonlyPropertyGenerator" />
 		<Class class = "MonoDevelop.CodeGeneration.PropertyGenerator" />
@@ -334,22 +287,13 @@
 		<Class class = "MonoDevelop.CodeGeneration.EqualityMembersGenerator" />
 		<Class class = "MonoDevelop.CodeGeneration.WriteLineGenerator" />
 	</Extension>-->
-	<!--	<Extension path = "/MonoDevelop/Refactoring/CodeActionSource">
-		<Source class ="MonoDevelop.CSharp.Refactoring.CodeActions.NRefactoryCodeActionSource"/>
+
+	<Extension path = "/MonoDevelop/Refactoring/CodeActionSource">
+		<Source class ="MonoDevelop.PlayScript.Refactoring.CodeActions.NRefactoryCodeActionSource"/>
 	</Extension>
 
 	<Extension path = "/MonoDevelop/Refactoring/CodeIssueSource">
-		<Source class ="MonoDevelop.CSharp.Refactoring.CodeIssues.NRefactoryCodeIssueSource"/>
-	</Extension>
-
-	<Extension path = "/MonoDevelop/ProjectModel/Gui/DefaultPolicyPanels/SourceCode">
-		<Section id="NameConventions" _label="Name Conventions" fill = "true" class="MonoDevelop.CSharp.Refactoring.CodeIssues.NameConventionPanel" icon="md-prefs-name-conventions" />
-	</Extension>
-	<Extension path = "/MonoDevelop/ProjectModel/Gui/ItemOptionPanels/SourceCode">
-		<Section id="NameConventions" _label="Name Conventions" fill = "true" class="MonoDevelop.CSharp.Refactoring.CodeIssues.NameConventionPanel" icon="md-prefs-name-conventions" />
-	</Extension>
-	<Extension path = "/MonoDevelop/Ide/GlobalOptionsDialog/SourceCode">
-		<Section id="NameConventions" _label="Name Conventions" fill = "true" class="MonoDevelop.CSharp.Refactoring.CodeIssues.NameConventionPanel" icon="md-prefs-name-conventions" />
+		<Source class ="MonoDevelop.PlayScript.Refactoring.CodeIssues.NRefactoryCodeIssueSource"/>
 	</Extension>
 
 	<Extension path = "/MonoDevelop/SourceEditor2/TooltipProviders">
@@ -358,5 +302,5 @@
 	
 	<Extension path = "/MonoDevelop/Ide/CompletionCharacters">
 		<Complete language="PlayScript" commitOnSpace="True" commitChars="{}[]().,:;+-*/%&amp;|^!~=&lt;&gt;?@#'&quot;\"/>
-	</Extension>-->
+	</Extension>
 </ExtensionModel>
