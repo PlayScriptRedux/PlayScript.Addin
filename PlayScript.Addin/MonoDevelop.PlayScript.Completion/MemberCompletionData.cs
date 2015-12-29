@@ -464,7 +464,7 @@ namespace MonoDevelop.PlayScript.Completion
 						}
 						formatter.Space ();
 					} else if (node is DelegateDeclaration) {
-						formatter.WriteKeyword (Roles.DelegateKeyword, "delegate");
+						formatter.WriteKeyword (Roles.DelegateKeyword, "function");
 						formatter.Space ();
 					} else if (node is EventDeclaration) {
 						formatter.WriteKeyword (EventDeclaration.EventKeywordRole, "event");
