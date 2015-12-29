@@ -47,7 +47,7 @@ namespace MonoDevelop.PlayScript
 		
 		public BuildResult Compile (ProjectItemCollection projectItems, DotNetProjectConfiguration configuration, ConfigurationSelector configSelector, IProgressMonitor monitor)
 		{
-			return CSharpBindingCompilerManager.Compile (projectItems, configuration, configSelector, monitor);
+			return PlayScriptBindingCompilerManager.Compile (projectItems, configuration, configSelector, monitor);
 		}
 		
 		public ConfigurationParameters CreateCompilationParameters (XmlElement projectOptions)
