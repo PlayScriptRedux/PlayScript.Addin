@@ -24,24 +24,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
-using MonoDevelop.Ide.Gui.Content;
-using MonoDevelop.Core;
-using Mono.TextEditor;
-using System.Text;
-using MonoDevelop.Ide.Gui;
-using MonoDevelop.Ide;
-using ICSharpCode.NRefactory.PlayScript.Resolver;
-using ICSharpCode.NRefactory.TypeSystem;
-using MonoDevelop.Ide.TypeSystem;
-using ICSharpCode.NRefactory.PlayScript;
-using System.Linq;
 using System.Collections.Generic;
-using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory;
-using ICSharpCode.NRefactory.PlayScript.TypeSystem;
+using System.Linq;
+using System.Text;
 using System.Threading;
-using MonoDevelop.Refactoring;
+using ICSharpCode.NRefactory;
+using ICSharpCode.NRefactory.PlayScript;
 using ICSharpCode.NRefactory.PlayScript.Refactoring;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
+using ICSharpCode.NRefactory.PlayScript.TypeSystem;
+using ICSharpCode.NRefactory.Semantics;
+using ICSharpCode.NRefactory.TypeSystem;
+using Mono.TextEditor;
+using MonoDevelop.Core;
+using MonoDevelop.Ide;
+using MonoDevelop.Ide.Gui;
+using MonoDevelop.Ide.Gui.Content;
+using MonoDevelop.Ide.TypeSystem;
+using MonoDevelop.Refactoring;
 
 namespace MonoDevelop.PlayScript.Resolver
 {
@@ -124,13 +124,12 @@ namespace MonoDevelop.PlayScript.Resolver
 			}
 			return state.LookupSimpleNameOrTypeName (expression, list, NameLookupMode.Expression);
 		}
-		
-		
+
 		static string paramStr = GettextCatalog.GetString ("Parameter");
 		static string localStr = GettextCatalog.GetString ("Local variable");
 		static string methodStr = GettextCatalog.GetString ("Method");
 
-		static string namespaceStr = GettextCatalog.GetString ("Namespace");		
+		static string namespaceStr = GettextCatalog.GetString ("Import");		
 		static string GetString (IType type)
 		{
 			switch (type.Kind) {

@@ -25,47 +25,43 @@
 // THE SOFTWARE.
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Collections.Generic;
-
+using System.Xml;
+using ICSharpCode.NRefactory;
+using ICSharpCode.NRefactory.Completion;
+using ICSharpCode.NRefactory.PlayScript;
+using ICSharpCode.NRefactory.PlayScript.Completion;
+using ICSharpCode.NRefactory.PlayScript.Refactoring;
+using ICSharpCode.NRefactory.PlayScript.Resolver;
+using ICSharpCode.NRefactory.PlayScript.TypeSystem;
+using ICSharpCode.NRefactory.Semantics;
+using ICSharpCode.NRefactory.TypeSystem;
 using Mono.TextEditor;
-
+using MonoDevelop.Components.Commands;
 using MonoDevelop.Core;
 using MonoDevelop.Debugger;
-using MonoDevelop.Projects;
-using MonoDevelop.Ide.Gui;
-//using MonoDevelop.CodeGeneration;
-using MonoDevelop.Ide.TypeSystem;
-using MonoDevelop.Ide.Gui.Content;
-using MonoDevelop.Ide.CodeTemplates;
 using MonoDevelop.Ide.CodeCompletion;
-using MonoDevelop.Components.Commands;
+using MonoDevelop.Ide.CodeTemplates;
+using MonoDevelop.Ide.Gui;
+using MonoDevelop.Ide.Gui.Content;
+using MonoDevelop.Ide.TypeSystem;
+using MonoDevelop.PlayScript.CodeGeneration;
+using MonoDevelop.PlayScript.Formatting;
+using MonoDevelop.PlayScript.Project;
+using MonoDevelop.PlayScript.Refactoring.CodeActions;
+using MonoDevelop.Projects;
+using MonoDevelop.Refactoring;
 
-using ICSharpCode.NRefactory;
-using ICSharpCode.NRefactory.Semantics;
-using ICSharpCode.NRefactory.Completion;
-using ICSharpCode.NRefactory.TypeSystem;
-using ICSharpCode.NRefactory.PlayScript;
-using ICSharpCode.NRefactory.PlayScript.Resolver;
-using ICSharpCode.NRefactory.PlayScript.Completion;
-using ICSharpCode.NRefactory.PlayScript.TypeSystem;
-using ICSharpCode.NRefactory.PlayScript.Refactoring;
-
-using IEntityCompletionData = ICSharpCode.NRefactory.Completion.IEntityCompletionData;
 using ICompletionData = ICSharpCode.NRefactory.Completion.ICompletionData;
+using ICompletionDataFactory = ICSharpCode.NRefactory.PlayScript.Completion.ICompletionDataFactory;
+using IEntityCompletionData = ICSharpCode.NRefactory.Completion.IEntityCompletionData;
 using IParameterDataProvider = ICSharpCode.NRefactory.Completion.IParameterDataProvider;
 using IVariableCompletionData = ICSharpCode.NRefactory.Completion.IVariableCompletionData;
-using ICompletionDataFactory = ICSharpCode.NRefactory.PlayScript.Completion.ICompletionDataFactory;
 
-using MonoDevelop.PlayScript.Project;
-using MonoDevelop.PlayScript.Formatting;
-using MonoDevelop.PlayScript.Refactoring.CodeActions;
-using MonoDevelop.PlayScript.CodeGeneration;
-using MonoDevelop.Refactoring;
-using System.Xml;
 
 namespace MonoDevelop.PlayScript.Completion
 {
@@ -963,7 +959,7 @@ namespace MonoDevelop.PlayScript.Completion
 					if (isInAttributeContext && name.EndsWith("Attribute") && name.Length > "Attribute".Length) {
 						name = name.Substring(0, name.Length - "Attribute".Length);
 					}
-					return name;
+ 					return name;
 				});
 
 				var result = new TypeCompletionData (type, ext,
@@ -1360,7 +1356,7 @@ namespace MonoDevelop.PlayScript.Completion
 
 		internal static string ResolveExpression (TextEditorData editor, ResolveResult result, AstNode node, out int startOffset)
 		{
-			//Console.WriteLine ("result is a {0}", result.GetType ().Name);
+			Console.WriteLine ("result is a {0}", result.GetType ().Name);
 			startOffset = -1;
 
 			if (result is NamespaceResolveResult ||
