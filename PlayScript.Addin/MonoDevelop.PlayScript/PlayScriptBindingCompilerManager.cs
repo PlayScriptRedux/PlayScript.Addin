@@ -1,5 +1,5 @@
 // 
-// CSharpBindingCompilerManager.cs
+// PlayScriptBindingCompilerManager.cs
 //  
 // Author:
 //       Mike Krüger <mkrueger@novell.com>
@@ -31,6 +31,7 @@ using System.Linq;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Text;
+using System.Runtime.InteropServices;
 using Mono.Addins;
 
 using MonoDevelop.Projects;
@@ -45,8 +46,11 @@ using MonoDevelop.Core.ProgressMonitoring;
 
 namespace MonoDevelop.PlayScript
 {
-	static class CSharpBindingCompilerManager
+	static class PlayScriptBindingCompilerManager
 	{	
+		[DllImport ("libc")]
+		private static extern int system (string exec);
+
 		static void AppendQuoted (StringBuilder sb, string option, string val)
 		{
 			sb.Append ('"');
@@ -423,12 +427,20 @@ namespace MonoDevelop.PlayScript
 			if (Platform.IsWindows) {
 				psc_name += ".exe";
 			}
-			string csc = runtime.GetToolPath (fx, psc_name);
-			if (csc != null)
-				return csc;
-			csc = AddinManager.CurrentAddin.GetFilePath (psc_name);
-			if (csc != null)
-				return csc;
+			// Using a runtime that includes the playscript compiler?
+			string psc = runtime.GetToolPath (fx, psc_name);
+			if (psc != null)
+				return psc;
+			psc_name = Path.Combine ("MonoDevelop.PlayScript.SupportPackages", psc_name);
+			psc = AddinManager.CurrentAddin.GetFilePath (psc_name);
+			if (psc != null) {
+				// TODO: Fixme...Hack file perms on script as Addin system does not preserve them...
+				system (String.Format ("chmod u+x \"{0}\"", psc));
+				return psc;
+			}
+			psc = AddinManager.CurrentAddin.GetFilePath (psc_name += ".exe");
+			if (psc != null)
+				return psc;
 			else {
 				string message = GettextCatalog.GetString ("PlayScript compiler not found for {0}.", fx.Name);
 				LoggingService.LogError (message);

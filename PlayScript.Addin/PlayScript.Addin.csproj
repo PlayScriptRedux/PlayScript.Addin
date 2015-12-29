@@ -124,7 +124,6 @@
     <Compile Include="PlayScript.AddinReference.cs" />
     <Compile Include="PlayScript.AddinReferenceCollection.cs" />
     <Compile Include="Properties\PlayScript.AddinInfo.cs" />
-    <Compile Include="MonoDevelop.PlayScript\CSharpBindingCompilerManager.cs" />
     <Compile Include="MonoDevelop.PlayScript\CSharpEnhancedCodeProvider.cs" />
     <Compile Include="MonoDevelop.PlayScript\ExpandSelectionHandler.cs" />
     <Compile Include="MonoDevelop.PlayScript\CSharpAmbience.cs" />
@@ -210,6 +209,7 @@
     <Compile Include="MonoDevelop.PlayScript.Resolver\TextEditorResolverProvider.cs" />
     <Compile Include="MonoDevelop.PlayScript.Resolver\HelperMethods.cs" />
     <Compile Include="MonoDevelop.PlayScript.Tooltips\LanguageItemTooltipProvider.cs" />
+    <Compile Include="MonoDevelop.PlayScript\PlayScriptBindingCompilerManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="icons\actionscript-file-source-32%402x.psd" />
@@ -400,6 +400,9 @@
     <AddinFile Include="..\..\playscript\mcs\class\lib\net_4_5\pscorlib_aot.dll.mdb">
       <Link>MonoDevelop.PlayScript.SupportPackages\pscorlib_aot.dll.mdb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AddinFile>
+    <AddinFile Include="..\..\playscript\mcs\psc\psc">
+      <Link>MonoDevelop.PlayScript.SupportPackages\psc</Link>
     </AddinFile>
   </ItemGroup>
   <ItemGroup>
