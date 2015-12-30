@@ -54,13 +54,10 @@
 		<LanguageBinding id="PlayScript" supportedextensions=".play" class="MonoDevelop.PlayScript.PlayScriptLanguageBinding" />
 	</Extension>
 	<Extension path="/MonoDevelop/ProjectModel/MSBuildItemTypes">
-		<DotNetProject language="PlayScript" extension="psproj" guid="{1fc382b4-0f88-4dbe-994d-7aa7d07975c6}" import="$(MSBuildBinPath)\Microsoft.PlaySharp.targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
-		<DotNetProject language="PlayScript" extension="asproj" guid="{1fc382b4-0f88-4dbe-994d-7aa7d07975c6}" import="$(MSBuildBinPath)\Microsoft.PlaySharp.targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
+		<DotNetProject language="PlayScript" extension="psproj" guid="{464403d2-eb41-442a-a1f1-9bf858b8865f}" import="$(PsBuildBinPath)\PlayScript.Targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpresourceIdBuilder" />
+		<DotNetProject language="ActionScript" extension="asproj" guid="{496fe5ed-847f-4824-ad86-a92108ffcf0}" import="$(PsBuildBinPath)\PlayScript.Targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
 	</Extension>
-	<Extension path="/MonoDevelop/ProjectModel/MSBuildItemTypes">
-		<DotNetProject language="ActionScript" extension="psproj" guid="{1fc382b4-0f88-4dbe-994d-7aa7d07975c6}" import="$(MSBuildBinPath)\Microsoft.CSharp.targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
 		<!--		<DotNetProjectSubtype guid="{1fc382b4-0f88-4dbe-994d-7aa7d07975c6}" type="MonoDevelop.AddinMaker.AddinProject" useXBuild="true" requireXbuild="false" />-->
-	</Extension>
 	<Extension path="/MonoDevelop/ProjectModel/Gui/ItemOptionPanels/Build/General">
 		<Condition id="ActiveLanguage" value="PlayScript">
 			<Panel id="CSharpCompilerOptionsPanel" _label="PlayScript" class="MonoDevelop.PlayScript.Project.CompilerOptionsPanel" />
@@ -182,6 +179,7 @@
 		<Panel id="ActionScriptFormatting" _label="ActionScript Format" mimeType="text/x-actionscript" class="MonoDevelop.PlayScript.Formatting.CSharpFormattingPolicyPanel" />
 		<Panel id="PlayScriptFormatting" _label="PlayScript Format" mimeType="text/x-playscript" class="MonoDevelop.PlayScript.Formatting.CSharpFormattingPolicyPanel" />
 	</Extension>
+
 	<!--	<ConditionType id="MSBuildTargetIsAvailable" type="MonoDevelop.Projects.Formats.MSBuild.TargetsAvailableCondition" />-->
 	<!--	<Extension path = "/MonoDevelop/Ide/Commands">
 		<Command id = "MonoDevelop.CodeGeneration.CodeGenerationCommands.ShowCodeGenerationWindow"
@@ -189,15 +187,16 @@
 				shortcut = "Alt|Insert"
 				macShortcut = "Meta|I" />
 	</Extension>-->
+
 	<Extension path = "/MonoDevelop/ProjectModel/MSBuildItemTypes">
 		<DotNetProject
 			language="PlayScript"
 			extension="psproj"
 			guid="{464403d2-eb41-442a-a1f1-9bf858b8865f}"
-			import="$(PsBuildBinPath)\PlayScript.targets"
+			import="$(PsBuildBinPath)\PlayScript.Targets"
 			resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder"
 			/>
-		<Condition id="MSBuildTargetIsAvailable" target="$(PsBuildBinPath)\PlayScript.Portable.Targets">
+<!--		<Condition id="MSBuildTargetIsAvailable" target="$(PsBuildBinPath)\PlayScript.Portable.Targets">
 			<DotNetProjectSubtype
 				guid="{786C830F-07A1-408B-BD7F-6EE04809D6DB}"
 				type="MonoDevelop.Projects.PortableDotNetProject"
@@ -205,22 +204,22 @@
 				<AddImport language="CPlayScript projects="$(PsBuildBinPath)\PlayScript.Portable.Targets" />
 				<RemoveImport language="CPlayScript projects="$(PsBuildBinPath)\PlayScript.Targets" />
 			</DotNetProjectSubtype>
-		</Condition>
+		</Condition>-->
 	</Extension>
+	<!--No portable libs for ActionScript, only PlayScript-->
 	<Extension path = "/MonoDevelop/ProjectModel/MSBuildItemTypes">
 		<DotNetProject
 			language="PlayScript"
 			extension="asproj"
 			guid="{496fe5ed-847f-4824-ad86-a92108ffcf0f}"
-			import="$(PsBuildBinPath)\PlayScript.targets"
+			import="$(PsBuildBinPath)\PlayScript.Targets"
 			resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder"
 			/>
-		<!--No portable libs for ActionScript, only PlayScript-->
 	</Extension>
 	<Extension path="/MonoDevelop/ProjectModel/SerializableClasses">
 		<DataType class="MonoDevelop.PlayScript.Project.CSharpCompilerParameters" />
 		<DataType class="MonoDevelop.PlayScript.Project.CSharpProjectParameters" />
-	</Extension>--&gt;
+	</Extension>
 
 	<!--	
 	<Extension path = "/MonoDevelop/Refactoring/CodeActions">
@@ -233,12 +232,17 @@
 			_description = "Converts constant fields to enumeration"
 			class = "MonoDevelop.CSharp.Refactoring.CodeActions.ConvertToEnumAction" />
 	</Extension>
---><Extension path="/MonoDevelop/Ide/TextEditorResolver"><Resolver class="MonoDevelop.PlayScript.Resolver.TextEditorResolverProvider" mimeType="text/x-playscript" /></Extension><!--	<Extension path = "/MonoDevelop/Refactoring/CodeIssues">
+-->
+	<Extension path="/MonoDevelop/Ide/TextEditorResolver"><Resolver class="MonoDevelop.PlayScript.Resolver.TextEditorResolverProvider" mimeType="text/x-playscript" /></Extension>
+	<!--	<Extension path = "/MonoDevelop/Refactoring/CodeIssues">
 		<CodeIssue mimeType="text/x-playscript" severity = "Error" class="MonoDevelop.CSharp.Refactoring.CodeIssues.MonoTODOIssue"/>
-	</Extension>--><Extension path="/MonoDevelop/Ide/Commands/TextEditor"><Command id="MonoDevelop.CSharp.Highlighting.MoveToUsagesCommand.PrevUsage" defaultHandler="MonoDevelop.PlayScript.Highlighting.MoveToPrevUsageHandler" shortcut="Ctrl|Shift|Up" macShortcut="Meta|Shift|Up" _label="_Move to prev usage" /><Command id="MonoDevelop.CSharp.Highlighting.MoveToUsagesCommand.NextUsage" defaultHandler="MonoDevelop.PlayScript.Highlighting.MoveToNextUsageHandler" shortcut="Ctrl|Shift|Down" macShortcut="Meta|Shift|Down"
+	</Extension>-->
+
+	<Extension path="/MonoDevelop/Ide/Commands/TextEditor"><Command id="MonoDevelop.CSharp.Highlighting.MoveToUsagesCommand.PrevUsage" defaultHandler="MonoDevelop.PlayScript.Highlighting.MoveToPrevUsageHandler" shortcut="Ctrl|Shift|Up" macShortcut="Meta|Shift|Up" _label="_Move to prev usage" /><Command id="MonoDevelop.CSharp.Highlighting.MoveToUsagesCommand.NextUsage" defaultHandler="MonoDevelop.PlayScript.Highlighting.MoveToNextUsageHandler" shortcut="Ctrl|Shift|Down" macShortcut="Meta|Shift|Down"
 			_label="_Move to next usage" /><Command id="MonoDevelop.CSharp.ExpandCommands.ExpandSelection" defaultHandler="MonoDevelop.PlayScript.ExpandSelectionHandler" shortcut="Alt|Shift|Up" macShortcut="Alt|Shift|Up" _label="_Expand selection" /><Command id="MonoDevelop.CSharp.ExpandCommands.ShrinkSelection" defaultHandler="MonoDevelop.PlayScript.ShrinkSelectionHandler" shortcut="Alt|Shift|Down" macShortcut="Alt|Shift|Down"
 			_label="_Shrink selection" /></Extension><Extension path="/MonoDevelop/Refactoring/CodeGenerators"><Class class="MonoDevelop.CodeGeneration.CreateConstructorGenerator" /><Class class="MonoDevelop.CodeGeneration.ReadonlyPropertyGenerator" /><Class class="MonoDevelop.CodeGeneration.PropertyGenerator" /><Class class="MonoDevelop.CodeGeneration.ImplementInterfaceMembersGenerator" /><Class class="MonoDevelop.CodeGeneration.RequiredProtocolMemberGenerator" /><Class class="MonoDevelop.CodeGeneration.OptionalProtocolMemberGenerator" /><Class class="MonoDevelop.CodeGeneration.PartialGenerator" /><Class class="MonoDevelop.CodeGeneration.OverrideMembersGenerator" /><Class
-			class="MonoDevelop.CodeGeneration.ToStringGenerator" /><Class class="MonoDevelop.CodeGeneration.RaiseEventMethodGenerator" /><Class class="MonoDevelop.CodeGeneration.EqualityMembersGenerator" /><Class class="MonoDevelop.CodeGeneration.WriteLineGenerator" /></Extension>--&gt;
+			class="MonoDevelop.CodeGeneration.ToStringGenerator" /><Class class="MonoDevelop.CodeGeneration.RaiseEventMethodGenerator" /><Class class="MonoDevelop.CodeGeneration.EqualityMembersGenerator" /><Class class="MonoDevelop.CodeGeneration.WriteLineGenerator" />
+	</Extension>
 
 	<Extension path="/MonoDevelop/Refactoring/CodeActionSource"><Source class="MonoDevelop.PlayScript.Refactoring.CodeActions.NRefactoryCodeActionSource" /></Extension><Extension path="/MonoDevelop/Refactoring/CodeIssueSource"><Source class="MonoDevelop.PlayScript.Refactoring.CodeIssues.NRefactoryCodeIssueSource" /></Extension><Extension path="/MonoDevelop/SourceEditor2/TooltipProviders"><Class id="LanguageItem" class="MonoDevelop.SourceEditor.LanguageItemTooltipProvider" /></Extension><Extension path="/MonoDevelop/Ide/CompletionCharacters"><Complete language="PlayScript" commitOnSpace="True"
 			commitChars="{}[]().,:;+-*/%&amp;|^!~=&lt;&gt;?@#'&quot;\" />
@@ -266,11 +270,4 @@
 		 resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
 		<!--<DotNetProjectSubtype guid="{1fc382b4-0f88-4dbe-994d-7aa7d07975c6}" type="MonoDevelop.AddinMaker.AddinProject" useXBuild="true" requireXbuild="false" />-->
 	</Extension>
-<!--		<Extension path="/MonoDevelop/ProjectModel/MSBuildItemTypes">
-		<DotNetProject language="PlayScript" extension="psproj" guid="{464403d2-eb41-442a-a1f1-9bf858b8865f}" type="MonoDevelop.PlayScript.PlayScriptProject"
-		import="$(MSBuildBinPath)\Microsoft.PlaySharp.targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
-		<DotNetProject language="PlayScript" extension="asproj" guid="{496fe5ed-847f-4824-ad86-a92108ffcf0f}" type="MonoDevelop.PlayScript.ActionScriptProject"
-		import="$(MSBuildBinPath)\Microsoft.PlaySharp.targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
-		<!--<DotNetProjectSubtype guid="{1fc382b4-0f88-4dbe-994d-7aa7d07975c6}" type="MonoDevelop.AddinMaker.AddinProject" useXBuild="true" requireXbuild="false" />-->
-	</Extension>-->
 </ExtensionModel>

@@ -13,7 +13,7 @@
 		<CreateManifestResourceNamesDependsOn></CreateManifestResourceNamesDependsOn>
 		<CoreCompileDependsOn></CoreCompileDependsOn>
 
-		<MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildToolsPath)\Microsoft.PlayScript.targets</MSBuildAllProjects>
+		<MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildToolsPath)\PlayScript.Targets</MSBuildAllProjects>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -53,9 +53,9 @@
 
 <!--	PlayScript   -->
 	<PropertyGroup>
-		<PlayScriptBinPath Condition=" '$(PlayScriptBinPath)' == '' ">/Users/sushi/Library/Application Support/XamarinStudio-5.0/LocalInstall/Addins/MonoDevelop.PlayScript.5.10.2/MonoDevelop.PlayScript.SupportPackages</PlayScriptBinPath>
+		<PlayScriptBinPath Condition=" '$(PsBuildBinPath)' == '' ">/Users/sushi/Library/Application Support/XamarinStudio-5.0/LocalInstall/Addins/MonoDevelop.PlayScript.5.10.2/MonoDevelop.PlayScript.SupportPackages</PlayScriptBinPath>
 		<CscToolExe Condition=" '$(CscToolExe)' == '' ">psc</CscToolExe>
-		<CscToolPath Condition=" '$(CscToolPath)' == '' ">$(PlayScriptBinPath)</CscToolPath>
+		<CscToolPath Condition=" '$(CscToolPath)' == '' ">$(PsBuildBinPath)</CscToolPath>
 	</PropertyGroup>
 <!--	PlayScript   -->
 
@@ -66,7 +66,7 @@
 		<Message Text="                       ReferencePath: $(ReferencePath) "/>
         <Message Text="                           ToolsPath: $(ToolsPath) "/>
         <Message Text="            TargetFrameworkDirectory: $(TargetFrameworkDirectory) "/>
-        <Message Text="(P# import)        PlayScriptBinPath: $(PlayScriptBinPath) "/>
+        <Message Text="(P# import)           PsBuildBinPath: $(PsBuildBinPath) "/>
         <Message Text="(C# import)           MSBuildBinPath: $(ToolsPath) "/>
         <Message Text="(F# import)) MSBuildExtensionsPath32: $(MSBuildExtensionsPath32) "/>
         <Message Text="                 AssemblySearchPaths: $(AssemblySearchPaths) "/>
@@ -151,12 +151,12 @@
 		</CreateCSharpManifestResourceName>
 	</Target>
 
-	<Import Project="Microsoft.Common.targets" />
+	<Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
 
 	<!--	PlayScript   -->
 	<Target Name="BeforeResolveReferences">
   		<CreateProperty
-    		Value="/Users/sushi/code/redux/PlayScript.Addin/PlayScript.Addin/MSBuild.targets;$(AssemblySearchPaths)">
+    		Value="$(AssemblySearchPaths);$(PsBuildBinPath)">
     	    <Output TaskParameter="Value" PropertyName="AssemblySearchPaths" />
         </CreateProperty>
         <Message Text="                 AssemblySearchPaths: $(AssemblySearchPaths) "/>
