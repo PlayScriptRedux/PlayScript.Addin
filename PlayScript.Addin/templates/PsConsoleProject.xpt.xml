@@ -4,7 +4,7 @@
 	<TemplateConfiguration>
 		<_Name>PlayScript Console Project</_Name>
 		<Category>other/net/general</Category>
-		<Icon>md-project-console</Icon>
+		<Icon>md-playscript-project</Icon>
 		<LanguageName>PlayScript</LanguageName>
 		<_Description>Creates a new PlayScript console project</_Description>
 		<DefaultFilename>ConsoleProject</DefaultFilename>

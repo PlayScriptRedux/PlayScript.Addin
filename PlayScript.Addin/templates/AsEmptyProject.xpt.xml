@@ -4,7 +4,7 @@
 	<TemplateConfiguration>
 		<_Name>Empty Project</_Name>
 		<Category>other/net/general</Category>
-		<Icon>md-project</Icon>
+		<Icon>md-playscript-project</Icon>
 		<LanguageName>ActionScript</LanguageName>
 		<_Description>Creates an empty ActionScript project</_Description>
 		<DefaultFilename>EmptyProject</DefaultFilename>

@@ -4,7 +4,7 @@
 	<TemplateConfiguration>
 		<_Name>Empty Project</_Name>
 		<Category>other/net/general</Category>
-		<Icon>md-project</Icon>
+		<Icon>md-playscript-project</Icon>
 		<LanguageName>PlayScript</LanguageName>
 		<_Description>Creates an empty PlayScript project</_Description>
 		<DefaultFilename>EmptyProject</DefaultFilename>
