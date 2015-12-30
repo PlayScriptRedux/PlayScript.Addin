@@ -42,6 +42,9 @@
 		<MimeType id="text/x-playscript" _description="PlayScript source code" icon="md-playscript-file" isText="true">
 			<File pattern="*.play" />
 		</MimeType>
+		<MimeType id="application/asproject+xml" _description="ActionScript project file" baseType="application/xml">
+			<File pattern="*.asproj" />
+		</MimeType>
 		<MimeType id="text/x-actionscript" _description="ActionScript source code" icon="md-actionscript-file" isText="true">
 			<File pattern="*.as" />
 		</MimeType>
@@ -50,9 +53,9 @@
 		<LanguageBinding id="ActionScript" supportedextensions=".as" class="MonoDevelop.PlayScript.ActionScriptLanguageBinding" />
 		<LanguageBinding id="PlayScript" supportedextensions=".play" class="MonoDevelop.PlayScript.PlayScriptLanguageBinding" />
 	</Extension>
-	<!--    <DotNetProject language="F#" extension="fsproj" guid="{f2a71f9b-5d33-465a-a702-920d77279786}" import="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets"  resourceHandler="MonoDevelop.FSharp.FSharpResourceIdBuilder"/>-->
 	<Extension path="/MonoDevelop/ProjectModel/MSBuildItemTypes">
-		<DotNetProject language="PlayScript" extension="psproj" guid="{1fc382b4-0f88-4dbe-994d-7aa7d07975c6}" import="$(MSBuildBinPath)\Microsoft.CSharp.targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
+		<DotNetProject language="PlayScript" extension="psproj" guid="{1fc382b4-0f88-4dbe-994d-7aa7d07975c6}" import="$(MSBuildBinPath)\Microsoft.PlaySharp.targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
+		<DotNetProject language="PlayScript" extension="asproj" guid="{1fc382b4-0f88-4dbe-994d-7aa7d07975c6}" import="$(MSBuildBinPath)\Microsoft.PlaySharp.targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
 	</Extension>
 	<Extension path="/MonoDevelop/ProjectModel/MSBuildItemTypes">
 		<DotNetProject language="ActionScript" extension="psproj" guid="{1fc382b4-0f88-4dbe-994d-7aa7d07975c6}" import="$(MSBuildBinPath)\Microsoft.CSharp.targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
@@ -228,4 +231,27 @@
 			class="MonoDevelop.CodeGeneration.ToStringGenerator" /><Class class="MonoDevelop.CodeGeneration.RaiseEventMethodGenerator" /><Class class="MonoDevelop.CodeGeneration.EqualityMembersGenerator" /><Class class="MonoDevelop.CodeGeneration.WriteLineGenerator" /></Extension>--&gt;
 
 	<Extension path="/MonoDevelop/Refactoring/CodeActionSource"><Source class="MonoDevelop.PlayScript.Refactoring.CodeActions.NRefactoryCodeActionSource" /></Extension><Extension path="/MonoDevelop/Refactoring/CodeIssueSource"><Source class="MonoDevelop.PlayScript.Refactoring.CodeIssues.NRefactoryCodeIssueSource" /></Extension><Extension path="/MonoDevelop/SourceEditor2/TooltipProviders"><Class id="LanguageItem" class="MonoDevelop.SourceEditor.LanguageItemTooltipProvider" /></Extension><Extension path="/MonoDevelop/Ide/CompletionCharacters"><Complete language="PlayScript" commitOnSpace="True"
-			commitChars="{}[]().,:;+-*/%&amp;|^!~=&lt;&gt;?@#'&quot;\" /></Extension></ExtensionModel>
+			commitChars="{}[]().,:;+-*/%&amp;|^!~=&lt;&gt;?@#'&quot;\" />
+	</Extension>
+<!--	<ExtensionPoint path = "/MonoDevelop/ProjectModel/UnknownMSBuildProjectTypes" name = "Unknown MSBuild project types">
+		<Description>Project types not supported by MonoDevelop</Description>
+		<ExtensionNode name="ProjectType" type="MonoDevelop.Projects.Extensions.UnknownProjectTypeNode"/>
+	</ExtensionPoint>-->
+<!--		<ExtensionPoint path = "/MonoDevelop/ProjectModel/MSBuildImportRedirects" name = "MSBuild import redirects">
+		<Description>Allows replacing an import by another one when a project is evaluated</Description>
+		<ExtensionNode name="Import" type="MonoDevelop.Projects.Extensions.ImportRedirectTypeNode"/>
+	</ExtensionPoint>-->
+<!--	<ExtensionPoint path = "/MonoDevelop/ProjectModel/MSBuildProjectItemTypes" name = "MSBuild project item subclasses">
+		<Description>Allows defining ProjectItem subclasses to be used for specific msbuild project items</Description>
+		<ExtensionNode name="Item" customAttributeType="MonoDevelop.Projects.ExportProjectItemTypeAttribute" />
+	</ExtensionPoint>-->
+	<Extension path = "/MonoDevelop/ProjectModel/UnknownMSBuildProjectTypes">
+			<ProjectType guid = "{464403d2-eb41-442a-a1f1-9bf858b8865f}" name = "PlayScript" extension="psproj" addin = "PlayScript" />
+			<ProjectType guid = "{496fe5ed-847f-4824-ad86-a92108ffcf0f}" name = "ActionScript" extension="asproj" addin = "PlayScript" />
+	</Extension>
+	<Extension path="/MonoDevelop/ProjectModel/MSBuildItemTypes">
+		<DotNetProject language="PlayScript" extension="psproj" guid="{464403d2-eb41-442a-a1f1-9bf858b8865f}" import="$(MSBuildBinPath)\Microsoft.PlaySharp.targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
+		<DotNetProject language="PlayScript" extension="asproj" guid="{496fe5ed-847f-4824-ad86-a92108ffcf0f}" import="$(MSBuildBinPath)\Microsoft.PlaySharp.targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
+		<!--<DotNetProjectSubtype guid="{1fc382b4-0f88-4dbe-994d-7aa7d07975c6}" type="MonoDevelop.AddinMaker.AddinProject" useXBuild="true" requireXbuild="false" />-->
+	</Extension>
+</ExtensionModel>
