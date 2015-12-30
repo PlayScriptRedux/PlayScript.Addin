@@ -1,26 +1,20 @@
 <?xml version="1.0"?>
-<Template Originator="Ben Cooley" Language="PlayScript" Created="3/09/2001" LastModified="3/09/2013">
-	
+<Template Originator="PlayScript" Language="PlayScript" Created="3/09/2001" LastModified="12/29/2015">
 	<TemplateConfiguration>
 		<_Name>Empty ActionScript Class</_Name>
 		<Icon>md-class-file</Icon>
-		<_Category>ActionScript</_Category>
+		<_Category>PlayScript</_Category>
 		<LanguageName>PlayScript</LanguageName>
 		<_Description>Creates an empty ActionScript class file.</_Description>
 	</TemplateConfiguration>
-	
 	<TemplateFiles>
-		<File DefaultExtension=".as" DefaultName="MyClass" AddStandardHeader="True">
-<![CDATA[package ${Namespace}
+		<File DefaultExtension=".as" DefaultName="MyClass" AddStandardHeader="True"><![CDATA[package ${Namespace}
 {
 	public class ${Name}
 	{
 	
 	}
-}]]>		
-		</File>
+}]]></File>
 	</TemplateFiles>
-	
-	<FileOptions/>
-	
+	<FileOptions />
 </Template>

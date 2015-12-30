@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<Template Originator="Ben Cooley" Language="PlayScript" Created="3/09/2001" LastModified="3/09/2013">
+<Template Originator="PlayScript" Language="PlayScript" Created="3/09/2001" LastModified="12/29/2015">
 	<TemplateConfiguration>
-		<_Name>Empty File</_Name>
+		<_Name>Empty PlayScript File</_Name>
 		<Icon>md-text-file-icon</Icon>
-		<_Category>General</_Category>
+		<_Category>PlayScript</_Category>
 		<LanguageName>PlayScript</LanguageName>
 		<_Description>Creates an empty PlayScript file</_Description>
 		<DefaultFilename>EmptyPlayScriptFile</DefaultFilename>
