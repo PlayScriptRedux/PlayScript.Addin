@@ -1,9 +1,5 @@
 <?xml version="1.0"?>
-<Template
-	Originator="Michael Hutchinson"
-	Created="2007/12/13"
-	LastModified="2007/12/13">
-
+<Template Originator="Michael Hutchinson" Created="2007/12/13" LastModified="2007/12/13">
 	<!-- Template Header -->
 	<TemplateConfiguration>
 		<_Name>Assembly Information</_Name>
@@ -13,15 +9,12 @@
 		<DefaultFilename IsFixed="True">AssemblyInfo.cs</DefaultFilename>
 		<_Description>A file defining assembly information attributes.</_Description>
 	</TemplateConfiguration>
-	
 	<Conditions>
-		<ParentProject PermittedCreationPaths="" ExcludedFiles="AssemblyInfo.cs" RequireProject="True"/>
+		<ParentProject PermittedCreationPaths="" ExcludedFiles="AssemblyInfo.cs" RequireProject="True" />
 	</Conditions>
-
 	<!-- Template Content -->
 	<TemplateFiles>
-        <File name="Properties/AssemblyInfo.cs" AddStandardHeader="True">
-			<![CDATA[using System.Reflection;
+		<File name="Properties/AssemblyInfo.cs" AddStandardHeader="True"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
 
 // Information about this assembly is defined by the following attributes. 
