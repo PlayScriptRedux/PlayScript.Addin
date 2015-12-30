@@ -5,24 +5,6 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<PlayScriptBinPath Condition=" '$(PlayScriptBinPath)' == '' ">/Users/sushi/Library/Application Support/XamarinStudio-5.0/LocalInstall/Addins/MonoDevelop.PlayScript.5.10.2/MonoDevelop.PlayScript.SupportPackages</PlayScriptBinPath>
-		<CscToolExe Condition=" '$(CscToolExe)' == '' ">psc</CscToolExe>
-		<CscToolPath Condition=" '$(CscToolPath)' == '' ">$(PlayScriptBinPath)</CscToolPath>
-		<AssemblySearchPaths Condition=" '$(AssemblySearchPaths)' == '' ">
-			/Users/sushi/Library/Application Support/XamarinStudio-5.0/LocalInstall/Addins/MonoDevelop.PlayScript.5.10.2/MonoDevelop.PlayScript.SupportPackages;
-		    {CandidateAssemblyFiles};
-		    $(ReferencePath);
-		    {HintPathFromItem};
-		    {TargetFrameworkDirectory};
-		    {Registry:$(FrameworkRegistryBase),$(TargetFrameworkVersion),$(AssemblyFoldersSuffix)$(AssemblyFoldersExConditions)};
-		    {AssemblyFolders};
-		    {GAC};
-		    {RawFileName};
-		    $(OutputPath)
-	   </AssemblySearchPaths>
-	</PropertyGroup>
-
-	<PropertyGroup>
 		<DebugSymbols Condition=" '$(DebugType)' == 'none' ">false</DebugSymbols>
 		<DebugType    Condition=" '$(DebugType)' == 'none' "></DebugType>
 	</PropertyGroup>
@@ -68,6 +50,28 @@
 			</_ExplicitReference>
 		</ItemGroup>
 	</Target>
+
+<!--	PlayScript   -->
+	<PropertyGroup>
+		<PlayScriptBinPath Condition=" '$(PlayScriptBinPath)' == '' ">/Users/sushi/Library/Application Support/XamarinStudio-5.0/LocalInstall/Addins/MonoDevelop.PlayScript.5.10.2/MonoDevelop.PlayScript.SupportPackages</PlayScriptBinPath>
+		<CscToolExe Condition=" '$(CscToolExe)' == '' ">psc</CscToolExe>
+		<CscToolPath Condition=" '$(CscToolPath)' == '' ">$(PlayScriptBinPath)</CscToolPath>
+	</PropertyGroup>
+<!--	PlayScript   -->
+
+<!--	PlayScript   -->
+	<Target Name="VIEWENV" DependsOnTargets="BeforeResolveReferences">
+		<Message Text="                          CscToolExe: $(CscToolExe) "/>
+		<Message Text="                         CscToolPath: $(CscToolPath) "/>
+		<Message Text="                       ReferencePath: $(ReferencePath) "/>
+        <Message Text="                           ToolsPath: $(ToolsPath) "/>
+        <Message Text="            TargetFrameworkDirectory: $(TargetFrameworkDirectory) "/>
+        <Message Text="(P# import)        PlayScriptBinPath: $(PlayScriptBinPath) "/>
+        <Message Text="(C# import)           MSBuildBinPath: $(ToolsPath) "/>
+        <Message Text="(F# import)) MSBuildExtensionsPath32: $(MSBuildExtensionsPath32) "/>
+        <Message Text="                 AssemblySearchPaths: $(AssemblySearchPaths) "/>
+    </Target>
+<!--	PlayScript   -->
 
 	<Target
 		Name="CoreCompile"
@@ -148,6 +152,16 @@
 	</Target>
 
 	<Import Project="Microsoft.Common.targets" />
+
+	<!--	PlayScript   -->
+	<Target Name="BeforeResolveReferences">
+  		<CreateProperty
+    		Value="/Users/sushi/code/redux/PlayScript.Addin/PlayScript.Addin/MSBuild.targets;$(AssemblySearchPaths)">
+    	    <Output TaskParameter="Value" PropertyName="AssemblySearchPaths" />
+        </CreateProperty>
+        <Message Text="                 AssemblySearchPaths: $(AssemblySearchPaths) "/>
+    </Target>
+	<!--	PlayScript   -->
 
 	<PropertyGroup Condition="'$(NoCompilerStandardLib)'=='true' and '$(NoStdLib)'!='true'">
 		<ResolveAssemblyReferencesDependsOn>$(ResolveAssemblyReferencesDependsOn);_AddCorlibReference</ResolveAssemblyReferencesDependsOn>

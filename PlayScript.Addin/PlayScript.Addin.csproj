@@ -405,7 +405,7 @@
       <Link>MonoDevelop.PlayScript.SupportPackages\psc</Link>
     </AddinFile>
     <AddinFile Include="MSBuild.targets\Microsoft.Common.targets" />
-    <AddinFile Include="MSBuild.targets\Microsoft.PlayScript.targets" />
+    <AddinFile Include="MSBuild.targets\PlayScript.Targets" />
   </ItemGroup>
   <ItemGroup>
     <AddinReference Include="MonoDevelop.SourceEditor2" />

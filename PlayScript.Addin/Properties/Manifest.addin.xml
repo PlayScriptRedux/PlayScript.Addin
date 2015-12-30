@@ -189,24 +189,34 @@
 				shortcut = "Alt|Insert"
 				macShortcut = "Meta|I" />
 	</Extension>-->
-	<!--	<Extension path = "/MonoDevelop/ProjectModel/MSBuildItemTypes">
+	<Extension path = "/MonoDevelop/ProjectModel/MSBuildItemTypes">
 		<DotNetProject
-			language="C#"
-			extension="csproj"
-			guid="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
-			import="$(MSBuildBinPath)\Microsoft.CSharp.targets"
-			resourceHandler="MonoDevelop.CSharp.Project.CSharpResourceIdBuilder"
+			language="PlayScript"
+			extension="psproj"
+			guid="{464403d2-eb41-442a-a1f1-9bf858b8865f}"
+			import="$(PsBuildBinPath)\PlayScript.targets"
+			resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder"
 			/>
-		<Condition id="MSBuildTargetIsAvailable" target="$(MSBuildExtensionsPath)\Microsoft\Portable\v4.0\Microsoft.Portable.CSharp.targets">
+		<Condition id="MSBuildTargetIsAvailable" target="$(PsBuildBinPath)\PlayScript.Portable.Targets">
 			<DotNetProjectSubtype
 				guid="{786C830F-07A1-408B-BD7F-6EE04809D6DB}"
 				type="MonoDevelop.Projects.PortableDotNetProject"
 				useXBuild="true">
-				<AddImport language="C#" projects="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-				<RemoveImport language="C#" projects="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+				<AddImport language="CPlayScript projects="$(PsBuildBinPath)\PlayScript.Portable.Targets" />
+				<RemoveImport language="CPlayScript projects="$(PsBuildBinPath)\PlayScript.Targets" />
 			</DotNetProjectSubtype>
 		</Condition>
-	</Extension>-->
+	</Extension>
+	<Extension path = "/MonoDevelop/ProjectModel/MSBuildItemTypes">
+		<DotNetProject
+			language="PlayScript"
+			extension="asproj"
+			guid="{496fe5ed-847f-4824-ad86-a92108ffcf0f}"
+			import="$(PsBuildBinPath)\PlayScript.targets"
+			resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder"
+			/>
+		<!--No portable libs for ActionScript, only PlayScript-->
+	</Extension>
 	<Extension path="/MonoDevelop/ProjectModel/SerializableClasses">
 		<DataType class="MonoDevelop.PlayScript.Project.CSharpCompilerParameters" />
 		<DataType class="MonoDevelop.PlayScript.Project.CSharpProjectParameters" />
@@ -233,18 +243,18 @@
 	<Extension path="/MonoDevelop/Refactoring/CodeActionSource"><Source class="MonoDevelop.PlayScript.Refactoring.CodeActions.NRefactoryCodeActionSource" /></Extension><Extension path="/MonoDevelop/Refactoring/CodeIssueSource"><Source class="MonoDevelop.PlayScript.Refactoring.CodeIssues.NRefactoryCodeIssueSource" /></Extension><Extension path="/MonoDevelop/SourceEditor2/TooltipProviders"><Class id="LanguageItem" class="MonoDevelop.SourceEditor.LanguageItemTooltipProvider" /></Extension><Extension path="/MonoDevelop/Ide/CompletionCharacters"><Complete language="PlayScript" commitOnSpace="True"
 			commitChars="{}[]().,:;+-*/%&amp;|^!~=&lt;&gt;?@#'&quot;\" />
 	</Extension>
-<!--	<ExtensionPoint path = "/MonoDevelop/ProjectModel/UnknownMSBuildProjectTypes" name = "Unknown MSBuild project types">
+	<ExtensionPoint path = "/MonoDevelop/ProjectModel/UnknownMSBuildProjectTypes" name = "Unknown MSBuild project types">
 		<Description>Project types not supported by MonoDevelop</Description>
 		<ExtensionNode name="ProjectType" type="MonoDevelop.Projects.Extensions.UnknownProjectTypeNode"/>
-	</ExtensionPoint>-->
-<!--		<ExtensionPoint path = "/MonoDevelop/ProjectModel/MSBuildImportRedirects" name = "MSBuild import redirects">
+	</ExtensionPoint>
+		<ExtensionPoint path = "/MonoDevelop/ProjectModel/MSBuildImportRedirects" name = "MSBuild import redirects">
 		<Description>Allows replacing an import by another one when a project is evaluated</Description>
 		<ExtensionNode name="Import" type="MonoDevelop.Projects.Extensions.ImportRedirectTypeNode"/>
-	</ExtensionPoint>-->
-<!--	<ExtensionPoint path = "/MonoDevelop/ProjectModel/MSBuildProjectItemTypes" name = "MSBuild project item subclasses">
+	</ExtensionPoint>
+	<ExtensionPoint path = "/MonoDevelop/ProjectModel/MSBuildProjectItemTypes" name = "MSBuild project item subclasses">
 		<Description>Allows defining ProjectItem subclasses to be used for specific msbuild project items</Description>
 		<ExtensionNode name="Item" customAttributeType="MonoDevelop.Projects.ExportProjectItemTypeAttribute" />
-	</ExtensionPoint>-->
+	</ExtensionPoint>
 	<Extension path = "/MonoDevelop/ProjectModel/UnknownMSBuildProjectTypes">
 			<ProjectType guid = "{464403d2-eb41-442a-a1f1-9bf858b8865f}" name = "PlayScript" extension="psproj" addin = "PlayScript" />
 			<ProjectType guid = "{496fe5ed-847f-4824-ad86-a92108ffcf0f}" name = "ActionScript" extension="asproj" addin = "PlayScript" />
