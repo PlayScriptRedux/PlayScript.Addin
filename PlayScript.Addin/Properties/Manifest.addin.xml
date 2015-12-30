@@ -86,13 +86,13 @@
 			<Package name="pscorlib" version="3.99.0.0" clrVersion="Default">
 				<Assembly file="MonoDevelop.PlayScript.SupportPackages/pscorlib.dll" />
 				<Assembly file="MonoDevelop.PlayScript.SupportPackages/PlayScript.Dynamic.dll" />
-				<Assembly file="MonoDevelop.PlayScript.SupportPackages/Mono.Playscript.dll" />
+				<Assembly file="MonoDevelop.PlayScript.SupportPackages/Mono.PlayScript.dll" />
 				<Assembly file="MonoDevelop.PlayScript.SupportPackages/PlayScript.Optimization.dll" />
 			</Package>
 			<Package name="pscorlib_aot" version="3.99.0.0" clrVersion="Default">
 				<Assembly file="MonoDevelop.PlayScript.SupportPackages/pscorlib_aot.dll" />
 				<Assembly file="MonoDevelop.PlayScript.SupportPackages/PlayScript.Dynamic_aot.dll" />
-				<Assembly file="MonoDevelop.PlayScript.SupportPackages/Mono.Playscript.dll" />
+				<Assembly file="MonoDevelop.PlayScript.SupportPackages/Mono.PlayScript.dll" />
 				<Assembly file="MonoDevelop.PlayScript.SupportPackages/PlayScript.Optimization.dll" />
 			</Package>
 		</Condition>
@@ -250,8 +250,17 @@
 			<ProjectType guid = "{496fe5ed-847f-4824-ad86-a92108ffcf0f}" name = "ActionScript" extension="asproj" addin = "PlayScript" />
 	</Extension>
 	<Extension path="/MonoDevelop/ProjectModel/MSBuildItemTypes">
-		<DotNetProject language="PlayScript" extension="psproj" guid="{464403d2-eb41-442a-a1f1-9bf858b8865f}" import="$(MSBuildBinPath)\Microsoft.PlaySharp.targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
-		<DotNetProject language="PlayScript" extension="asproj" guid="{496fe5ed-847f-4824-ad86-a92108ffcf0f}" import="$(MSBuildBinPath)\Microsoft.PlaySharp.targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
+		<DotNetProject language="PlayScript" extension="psproj" guid="{464403d2-eb41-442a-a1f1-9bf858b8865f}" type="MonoDevelop.PlayScript.PlayScriptProject"
+		resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
+		<DotNetProject language="PlayScript" extension="asproj" guid="{496fe5ed-847f-4824-ad86-a92108ffcf0f}" type="MonoDevelop.PlayScript.ActionScriptProject"
+		 resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
 		<!--<DotNetProjectSubtype guid="{1fc382b4-0f88-4dbe-994d-7aa7d07975c6}" type="MonoDevelop.AddinMaker.AddinProject" useXBuild="true" requireXbuild="false" />-->
 	</Extension>
+<!--		<Extension path="/MonoDevelop/ProjectModel/MSBuildItemTypes">
+		<DotNetProject language="PlayScript" extension="psproj" guid="{464403d2-eb41-442a-a1f1-9bf858b8865f}" type="MonoDevelop.PlayScript.PlayScriptProject"
+		import="$(MSBuildBinPath)\Microsoft.PlaySharp.targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
+		<DotNetProject language="PlayScript" extension="asproj" guid="{496fe5ed-847f-4824-ad86-a92108ffcf0f}" type="MonoDevelop.PlayScript.ActionScriptProject"
+		import="$(MSBuildBinPath)\Microsoft.PlaySharp.targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
+		<!--<DotNetProjectSubtype guid="{1fc382b4-0f88-4dbe-994d-7aa7d07975c6}" type="MonoDevelop.AddinMaker.AddinProject" useXBuild="true" requireXbuild="false" />-->
+	</Extension>-->
 </ExtensionModel>
