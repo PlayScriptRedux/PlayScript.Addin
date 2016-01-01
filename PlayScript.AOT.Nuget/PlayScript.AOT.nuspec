@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<package>
+  <metadata minClientVersion="2.8.5">
+    <id>PlayScript.AOT</id>
+    <version>5.10.2.0</version>
+    <authors>SushiHangover\RobertN</authors>
+    <owners>SushiHangover\RobertN</owners>
+    <projectUrl>https://github.com/PlayScriptRedux/PlayScript.Addin</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/PlayScriptRedux/PlayScript.Addin/playscript/PlayScript.AOT/img/PlayScript.AOT.png</iconUrl>
+    <licenseUrl>https://raw.githubusercontent.com/PlayScriptRedux/PlayScript.Addin/playscript/PlayScript.AOT/LICENSE.md</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>
+    Adds PlayScripts AOT Libraries to your project. 
+    </summary>
+    <description>
+    Adds PlayScripts AOT Libraries to your project. 
+   
+    * PCLs will be in a future release 
+    * Requires the MonoDevelop.PlayScript.5.10.2.x Addin is installed
+      - requirement to be removed in a future release
+    </description>
+    <releaseNotes>
+    PlayScript.AOT release notes:
+
+    5.10.2.0 New : Initial Public Release
+    </releaseNotes>
+    <language>en-US</language>
+    <copyright>Copyright (c) SushiHangover\RobertN (sushihangover@outlook.com)</copyright>
+    <developmentDependency>true</developmentDependency>
+    <tags>playscript actionscript</tags>
+  </metadata>
+  <files>
+    <file src="LICENSE.md" target="LICENSE.md" />
+    <file src="lib/**" target="lib" />
+  </files>
+</package>

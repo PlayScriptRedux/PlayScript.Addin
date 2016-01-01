@@ -2,12 +2,12 @@
 <package>
   <metadata minClientVersion="2.8.5">
     <id>PlayScript.MSBuild</id>
-    <version>5.10.2.1</version>
+    <version>5.10.2.2</version>
     <authors>SushiHangover\RobertN</authors>
     <owners>SushiHangover\RobertN</owners>
     <projectUrl>https://github.com/PlayScriptRedux/PlayScript.Addin</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/PlayScriptRedux/PlayScript.Addin/playscript/PlayScript.MSBuild.Targets/img/PlayScript.MSBuild.png</iconUrl>
-    <licenseUrl>https://raw.githubusercontent.com/PlayScriptRedux/PlayScript.Addin/playscript/PlayScript.MSBuild.Targets/LICENSE.md</licenseUrl>
+    <iconUrl>https://raw.githubusercontent.com/PlayScriptRedux/PlayScript.Addin/playscript/PlayScript.MSBuild.Targets.Nuget/img/PlayScript.MSBuild.png</iconUrl>
+    <licenseUrl>https://raw.githubusercontent.com/PlayScriptRedux/PlayScript.Addin/playscript/PlayScript.MSBuild.Targets.Nuget/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>
     Adds PlayScripts MSBuild targets to your project. Works both on a developer workstation and on a CI build server.
@@ -19,7 +19,8 @@
     </description>
     <releaseNotes>
     PlayScript.MSBuild release notes:
-    
+
+    5.10.2.2 Fix : Include build file (failing due to x-plat pathing)   
     5.10.2.1 Fix : Fix License and icon
     5.10.2.0 New : Initial Public Release
     </releaseNotes>
@@ -29,7 +30,9 @@
   </metadata>
   <files>
     <file src="LICENSE.md" target="LICENSE.md" />
-    <file src="build\**\*.*" target="build" />
-    <file src="tools\**\*.*" target="tools" />
+    <file src="build/PlayScript.MSBuild.Targets" target="build" />
+<!-- 
+    <file src="tools/**\*.*" target="tools" />
+ -->
   </files>
 </package>
