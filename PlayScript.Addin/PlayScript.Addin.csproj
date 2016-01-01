@@ -222,7 +222,7 @@
     <None Include="MonoDevelop.PlayScript.Refactoring.CodeActions\Actions\MoveTypeToFile.cs" />
     <None Include="MonoDevelop.PlayScript.UnitTests\UnitTestTextEditorExtension.cs" />
     <None Include="MSBuild.Targets\Microsoft.Common.targets" />
-    <None Include="MSBuild.targets\PlayScript.Targets" />
+    <None Include="MSBuild.Targets\PlayScript.Targets" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <Import Project="..\PlayScript.Addin\packages\MonoDevelop.Addins.0.3.0\build\net40\MonoDevelop.Addins.targets" Condition="Exists('..\PlayScript.Addin\packages\MonoDevelop.Addins.0.3.0\build\net40\MonoDevelop.Addins.targets')" />
@@ -406,10 +406,10 @@
     <AddinFile Include="..\..\playscript\mcs\psc\psc">
       <Link>MonoDevelop.PlayScript.SupportPackages\psc</Link>
     </AddinFile>
-    <AddinFile Include="MSBuild.targets\Microsoft.Common.targets">
+    <AddinFile Include="MSBuild.Targets\Microsoft.Common.targets">
       <Link>MonoDevelop.PlayScript.SupportPackages\Microsoft.Common.targets</Link>
     </AddinFile>
-    <AddinFile Include="MSBuild.targets\PlayScript.Targets">
+    <AddinFile Include="MSBuild.Targets\PlayScript.Targets">
       <Link>MonoDevelop.PlayScript.SupportPackages\PlayScript.Targets</Link>
     </AddinFile>
   </ItemGroup>
