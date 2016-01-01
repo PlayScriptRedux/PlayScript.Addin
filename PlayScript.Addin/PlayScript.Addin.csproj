@@ -221,8 +221,10 @@
     <None Include="MonoDevelop.PlayScript.Refactoring.CodeActions\Actions\ConvertToEnumDialog.cs" />
     <None Include="MonoDevelop.PlayScript.Refactoring.CodeActions\Actions\MoveTypeToFile.cs" />
     <None Include="MonoDevelop.PlayScript.UnitTests\UnitTestTextEditorExtension.cs" />
+    <None Include="MSBuild.Targets\Microsoft.Common.targets" />
+    <None Include="MSBuild.Targets\PlayScript.Targets" />
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <Import Project="..\PlayScript.Addin\packages\MonoDevelop.Addins.0.3.0\build\net40\MonoDevelop.Addins.targets" Condition="Exists('..\PlayScript.Addin\packages\MonoDevelop.Addins.0.3.0\build\net40\MonoDevelop.Addins.targets')" />
   <Import Project="..\packages\MonoDevelop.Addins.0.3.0\build\net40\MonoDevelop.Addins.targets" Condition="Exists('..\packages\MonoDevelop.Addins.0.3.0\build\net40\MonoDevelop.Addins.targets')" />
   <ItemGroup>
@@ -403,6 +405,12 @@
     </AddinFile>
     <AddinFile Include="..\..\playscript\mcs\psc\psc">
       <Link>MonoDevelop.PlayScript.SupportPackages\psc</Link>
+    </AddinFile>
+    <AddinFile Include="MSBuild.Targets\Microsoft.Common.targets">
+      <Link>MonoDevelop.PlayScript.SupportPackages\Microsoft.Common.targets</Link>
+    </AddinFile>
+    <AddinFile Include="MSBuild.Targets\PlayScript.Targets">
+      <Link>MonoDevelop.PlayScript.SupportPackages\PlayScript.Targets</Link>
     </AddinFile>
   </ItemGroup>
   <ItemGroup>
