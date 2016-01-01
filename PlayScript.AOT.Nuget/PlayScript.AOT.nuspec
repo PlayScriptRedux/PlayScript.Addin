@@ -6,8 +6,8 @@
     <authors>SushiHangover\RobertN</authors>
     <owners>SushiHangover\RobertN</owners>
     <projectUrl>https://github.com/PlayScriptRedux/PlayScript.Addin</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/PlayScriptRedux/PlayScript.Addin/playscript/PlayScript.AOT/img/PlayScript.AOT.png</iconUrl>
-    <licenseUrl>https://raw.githubusercontent.com/PlayScriptRedux/PlayScript.Addin/playscript/PlayScript.AOT/LICENSE.md</licenseUrl>
+    <iconUrl>https://raw.githubusercontent.com/PlayScriptRedux/PlayScript.Addin/playscript/PlayScript.AOT.Nuget/img/PlayScript.AOT.png</iconUrl>
+    <licenseUrl>https://github.com/PlayScriptRedux/PlayScript.Addin/blob/playscript/PlayScript.AOT.Nuget/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>
     Adds PlayScripts AOT Libraries to your project. 

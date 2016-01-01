@@ -7,7 +7,7 @@
     <owners>SushiHangover\RobertN</owners>
     <projectUrl>https://github.com/PlayScriptRedux/PlayScript.Addin</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/PlayScriptRedux/PlayScript.Addin/playscript/PlayScript.MSBuild.Targets.Nuget/img/PlayScript.MSBuild.png</iconUrl>
-    <licenseUrl>https://raw.githubusercontent.com/PlayScriptRedux/PlayScript.Addin/playscript/PlayScript.MSBuild.Targets.Nuget/LICENSE.md</licenseUrl>
+    <licenseUrl>https://github.com/PlayScriptRedux/PlayScript.Addin/blob/playscript/PlayScript.MSBuild.Targets.Nuget/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>
     Adds PlayScripts MSBuild targets to your project. Works both on a developer workstation and on a CI build server.
