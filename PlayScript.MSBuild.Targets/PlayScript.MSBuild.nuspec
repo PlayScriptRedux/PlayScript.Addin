@@ -27,10 +27,8 @@
     <developmentDependency>true</developmentDependency>
   </metadata>
   <files>
-    <file src="../LICENSE.md" target="LICENSE.md" />
+    <file src="LICENSE.md" target="LICENSE.md" />
     <file src="build\**\*.*" target="build" />
-<!-- 
     <file src="tools\**\*.*" target="tools" />
- -->
   </files>
 </package>
