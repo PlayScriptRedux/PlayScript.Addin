@@ -13,4 +13,4 @@ cleanhard:
 
 install:
 	xbuild /p:InstallAddin=True /p:Configuration=${CONFIG} ${ARGS}
-
+	-find . -name "*.mpack"

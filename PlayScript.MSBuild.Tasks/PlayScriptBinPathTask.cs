@@ -21,13 +21,11 @@ namespace PlayScript.MSBuild.Tasks
 		}
 
 		public override bool Execute() {
-			Console.WriteLine ("PlayScriptBinPathTask Execute");
 			string psc_name = "psc";
 			if (Environment.OSVersion.Platform != PlatformID.Unix) {
 				psc_name += ".exe";
 			}
 			_PlayScriptCompiler = psc_name;
-			Console.WriteLine ("PlayScriptBinPathTask {0}", _PlayScriptCompiler);
 
 			// Does psc exist on the path?
 			string psc = GetFullPath(psc_name);
@@ -39,17 +37,22 @@ namespace PlayScript.MSBuild.Tasks
 			var home = Environment.GetEnvironmentVariable("HOME");
 			// TODO: this needs to be done via CONST and x-plat
 			var psc_addin = Path.Combine (home, "Library/Application Support/XamarinStudio-5.0/LocalInstall/Addins");
-			psc_addin = Path.Combine(psc_addin, "MonoDevelop.PlayScript.5.10.2");
-			psc_addin = Path.Combine (psc_addin, "MonoDevelop.PlayScript.SupportPackages");
-			var psc_full_path = Path.Combine (psc_addin, psc_name);
-			if (File.Exists(psc_full_path)) {
-				// TODO: Fixme...Hack file perms on script as Addin installer does not preserve them...
+
+			var AddinFullName = Directory.GetDirectories (psc_addin, "MonoDevelop.PlayScript.5.*");
+			if (AddinFullName.Length == 1) {
+				psc_addin = Path.Combine (psc_addin, AddinFullName[0]);
+				psc_addin = Path.Combine (psc_addin, "MonoDevelop.PlayScript.SupportPackages");
+				var psc_full_path = Path.Combine (psc_addin, psc_name);
+				if (File.Exists (psc_full_path)) {
+					// TODO: Fixme...Hack file perms on script as Addin installer does not preserve them...
 //				system (String.Format ("chmod u+x \"{0}\"", psc));
-				_PlayScriptSDKPath = psc_addin;
-				Console.WriteLine ("PlayScriptBinPathTask {0}", PlayScriptSDKPath);
-				return true;
+					_PlayScriptSDKPath = psc_addin;
+					Console.WriteLine ("PlayScriptBinPathTask {0}", PlayScriptSDKPath);
+					return true;
+				}
 			}
 			_PlayScriptSDKPath = "";
+			Console.WriteLine ("Addin locator failure: {0}", psc_addin);
 			return false;
 		}
 
