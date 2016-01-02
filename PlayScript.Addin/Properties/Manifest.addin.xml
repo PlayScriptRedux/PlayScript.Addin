@@ -53,10 +53,10 @@
 		<LanguageBinding id="ActionScript" supportedextensions=".as" class="MonoDevelop.PlayScript.ActionScriptLanguageBinding" />
 		<LanguageBinding id="PlayScript" supportedextensions=".play" class="MonoDevelop.PlayScript.PlayScriptLanguageBinding" />
 	</Extension>
-	<Extension path="/MonoDevelop/ProjectModel/MSBuildItemTypes">
+<!--	<Extension path="/MonoDevelop/ProjectModel/MSBuildItemTypes">
 		<DotNetProject language="PlayScript" extension="psproj" guid="{464403d2-eb41-442a-a1f1-9bf858b8865f}" import="$(PsBuildBinPath)\PlayScript.Targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpresourceIdBuilder" />
 		<DotNetProject language="ActionScript" extension="asproj" guid="{496fe5ed-847f-4824-ad86-a92108ffcf0}" import="$(PsBuildBinPath)\PlayScript.Targets" resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder" />
-	</Extension>
+	</Extension>-->
 		<!--		<DotNetProjectSubtype guid="{1fc382b4-0f88-4dbe-994d-7aa7d07975c6}" type="MonoDevelop.AddinMaker.AddinProject" useXBuild="true" requireXbuild="false" />-->
 	<Extension path="/MonoDevelop/ProjectModel/Gui/ItemOptionPanels/Build/General">
 		<Condition id="ActiveLanguage" value="PlayScript">
@@ -188,12 +188,12 @@
 				macShortcut = "Meta|I" />
 	</Extension>-->
 
+<!--			import="$(PsBuildBinPath)\PlayScript.Targets"-->
 	<Extension path = "/MonoDevelop/ProjectModel/MSBuildItemTypes">
 		<DotNetProject
 			language="PlayScript"
 			extension="psproj"
 			guid="{464403d2-eb41-442a-a1f1-9bf858b8865f}"
-			import="$(PsBuildBinPath)\PlayScript.Targets"
 			resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder"
 			/>
 <!--		<Condition id="MSBuildTargetIsAvailable" target="$(PsBuildBinPath)\PlayScript.Portable.Targets">
@@ -207,12 +207,12 @@
 		</Condition>-->
 	</Extension>
 	<!--No portable libs for ActionScript, only PlayScript-->
+<!--	import="$(PsBuildBinPath)\PlayScript.Targets"-->
 	<Extension path = "/MonoDevelop/ProjectModel/MSBuildItemTypes">
 		<DotNetProject
 			language="PlayScript"
 			extension="asproj"
 			guid="{496fe5ed-847f-4824-ad86-a92108ffcf0f}"
-			import="$(PsBuildBinPath)\PlayScript.Targets"
 			resourceHandler="MonoDevelop.PlayScript.Project.CSharpResourceIdBuilder"
 			/>
 	</Extension>

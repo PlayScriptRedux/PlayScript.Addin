@@ -210,6 +210,7 @@
     <Compile Include="MonoDevelop.PlayScript.Resolver\HelperMethods.cs" />
     <Compile Include="MonoDevelop.PlayScript.Tooltips\LanguageItemTooltipProvider.cs" />
     <Compile Include="MonoDevelop.PlayScript\PlayScriptBindingCompilerManager.cs" />
+    <Compile Include="MonoDevelop.PlayScript\Consts.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="icons\actionscript-file-source-32%402x.psd" />
@@ -221,8 +222,6 @@
     <None Include="MonoDevelop.PlayScript.Refactoring.CodeActions\Actions\ConvertToEnumDialog.cs" />
     <None Include="MonoDevelop.PlayScript.Refactoring.CodeActions\Actions\MoveTypeToFile.cs" />
     <None Include="MonoDevelop.PlayScript.UnitTests\UnitTestTextEditorExtension.cs" />
-    <None Include="MSBuild.Targets\Microsoft.Common.targets" />
-    <None Include="MSBuild.Targets\PlayScript.Targets" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <Import Project="..\PlayScript.Addin\packages\MonoDevelop.Addins.0.3.0\build\net40\MonoDevelop.Addins.targets" Condition="Exists('..\PlayScript.Addin\packages\MonoDevelop.Addins.0.3.0\build\net40\MonoDevelop.Addins.targets')" />

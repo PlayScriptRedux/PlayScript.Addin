@@ -23,9 +23,11 @@
 			<Options Target="Library" PauseConsoleOutput="False" />
 			<References>
 				<Reference type="Package" refto="System" LocalCopy="false" SpecificVersion="true" />
-				<Reference type="Package" refto="pscorlib_aot" LocalCopy="true" SpecificVersion="false" />
-				<Reference type="Package" refto="PlayScript.Dynamic_aot" LocalCopy="true" SpecificVersion="false" />
 			</References>
+            <Packages>
+                <Package id="PlayScript.AOT" />
+                <package id="PlayScript.MSBuild" />
+            </Packages>
 			<Files>
 				<FileTemplateReference TemplateID="PlayScriptEmptyClass" name="MyClass.as" />
 				<FileTemplateReference TemplateID="CSharpAssemblyInfo" name="AssemblyInfo.cs" />
