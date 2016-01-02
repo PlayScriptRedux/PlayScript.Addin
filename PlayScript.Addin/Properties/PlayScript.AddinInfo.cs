@@ -1,11 +1,12 @@
 ﻿using System;
 using Mono.Addins;
 using Mono.Addins.Description;
+using PlayScript;
 
 [assembly:Addin (
 	"PlayScript",
 	Namespace = "MonoDevelop",
-	Version = MonoDevelop.BuildInfo.Version,
+	Version = PlayScript.Addin.Version,
 	Flags = AddinFlags.None,
 	Category = "Language bindings",
 	Url = "https://github.com/PlayScriptRedux/PlayScript.Addin"

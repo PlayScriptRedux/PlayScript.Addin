@@ -23,9 +23,11 @@
 			<Options ExternalConsole="True" />
 			<References>
 				<Reference type="Package" refto="System" LocalCopy="false" SpecificVersion="true" />
-				<Reference type="Package" refto="pscorlib_aot" LocalCopy="true" SpecificVersion="false" />
-				<Reference type="Package" refto="PlayScript.Dynamic_aot" LocalCopy="true" SpecificVersion="false" />
 			</References>
+            <Packages>
+                <Package id="PlayScript.AOT" />
+                <package id="PlayScript.MSBuild" />
+            </Packages>
 			<Files>
 				<File name="Main.as" AddStandardHeader="True"><![CDATA[package
 {
