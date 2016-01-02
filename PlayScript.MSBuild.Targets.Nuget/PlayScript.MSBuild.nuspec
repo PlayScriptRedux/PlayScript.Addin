@@ -2,7 +2,7 @@
 <package>
   <metadata minClientVersion="2.8.5">
     <id>PlayScript.MSBuild</id>
-    <version>5.10.2.2</version>
+    <version>5.10.2.3</version>
     <authors>SushiHangover\RobertN</authors>
     <owners>SushiHangover\RobertN</owners>
     <projectUrl>https://github.com/PlayScriptRedux/PlayScript.Addin</projectUrl>
@@ -20,6 +20,8 @@
     <releaseNotes>
     PlayScript.MSBuild release notes:
 
+    5.10.2.2 Update : Add MsBuild properties debug target : /target=viewenv
+		    : Add custom MSbuild Task to remove hardcoded paths to psc
     5.10.2.2 Fix : Include build file (failing due to x-plat pathing)   
     5.10.2.1 Fix : Fix License and icon
     5.10.2.0 New : Initial Public Release
@@ -31,6 +33,8 @@
   <files>
     <file src="LICENSE.md" target="LICENSE.md" />
     <file src="build/PlayScript.MSBuild.Targets" target="build" />
+    <file src="build/PlayScript.MSBuild.Debug.Targets" target="build" />
+    <file src="build/PlayScript.MSBuild.Tasks.dll" target="build" />
 <!-- 
     <file src="tools/**\*.*" target="tools" />
  -->
