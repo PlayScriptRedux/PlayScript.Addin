@@ -15,3 +15,5 @@ obj
 
 */build/PlayScript.MSBuild.Tasks.dll
 
+TestResult.xml
+

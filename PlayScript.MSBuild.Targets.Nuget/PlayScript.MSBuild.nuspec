@@ -2,7 +2,7 @@
 <package>
   <metadata minClientVersion="2.8.5">
     <id>PlayScript.MSBuild</id>
-    <version>5.10.2.3</version>
+    <version>5.10.2.4</version>
     <authors>SushiHangover\RobertN</authors>
     <owners>SushiHangover\RobertN</owners>
     <projectUrl>https://github.com/PlayScriptRedux/PlayScript.Addin</projectUrl>
@@ -20,6 +20,7 @@
     <releaseNotes>
     PlayScript.MSBuild release notes:
 
+    5.10.2.4 Fix : Dynamically adjust Addin directory based on current current
     5.10.2.3 Update : Add MsBuild properties debug target : /target=viewenv ; Add custom MSbuild Task to remove hardcoded paths to psc
     5.10.2.2 Fix : Include build file (failing due to x-plat pathing)   
     5.10.2.1 Fix : Fix License and icon
