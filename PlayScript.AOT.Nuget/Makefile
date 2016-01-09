@@ -16,4 +16,5 @@ copy:
 	cp ../../playscript/mcs/class/lib/net_4_5/PlayScript.Dynamic_aot.dll lib/net45
 
 publish: all
+	source mygetapikey.sh
 	nuget push PlayScript.AOT.*.nupkg $(MyGetApiKey) -source https://www.myget.org/F/playscript/api/v2

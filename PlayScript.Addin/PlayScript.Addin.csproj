@@ -343,74 +343,39 @@
       <Link>MonoDevelop.PlayScript.SupportPackages\Mono.PlayScript.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AddinFile>
-    <AddinFile Include="..\..\playscript\mcs\class\lib\net_4_5\Mono.PlayScript.dll.mdb">
-      <Link>MonoDevelop.PlayScript.SupportPackages\Mono.PlayScript.dll.mdb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AddinFile>
     <AddinFile Include="..\..\playscript\mcs\class\lib\net_4_5\PlayScript.Dynamic.dll">
       <Link>MonoDevelop.PlayScript.SupportPackages\PlayScript.Dynamic.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AddinFile>
-    <AddinFile Include="..\..\playscript\mcs\class\lib\net_4_5\PlayScript.Dynamic.dll.mdb">
-      <Link>MonoDevelop.PlayScript.SupportPackages\PlayScript.Dynamic.dll.mdb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AddinFile>
     <AddinFile Include="..\..\playscript\mcs\class\lib\net_4_5\PlayScript.Dynamic_aot.dll">
       <Link>MonoDevelop.PlayScript.SupportPackages\PlayScript.Dynamic_aot.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AddinFile>
-    <AddinFile Include="..\..\playscript\mcs\class\lib\net_4_5\PlayScript.Dynamic_aot.dll.mdb">
-      <Link>MonoDevelop.PlayScript.SupportPackages\PlayScript.Dynamic_aot.dll.mdb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AddinFile>
     <AddinFile Include="..\..\playscript\mcs\class\lib\net_4_5\PlayScript.Optimization.dll">
       <Link>MonoDevelop.PlayScript.SupportPackages\PlayScript.Optimization.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AddinFile>
-    <AddinFile Include="..\..\playscript\mcs\class\lib\net_4_5\PlayScript.Optimization.dll.mdb">
-      <Link>MonoDevelop.PlayScript.SupportPackages\PlayScript.Optimization.dll.mdb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AddinFile>
     <AddinFile Include="..\..\playscript\mcs\class\lib\net_4_5\playshell.exe">
       <Link>MonoDevelop.PlayScript.SupportPackages\playshell.exe</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AddinFile>
-    <AddinFile Include="..\..\playscript\mcs\class\lib\net_4_5\playshell.exe.mdb">
-      <Link>MonoDevelop.PlayScript.SupportPackages\playshell.exe.mdb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AddinFile>
     <AddinFile Include="..\..\playscript\mcs\class\lib\net_4_5\psc.exe">
       <Link>MonoDevelop.PlayScript.SupportPackages\psc.exe</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AddinFile>
-    <AddinFile Include="..\..\playscript\mcs\class\lib\net_4_5\psc.exe.mdb">
-      <Link>MonoDevelop.PlayScript.SupportPackages\psc.exe.mdb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AddinFile>
     <AddinFile Include="..\..\playscript\mcs\class\lib\net_4_5\pscorlib.dll">
       <Link>MonoDevelop.PlayScript.SupportPackages\pscorlib.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AddinFile>
-    <AddinFile Include="..\..\playscript\mcs\class\lib\net_4_5\pscorlib.dll.mdb">
-      <Link>MonoDevelop.PlayScript.SupportPackages\pscorlib.dll.mdb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AddinFile>
     <AddinFile Include="..\..\playscript\mcs\class\lib\net_4_5\pscorlib_aot.dll">
       <Link>MonoDevelop.PlayScript.SupportPackages\pscorlib_aot.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AddinFile>
-    <AddinFile Include="..\..\playscript\mcs\class\lib\net_4_5\pscorlib_aot.dll.mdb">
-      <Link>MonoDevelop.PlayScript.SupportPackages\pscorlib_aot.dll.mdb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AddinFile>
     <AddinFile Include="..\..\playscript\mcs\psc\psc">
       <Link>MonoDevelop.PlayScript.SupportPackages\psc</Link>
     </AddinFile>
-    <AddinFile Include="MSBuild.Targets\Microsoft.Common.targets">
-      <Link>MonoDevelop.PlayScript.SupportPackages\Microsoft.Common.targets</Link>
-    </AddinFile>
-    <AddinFile Include="MSBuild.Targets\PlayScript.Targets">
-      <Link>MonoDevelop.PlayScript.SupportPackages\PlayScript.Targets</Link>
+    <AddinFile Include="..\..\monomac\src\MonoMac.dll">
+      <Link>MonoDevelop.PlayScript.SupportPackages\MonoMac.dll</Link>
     </AddinFile>
   </ItemGroup>
   <ItemGroup>
