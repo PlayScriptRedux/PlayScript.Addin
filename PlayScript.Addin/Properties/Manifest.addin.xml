@@ -86,11 +86,14 @@
 				<Assembly file="MonoDevelop.PlayScript.SupportPackages/Mono.PlayScript.dll" />
 				<Assembly file="MonoDevelop.PlayScript.SupportPackages/PlayScript.Optimization.dll" />
 			</Package>
-			<Package name="pscorlib_aot" version="3.99.0.0" clrVersion="Default">
+			<Package name="pscorlib.AOT" version="3.99.0.0" clrVersion="Default">
 				<Assembly file="MonoDevelop.PlayScript.SupportPackages/pscorlib_aot.dll" />
 				<Assembly file="MonoDevelop.PlayScript.SupportPackages/PlayScript.Dynamic_aot.dll" />
 				<Assembly file="MonoDevelop.PlayScript.SupportPackages/Mono.PlayScript.dll" />
 				<Assembly file="MonoDevelop.PlayScript.SupportPackages/PlayScript.Optimization.dll" />
+			</Package>
+			<Package name="pscorlib.AOT.MonoMac" version="3.99.0.0" clrVersion="Default">
+				<Assembly file="MonoDevelop.PlayScript.SupportPackages/MonoMac.dll" />
 			</Package>
 		</Condition>
 	</Extension>
