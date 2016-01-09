@@ -2,7 +2,7 @@
 <package>
   <metadata minClientVersion="2.8.5">
     <id>PlayScript.AOT</id>
-    <version>5.10.2.0</version>
+    <version>5.10.2.1</version>
     <authors>SushiHangover\RobertN</authors>
     <owners>SushiHangover\RobertN</owners>
     <projectUrl>https://github.com/PlayScriptRedux/PlayScript.Addin</projectUrl>
@@ -22,6 +22,7 @@
     <releaseNotes>
     PlayScript.AOT release notes:
 
+    5.10.2.1 Update : Update pscorlib 
     5.10.2.0 New : Initial Public Release
     </releaseNotes>
     <language>en-US</language>
