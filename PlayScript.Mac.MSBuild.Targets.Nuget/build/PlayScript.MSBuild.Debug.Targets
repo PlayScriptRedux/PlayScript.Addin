@@ -1,0 +1,32 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+<!-- PlayScript -->
+	<Target Name="VIEWENV" DependsOnTargets="BeforeResolveReferences">
+		<Message Text="                          CscToolExe: $(CscToolExe) "/>
+		<Message Text="                         CscToolPath: $(CscToolPath) "/>
+		<Message Text="                       ReferencePath: $(ReferencePath) "/>
+        <Message Text="                           ToolsPath: $(ToolsPath) "/>
+        <Message Text="            TargetFrameworkDirectory: $(TargetFrameworkDirectory) "/>
+        <Message Text="            MSBuildThisFileDirectory: $(MSBuildThisFileDirectory) "/>
+        <Message Text="                 MSBuildThisFileName: $(MSBuildThisFileName) "/>
+        <Message Text="(P# import)           PsBuildBinPath: $(PsBuildBinPath) "/>
+        <Message Text="(C# import)           MSBuildBinPath: $(ToolsPath) "/>
+        <Message Text="(F# import)) MSBuildExtensionsPath32: $(MSBuildExtensionsPath32) "/>
+        <Message Text="~"/>
+        <Message Text="PlayScript: "/>
+        <Message Text="          PlayScriptSDKPath: $(PlayScriptSDKPath) "/>
+        <Message Text="         PlayScriptCompiler: $(PlayScriptCompiler) "/>
+        <Message Text="~"/>
+        <Message Text="Xamarin.iOS: "/>
+        <Message Text="         MD_MTOUCH_SDK_ROOT: $(MD_MTOUCH_SDK_ROOT) "/>
+        <Message Text="  TargetFrameworkIdentifier: $(TargetFrameworkIdentifier) "/>
+        <Message Text="             Before.targets: $(MSBuildThisFileDirectory)$(MSBuildThisFileName).Before.targets "/>
+        <Message Text="               Before.props: $(MSBuildThisFileDirectory)$(MSBuildThisFileName).Before.props "/>
+        <Message Text="              After.targets: $(MSBuildThisFileDirectory)$(MSBuildThisFileName).After.targets "/>
+        <Message Text="                After.props: $(MSBuildThisFileDirectory)$(MSBuildThisFileName).After.props "/>
+        <Message Text="        AssemblySearchPaths: $(AssemblySearchPaths) "/>
+    </Target>
+<!-- PlayScript -->
+
+</Project>
+

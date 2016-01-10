@@ -1,0 +1,20 @@
+<!--
+  PlayScript.Mac.targets
+
+  Authors:
+    SushiHangover\RobertN
+
+  Copyright 2015 All Rights Reserved.
+-->
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Import Project="$(MSBuildThisFileDirectory)$(MSBuildThisFileName).Before.targets"
+			Condition="Exists('$(MSBuildThisFileDirectory)$(MSBuildThisFileName).Before.targets')"/>
+	
+	<Import Project="PlayScript.MSBuild.Targets" />
+	<Import Project="/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/msbuild/Xamarin.Mac.Common.targets" />
+<!--	<Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+-->
+
+	<Import Project="$(MSBuildThisFileDirectory)$(MSBuildThisFileName).After.targets"
+			Condition="Exists('$(MSBuildThisFileDirectory)$(MSBuildThisFileName).After.targets')"/>
+</Project>
