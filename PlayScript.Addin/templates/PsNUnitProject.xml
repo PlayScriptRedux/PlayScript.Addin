@@ -1,0 +1,53 @@
+﻿<?xml version="1.0"?>
+<Template Originator="PlayScript" Language="PlayScript" Created="01/10/2016" LastModified="01/10/2016">
+	<!-- Template Header -->
+	<TemplateConfiguration>
+	    <_Name>NUnit Library Project</_Name>
+	    <Category>other/net/general</Category>
+	    <Icon>md-project|res:project-nunit-overlay-32.png</Icon>
+	    <Image id="md-nunit-library-project" />
+	    <_Description>Creates an NUnit library</_Description>
+	    <LanguageName>PlayScript</LanguageName>
+	    <DefaultFilename>NUnitProject</DefaultFilename>
+	    <GroupId>md-nunit-library</GroupId>
+    </TemplateConfiguration>
+	<!-- Actions -->
+	<Actions>
+		<Open filename="Test.play" />
+	</Actions>
+	<!-- Template Content -->
+	<Combine name="${ProjectName}" directory=".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+		<Project name="${ProjectName}" directory=".">
+			<Options Target = "Library" />
+			<References>
+				<Reference type="Package" refto="System" LocalCopy="false" SpecificVersion="true" />
+			</References>
+            <Packages>
+	            <Package ID="NUnit" Version="2.6.4" />
+                <Package id="PlayScript.AOT" />
+                <package id="PlayScript.MSBuild" />
+            </Packages>
+			<Files>
+				<File name="Test.play" AddStandardHeader="True"><![CDATA[package ${Namespace}
+{
+	import NUnit.Framework.*;
+	import System.*;
+
+	[TestFixture ()]
+	public class Test
+	{
+		[Test ()]
+		public function TestCase():void
+		{
+			
+		}
+	}
+}]]></File>
+				<FileTemplateReference TemplateID="CSharpAssemblyInfo" name="AssemblyInfo.cs" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

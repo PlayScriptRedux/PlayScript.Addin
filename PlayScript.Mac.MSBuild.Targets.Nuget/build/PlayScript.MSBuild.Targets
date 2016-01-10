@@ -1,0 +1,37 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+      
+	<PropertyGroup>
+		<DefaultLanguageSourceExtension>.cs</DefaultLanguageSourceExtension>
+		<Language>PlayScript</Language>
+	</PropertyGroup>
+
+<!--
+	Note: Microsoft.CSharp.targets already imports Microsoft.Common.targets
+		  so if we need to override/replacement would need to do it after the 
+		  Microsoft.CSharp.targets import either in this file or by importing another
+		  file, i.e. PlayScript.Common.targets
+		  (this is where we will include our multimedia pipeline tasks)
+	<Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+-->
+
+<!-- PlayScript -->
+    <UsingTask TaskName="PlayScriptBinPathTask" AssemblyFile="PlayScript.MSBuild.Tasks.dll" />
+	<Target Name="BeforeResolveReferences">
+	    <PlayScriptBinPathTask>
+          <Output TaskParameter="PlayScriptSDKPath" PropertyName="PlayScriptSDKPath"/>
+          <Output TaskParameter="PlayScriptCompiler" PropertyName="PlayScriptCompiler"/>
+        </PlayScriptBinPathTask>
+  		<CreateProperty
+    		Value="$(AssemblySearchPaths);$(PlayScriptSDKPath)">
+    	    <Output TaskParameter="Value" PropertyName="AssemblySearchPaths" />
+        </CreateProperty>
+     	<PropertyGroup>
+		   <CscToolPath Condition="'$(CscToolPath)' = ''">$(PlayScriptSDKPath)</CscToolPath>
+		   <CscToolExe Condition="'$(CscToolExe)' == ''">$(PlayScriptCompiler)</CscToolExe>
+    	</PropertyGroup>
+    </Target>
+<!-- PlayScript -->
+  
+    <Import Project="$(MSBuildThisFileDirectory)\PlayScript.MSBuild.Debug.Targets" />
+</Project>

@@ -16,6 +16,7 @@
 		<ProjectTemplate id="PlayScriptEmptyProject" file="templates/PsEmptyProject.xpt.xml" />
 		<ProjectTemplate id="PlayScriptLibrary" file="templates/PsLibrary.xpt.xml" />
 		<ProjectTemplate id="PlayScriptConsoleProject" file="templates/PsConsoleProject.xpt.xml" />
+		<ProjectTemplate id="PlayScriptNUNitProject" file="templates/PsNUnitProject.xml" />
 		<ProjectTemplate id="ActionScriptEmptyProject" file="templates/AsEmptyProject.xpt.xml" />
 		<ProjectTemplate id="ActionScriptLibrary" file="templates/AsLibrary.xpt.xml" />
 		<ProjectTemplate id="ActionScriptConsoleProject" file="templates/AsConsoleProject.xpt.xml" />

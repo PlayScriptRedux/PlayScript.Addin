@@ -377,6 +377,7 @@
     <AddinFile Include="..\..\monomac\src\MonoMac.dll">
       <Link>MonoDevelop.PlayScript.SupportPackages\MonoMac.dll</Link>
     </AddinFile>
+    <AddinFile Include="templates\PsNUnitProject.xml" />
   </ItemGroup>
   <ItemGroup>
     <AddinReference Include="MonoDevelop.SourceEditor2" />

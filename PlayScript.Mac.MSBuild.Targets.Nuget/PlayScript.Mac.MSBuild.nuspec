@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<package>
+  <metadata minClientVersion="2.8.5">
+    <id>PlayScript.MSBuild</id>
+    <version>5.10.2.4</version>
+    <authors>SushiHangover\RobertN</authors>
+    <owners>SushiHangover\RobertN</owners>
+    <projectUrl>https://github.com/PlayScriptRedux/PlayScript.Addin</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/PlayScriptRedux/PlayScript.Addin/playscript/PlayScript.MSBuild.Targets.Nuget/img/PlayScript.MSBuild.png</iconUrl>
+    <licenseUrl>https://github.com/PlayScriptRedux/PlayScript.Addin/blob/playscript/PlayScript.MSBuild.Targets.Nuget/LICENSE.md</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>
+    Adds PlayScripts MSBuild targets to your project. Works both on a developer workstation and on a CI build server.
+    </summary>
+    <description>
+    Adds PlayScripts MSBuild targets to your project. Works both on a developer workstation and on a CI build server.
+    
+    Currently requires the MonoDevelop.PlayScript.5.10.2.0 Addin is installed (requirement to be removed in a future release)
+    </description>
+    <releaseNotes>
+    PlayScript.MSBuild release notes:
+
+    5.10.2.4 Fix : Dynamically adjust Addin directory based on current current
+    5.10.2.3 Update : Add MsBuild properties debug target : /target=viewenv ; Add custom MSbuild Task to remove hardcoded paths to psc
+    5.10.2.2 Fix : Include build file (failing due to x-plat pathing)   
+    5.10.2.1 Fix : Fix License and icon
+    5.10.2.0 New : Initial Public Release
+    </releaseNotes>
+    <language>en-US</language>
+    <copyright>Copyright (c) SushiHangover\RobertN (sushihangover@outlook.com)</copyright>
+    <developmentDependency>true</developmentDependency>
+  </metadata>
+  <files>
+    <file src="LICENSE.md" target="LICENSE.md" />
+    <file src="build/PlayScript.MSBuild.Targets" target="build" />
+    <file src="build/PlayScript.MSBuild.Debug.Targets" target="build" />
+    <file src="build/PlayScript.MSBuild.Tasks.dll" target="build" />
+<!-- 
+    <file src="tools/**\*.*" target="tools" />
+ -->
+  </files>
+</package>
