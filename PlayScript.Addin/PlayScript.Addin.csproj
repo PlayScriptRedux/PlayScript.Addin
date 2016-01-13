@@ -390,21 +390,17 @@
       <Project>{0D8EC1C8-9706-4D8B-96F2-8636F2C9F894}</Project>
       <Name>ICSharpCode.NRefactory.PlayScript</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\monodevelop\main\contrib\ICSharpCode.Decompiler\ICSharpCode.Decompiler.csproj">
-      <Project>{984CC812-9470-4A13-AFF9-CC44068D666C}</Project>
-      <Name>ICSharpCode.Decompiler</Name>
-    </ProjectReference>
     <ProjectReference Include="..\external\NRefactory\ICSharpCode.NRefactory.PlayScript.Refactoring\ICSharpCode.NRefactory.PlayScript.Refactoring.csproj">
       <Project>{D9654D35-F86C-4105-B4E6-FAA656487BF8}</Project>
       <Name>ICSharpCode.NRefactory.PlayScript.Refactoring</Name>
     </ProjectReference>
-    <ProjectReference Include="..\external\ikvm\reflect\IKVM.Reflection.csproj">
-      <Project>{4CB170EF-DFE6-4A56-9E1B-A85449E827A7}</Project>
-      <Name>IKVM.Reflection</Name>
-    </ProjectReference>
     <ProjectReference Include="..\external\NRefactory\ICSharpCode.NRefactory.IKVM\ICSharpCode.NRefactory.PlayScript.IKVM.csproj">
       <Project>{6FBE63EB-4D01-4BED-BC3E-F4AB31AB7D6F}</Project>
       <Name>ICSharpCode.NRefactory.PlayScript.IKVM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\external\ICSharpCode.Decompiler\ICSharpCode.Decompiler.csproj">
+      <Project>{984CC812-9470-4A13-AFF9-CC44068D666C}</Project>
+      <Name>ICSharpCode.Decompiler</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
